@@ -12,6 +12,8 @@
 // For VWWGeneralSettings
 static NSString *VWWGeneralSettingsFrequencyMaxKey = @"general_frequency_max";
 static NSString *VWWGeneralSettingsFrequencyMinKey = @"general_frequency_min";
+static NSString *VWWGeneralSettingsFrequencyDefaultMinKey = @"general_frequency_default_min";
+static NSString *VWWGeneralSettingsFrequencyDefaultMaxKey = @"general_frequency_default_max";
 static NSString *VWWGeneralSettingsFrequencyNormalizedKey = @"general_frequency_normalized";
 static NSString *VWWGeneralSettingsAmplitudeKey = @"general_amplitude";
 

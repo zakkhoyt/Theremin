@@ -14,6 +14,8 @@
 // Default settings
 @property (nonatomic) float frequencyMax;
 @property (nonatomic) float frequencyMin;
+@property (nonatomic) float frequencyDefaultMin;
+@property (nonatomic) float frequencyDefaultMax;
 @property (nonatomic) float frequencyNormalized;
 @property (nonatomic) float amplitude;
 

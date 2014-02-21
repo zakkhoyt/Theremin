@@ -76,9 +76,8 @@
 //    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     //    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
 //    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
-
     
 }
 

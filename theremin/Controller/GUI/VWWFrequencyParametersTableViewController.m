@@ -157,6 +157,12 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 
 
 
+-(NSInteger)cappedFrequencyFromTextField:(UITextField*)textField{
+    NSInteger value = textField.text.integerValue;
+    value = MAX([VWWGeneralSettings sharedInstance].frequencyMin, value);
+    value = MIN([VWWGeneralSettings sharedInstance].frequencyMax, value);
+    return value;
+}
 
 
 #pragma mark UITextFieldDelegate
@@ -166,17 +172,17 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
     
     
     if(textField == self.xFrequencyMinTextField){
-        self.synthesizerGroup.xSynthesizer.frequencyMin = textField.text.floatValue;
+        self.synthesizerGroup.xSynthesizer.frequencyMin = [self cappedFrequencyFromTextField:textField];
     } else if(textField == self.xFrequencyMaxTextField){
-        self.synthesizerGroup.xSynthesizer.frequencyMax = textField.text.floatValue;
+        self.synthesizerGroup.xSynthesizer.frequencyMax = [self cappedFrequencyFromTextField:textField];
     } else if(textField == self.yFrequencyMinTextField){
-        self.synthesizerGroup.ySynthesizer.frequencyMin = textField.text.floatValue;
+        self.synthesizerGroup.ySynthesizer.frequencyMin = [self cappedFrequencyFromTextField:textField];
     } else if(textField == self.yFrequencyMaxTextField){
-        self.synthesizerGroup.ySynthesizer.frequencyMax = textField.text.floatValue;
+        self.synthesizerGroup.ySynthesizer.frequencyMax = [self cappedFrequencyFromTextField:textField];
     } else if(textField == self.zFrequencyMinTextField){
-        self.synthesizerGroup.zSynthesizer.frequencyMin = textField.text.floatValue;
+        self.synthesizerGroup.zSynthesizer.frequencyMin = [self cappedFrequencyFromTextField:textField];
     } else if(textField == self.zFrequencyMaxTextField){
-        self.synthesizerGroup.zSynthesizer.frequencyMax = textField.text.floatValue;
+        self.synthesizerGroup.zSynthesizer.frequencyMax = [self cappedFrequencyFromTextField:textField];
     }
     
     
