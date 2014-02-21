@@ -8,7 +8,7 @@
 
 #import "VWWSensitivityParameterTableViewController.h"
 #import "VWWSynthesizerGroup.h" 
-
+#import "VWWSynthesizersController.h"
 
 
 @interface VWWSensitivityParameterTableViewController ()
@@ -38,6 +38,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

@@ -61,6 +61,11 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
     [self updateControls];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -115,8 +120,6 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
     self.zFrequencyMinTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMin];
     self.zFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMax];
 
-    
-    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 
@@ -160,6 +163,26 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    
+    
+    if(textField == self.xFrequencyMinTextField){
+        self.synthesizerGroup.xSynthesizer.frequencyMin = textField.text.floatValue;
+    } else if(textField == self.xFrequencyMaxTextField){
+        self.synthesizerGroup.xSynthesizer.frequencyMax = textField.text.floatValue;
+    } else if(textField == self.yFrequencyMinTextField){
+        self.synthesizerGroup.ySynthesizer.frequencyMin = textField.text.floatValue;
+    } else if(textField == self.yFrequencyMaxTextField){
+        self.synthesizerGroup.ySynthesizer.frequencyMax = textField.text.floatValue;
+    } else if(textField == self.zFrequencyMinTextField){
+        self.synthesizerGroup.zSynthesizer.frequencyMin = textField.text.floatValue;
+    } else if(textField == self.zFrequencyMaxTextField){
+        self.synthesizerGroup.zSynthesizer.frequencyMax = textField.text.floatValue;
+    }
+    
+    
+    
+    
+    
     [self updateControls];
     return YES;
 }

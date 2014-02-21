@@ -37,6 +37,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -124,7 +130,6 @@
         self.synthesizerGroup.zSynthesizer.effectType = (VWWEffectType)indexPath.row;
     }
     
-    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

@@ -18,7 +18,6 @@ static NSString *VWWSynthesizersControllerMagnetoometersStatisticsString = @"mag
 
 +(VWWSynthesizersController*)sharedInstance;
 -(void)writeSettings;
--(void)readSettings;
 @property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *gyroscopesGroup;

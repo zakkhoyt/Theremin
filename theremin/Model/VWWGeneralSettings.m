@@ -10,7 +10,7 @@
 #import "VWWSynthesizerKeys.h"
 
 const float VWWGeneralSettingsFrequencyMin = 20.0;
-const float VWWGeneralSettingsFrequencyMax = 2000.0;
+const float VWWGeneralSettingsFrequencyMax = 18000.0;
 const float VWWGeneralSettingsFrequencyNormalized = 1.0;
 const float VWWGeneralSettingsAmplitude = 1.0;
 

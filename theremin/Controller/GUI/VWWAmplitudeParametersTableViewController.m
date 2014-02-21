@@ -53,6 +53,12 @@
     [self updateControls];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
+
 #pragma mark Private methods
 -(void)updateControls{
     
@@ -72,17 +78,31 @@
     self.yAmplitudeSlider.value = self.synthesizerGroup.ySynthesizer.amplitude;
     self.zAmplitudeSlider.value = self.synthesizerGroup.zSynthesizer.amplitude;
     
-//    // Text boxes
-//    self.xFrequencyMinTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.xSynthesizer.frequencyMin];
-//    self.xFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.xSynthesizer.frequencyMax];
-//    self.yFrequencyMinTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.ySynthesizer.frequencyMin];
-//    self.yFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.ySynthesizer.frequencyMax];
-//    self.zFrequencyMinTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMin];
-//    self.zFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMax];
+    // Text boxes
+    self.xAmplitudeTextField.text = [NSString stringWithFormat:@"%ld%%", (long)[self percentFromFloat:self.synthesizerGroup.xSynthesizer.amplitude]];
+    self.yAmplitudeTextField.text = [NSString stringWithFormat:@"%ld%%", (long)[self percentFromFloat:self.synthesizerGroup.ySynthesizer.amplitude]];
+    self.zAmplitudeTextField.text = [NSString stringWithFormat:@"%ld%%", (long)[self percentFromFloat:self.synthesizerGroup.zSynthesizer.amplitude]];
     
     
-    [[VWWSynthesizersController sharedInstance] writeSettings];
+
+
 }
+
+
+-(NSInteger)percentFromFloat:(float)amplitude{
+    return (NSInteger)(amplitude * 100);
+}
+
+
+-(float)floatValueFromTextField:(UITextField*)textField{
+    float value = textField.text.floatValue;
+    value = value / (float)100;
+    value = MAX(value, 0.0);
+    value = MIN(value, 1.0);
+    return value;
+}
+
+
 
 
 #pragma mark IBActions
@@ -103,8 +123,18 @@
 
 #pragma mark UITextFieldDelegate
 
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    
+    if(textField == self.xAmplitudeTextField) {
+        self.synthesizerGroup.xSynthesizer.amplitude = [self floatValueFromTextField:textField];
+    } else if(textField == self.yAmplitudeTextField){
+        self.synthesizerGroup.ySynthesizer.amplitude = [self floatValueFromTextField:textField];
+    } else if(textField == self.zAmplitudeTextField){
+        self.synthesizerGroup.zSynthesizer.amplitude = [self floatValueFromTextField:textField];
+    }
+    
     [self updateControls];
     return YES;
 }

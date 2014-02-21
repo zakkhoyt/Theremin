@@ -44,6 +44,12 @@
     [self updateControls];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -138,8 +144,6 @@
         self.synthesizerGroup.zSynthesizer.waveType = (VWWWaveType)indexPath.row;
     }
     
-    
-    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

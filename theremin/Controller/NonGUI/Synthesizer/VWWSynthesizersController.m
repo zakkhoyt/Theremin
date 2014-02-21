@@ -53,9 +53,6 @@
     [VWWUserDefaults setMagnetometersSettings:magnetometerDictionary];
     
 }
--(void)readSettings{
-    
-}
 
 
 #pragma mark Private methods
