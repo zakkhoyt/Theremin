@@ -68,6 +68,12 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.tableView.backgroundColor = nil;
+        self.tableView.backgroundColor = [UIColor darkGrayColor];
+    }
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
