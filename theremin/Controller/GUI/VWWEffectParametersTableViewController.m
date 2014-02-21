@@ -9,6 +9,7 @@
 #import "VWWEffectParametersTableViewController.h"
 #import "VWWSynthesizerGroup.h"
 #import "VWWEffectTableViewCell.h"
+#import "VWWSynthesizersController.h"
 
 @interface VWWEffectParametersTableViewController ()
 
@@ -122,6 +123,8 @@
     } else if(indexPath.section == VWWAxisTypeZ) {
         self.synthesizerGroup.zSynthesizer.effectType = (VWWEffectType)indexPath.row;
     }
+    
+    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

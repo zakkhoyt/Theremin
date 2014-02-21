@@ -10,7 +10,7 @@
 #import "VWWGeneralSettings.h"
 #import "VWWSynthesizerGroup.h"
 #import "VWWWaveformTableViewCell.h"
-
+#import "VWWSynthesizersController.h"
 
 
 @interface VWWWaveformParametersTableViewController ()
@@ -137,6 +137,9 @@
     } else if(indexPath.section == VWWAxisTypeZ) {
         self.synthesizerGroup.zSynthesizer.waveType = (VWWWaveType)indexPath.row;
     }
+    
+    
+    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

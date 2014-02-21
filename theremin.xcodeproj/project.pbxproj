@@ -336,6 +336,176 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C610D4AC18B80A2600999A3D /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				C610D4B018B80A7200999A3D /* Amplitude */,
+				C610D4B218B80A7D00999A3D /* Effects */,
+				C610D4AF18B80A6D00999A3D /* Frequency */,
+				C610D4B318B80A8300999A3D /* Sensitivity */,
+				C610D4B118B80A7900999A3D /* Waveform */,
+			);
+			name = Parameters;
+			sourceTree = "<group>";
+		};
+		C610D4AD18B80A4500999A3D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30618B7E03300B9F94B /* about.html */,
+				C6DFF30718B7E03300B9F94B /* VWWAboutViewController.h */,
+				C6DFF30818B7E03300B9F94B /* VWWAboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		C610D4AE18B80A4B00999A3D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C610D4BC18B80B3200999A3D /* General */,
+				C610D4BB18B80B2100999A3D /* Synthesizer */,
+				C610D4B618B80AC200999A3D /* Devices */,
+				C6DFF31D18B7E03300B9F94B /* VWWSettingsTableViewController.h */,
+				C6DFF31E18B7E03300B9F94B /* VWWSettingsTableViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		C610D4AF18B80A6D00999A3D /* Frequency */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31718B7E03300B9F94B /* VWWFrequencyParametersTableViewController.h */,
+				C6DFF31818B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m */,
+			);
+			name = Frequency;
+			sourceTree = "<group>";
+		};
+		C610D4B018B80A7200999A3D /* Amplitude */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30918B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.h */,
+				C6DFF30A18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m */,
+			);
+			name = Amplitude;
+			sourceTree = "<group>";
+		};
+		C610D4B118B80A7900999A3D /* Waveform */ = {
+			isa = PBXGroup;
+			children = (
+				C610D4B418B80A9900999A3D /* Cell */,
+				C6DFF32918B7E03300B9F94B /* VWWWaveformParametersTableViewController.h */,
+				C6DFF32A18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m */,
+			);
+			name = Waveform;
+			sourceTree = "<group>";
+		};
+		C610D4B218B80A7D00999A3D /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				C610D4B718B80AD600999A3D /* Cell */,
+				C6DFF31318B7E03300B9F94B /* VWWEffectParametersTableViewController.h */,
+				C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		C610D4B318B80A8300999A3D /* Sensitivity */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31B18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.h */,
+				C6DFF31C18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m */,
+			);
+			name = Sensitivity;
+			sourceTree = "<group>";
+		};
+		C610D4B418B80A9900999A3D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF32B18B7E03300B9F94B /* VWWWaveformTableViewCell.h */,
+				C6DFF32C18B7E03300B9F94B /* VWWWaveformTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C610D4B518B80AB300999A3D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30B18B7E03300B9F94B /* VWWAxisTableViewCell.h */,
+				C6DFF30C18B7E03300B9F94B /* VWWAxisTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C610D4B618B80AC200999A3D /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31118B7E03300B9F94B /* VWWDevicesViewController.h */,
+				C6DFF31218B7E03300B9F94B /* VWWDevicesViewController.m */,
+				C6DFF30D18B7E03300B9F94B /* VWWDevicesClientViewController.h */,
+				C6DFF30E18B7E03300B9F94B /* VWWDevicesClientViewController.m */,
+				C6DFF30F18B7E03300B9F94B /* VWWDevicesServerViewController.h */,
+				C6DFF31018B7E03300B9F94B /* VWWDevicesServerViewController.m */,
+			);
+			name = Devices;
+			sourceTree = "<group>";
+		};
+		C610D4B718B80AD600999A3D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31518B7E03300B9F94B /* VWWEffectTableViewCell.h */,
+				C6DFF31618B7E03300B9F94B /* VWWEffectTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C610D4B818B80AED00999A3D /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31F18B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.h */,
+				C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */,
+			);
+			name = Motion;
+			sourceTree = "<group>";
+		};
+		C610D4B918B80AF600999A3D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF32D18B7E03300B9F94B /* VWWWelcomeViewController.h */,
+				C6DFF32E18B7E03300B9F94B /* VWWWelcomeViewController.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		C610D4BA18B80AFD00999A3D /* Touchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF32718B7E03300B9F94B /* VWWTouchViewController.h */,
+				C6DFF32818B7E03300B9F94B /* VWWTouchViewController.m */,
+			);
+			name = Touchscreen;
+			sourceTree = "<group>";
+		};
+		C610D4BB18B80B2100999A3D /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C610D4AC18B80A2600999A3D /* Parameters */,
+				C610D4B518B80AB300999A3D /* Cell */,
+				C6DFF32118B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.h */,
+				C6DFF32218B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m */,
+				C6DFF32318B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.h */,
+				C6DFF32418B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m */,
+			);
+			name = Synthesizer;
+			sourceTree = "<group>";
+		};
+		C610D4BC18B80B3200999A3D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF31918B7E03300B9F94B /* VWWGeneralSettingsTableViewController.h */,
+				C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 		C6DFF20518B7DEB900B9F94B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,45 +536,11 @@
 		C6DFF30518B7E03300B9F94B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				C6DFF30618B7E03300B9F94B /* about.html */,
-				C6DFF30718B7E03300B9F94B /* VWWAboutViewController.h */,
-				C6DFF30818B7E03300B9F94B /* VWWAboutViewController.m */,
-				C6DFF30918B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.h */,
-				C6DFF30A18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m */,
-				C6DFF30B18B7E03300B9F94B /* VWWAxisTableViewCell.h */,
-				C6DFF30C18B7E03300B9F94B /* VWWAxisTableViewCell.m */,
-				C6DFF30D18B7E03300B9F94B /* VWWDevicesClientViewController.h */,
-				C6DFF30E18B7E03300B9F94B /* VWWDevicesClientViewController.m */,
-				C6DFF30F18B7E03300B9F94B /* VWWDevicesServerViewController.h */,
-				C6DFF31018B7E03300B9F94B /* VWWDevicesServerViewController.m */,
-				C6DFF31118B7E03300B9F94B /* VWWDevicesViewController.h */,
-				C6DFF31218B7E03300B9F94B /* VWWDevicesViewController.m */,
-				C6DFF31318B7E03300B9F94B /* VWWEffectParametersTableViewController.h */,
-				C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */,
-				C6DFF31518B7E03300B9F94B /* VWWEffectTableViewCell.h */,
-				C6DFF31618B7E03300B9F94B /* VWWEffectTableViewCell.m */,
-				C6DFF31718B7E03300B9F94B /* VWWFrequencyParametersTableViewController.h */,
-				C6DFF31818B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m */,
-				C6DFF31918B7E03300B9F94B /* VWWGeneralSettingsTableViewController.h */,
-				C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */,
-				C6DFF31B18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.h */,
-				C6DFF31C18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m */,
-				C6DFF31D18B7E03300B9F94B /* VWWSettingsTableViewController.h */,
-				C6DFF31E18B7E03300B9F94B /* VWWSettingsTableViewController.m */,
-				C6DFF31F18B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.h */,
-				C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */,
-				C6DFF32118B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.h */,
-				C6DFF32218B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m */,
-				C6DFF32318B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.h */,
-				C6DFF32418B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m */,
-				C6DFF32718B7E03300B9F94B /* VWWTouchViewController.h */,
-				C6DFF32818B7E03300B9F94B /* VWWTouchViewController.m */,
-				C6DFF32918B7E03300B9F94B /* VWWWaveformParametersTableViewController.h */,
-				C6DFF32A18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m */,
-				C6DFF32B18B7E03300B9F94B /* VWWWaveformTableViewCell.h */,
-				C6DFF32C18B7E03300B9F94B /* VWWWaveformTableViewCell.m */,
-				C6DFF32D18B7E03300B9F94B /* VWWWelcomeViewController.h */,
-				C6DFF32E18B7E03300B9F94B /* VWWWelcomeViewController.m */,
+				C610D4AD18B80A4500999A3D /* About */,
+				C610D4B818B80AED00999A3D /* Motion */,
+				C610D4AE18B80A4B00999A3D /* Settings */,
+				C610D4BA18B80AFD00999A3D /* Touchscreen */,
+				C610D4B918B80AF600999A3D /* Welcome */,
 			);
 			path = GUI;
 			sourceTree = "<group>";

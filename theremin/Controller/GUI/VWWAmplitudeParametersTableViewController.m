@@ -8,6 +8,7 @@
 
 #import "VWWAmplitudeParametersTableViewController.h"
 #import "VWWSynthesizerGroup.h" 
+#import "VWWSynthesizersController.h"
 
 @interface VWWAmplitudeParametersTableViewController ()
 @property (weak, nonatomic) IBOutlet UISlider *xAmplitudeSlider;
@@ -80,7 +81,7 @@
 //    self.zFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMax];
     
     
-    
+    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 
@@ -88,12 +89,15 @@
 
 - (IBAction)xAmplitudeSliderValueChanged:(UISlider*)sender {
     self.synthesizerGroup.xSynthesizer.amplitude = sender.value;
+    [self updateControls];
 }
 - (IBAction)yAmplitudeSliderValueChanged:(UISlider*)sender {
     self.synthesizerGroup.ySynthesizer.amplitude = sender.value;
+    [self updateControls];
 }
 - (IBAction)zAmplitudeSliderValueChanged:(UISlider*)sender {
     self.synthesizerGroup.zSynthesizer.amplitude = sender.value;
+    [self updateControls];
 }
 
 

@@ -9,6 +9,7 @@
 #import "VWWFrequencyParametersTableViewController.h"
 #import "VWWGeneralSettings.h"
 #import "VWWSynthesizerGroup.h" 
+#import "VWWSynthesizersController.h"
 
 const NSInteger VWWFrequencyParametersTableViewControllerXAxisSection = 0;
 const NSInteger VWWFrequencyParametersTableViewControllerYAxisSection = 1;
@@ -115,7 +116,7 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
     self.zFrequencyMaxTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.zSynthesizer.frequencyMax];
 
     
-    
+    [[VWWSynthesizersController sharedInstance] writeSettings];
 }
 
 

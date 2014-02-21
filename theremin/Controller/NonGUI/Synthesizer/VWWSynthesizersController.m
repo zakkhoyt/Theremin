@@ -39,6 +39,23 @@
     return self;
 }
 
+-(void)writeSettings{
+    NSDictionary *touchscreenDictionary = [self.touchscreenGroup dictionaryRepresentation];
+    [VWWUserDefaults setTouchscreenSettings:touchscreenDictionary];
+    
+    NSDictionary *accelerometersDictionary = [self.accelerometersGroup dictionaryRepresentation];
+    [VWWUserDefaults setAccelerometersSettings:accelerometersDictionary];
+    
+    NSDictionary *gyroscopesDictionary = [self.gyroscopesGroup dictionaryRepresentation];
+    [VWWUserDefaults setGyroscopesSettings:gyroscopesDictionary];
+    
+    NSDictionary *magnetometerDictionary = [self.magnetometersGroup dictionaryRepresentation];
+    [VWWUserDefaults setMagnetometersSettings:magnetometerDictionary];
+    
+}
+-(void)readSettings{
+    
+}
 
 
 #pragma mark Private methods
@@ -55,33 +72,55 @@
     // Each group will be initialized with the default settings (stored in NSUserDefaults), all axis muted, then started.
     // All that is required for each to make noise is to unmute an axis
     
-    // Touchscreeen
+    // Default settings
     VWWGeneralSettings *generalSettings = [VWWGeneralSettings sharedInstance];
-    self.touchscreenGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+
+    // Touchscreeen
+    NSDictionary *touchscreenDictionary = [VWWUserDefaults touchscreenSettings];
+    if(touchscreenDictionary){
+        self.touchscreenGroup = [[VWWSynthesizerGroup alloc]initWithDictionary:touchscreenDictionary];
+    } else {
+        self.touchscreenGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                    amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                    amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    }
     self.touchscreenGroup.muted = YES;
     [self.touchscreenGroup start];
     
     // Accelerometers
-    self.accelerometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                   amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                   amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    NSDictionary *accelerometersDictionary = [VWWUserDefaults accelerometersSettings];
+    if(accelerometersDictionary){
+        self.accelerometersGroup = [[VWWSynthesizerGroup alloc]initWithDictionary:accelerometersDictionary];
+    } else {
+        self.accelerometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                       amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                       amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    }
     self.accelerometersGroup.muted = YES;
     [self.accelerometersGroup start];
     
     // Gyroscopes
-    self.gyroscopesGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
-                                                               amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
-                                                               amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    NSDictionary *gyroscopesDictionary = [VWWUserDefaults gyroscopesSettings];
+    if(gyroscopesDictionary){
+        self.gyroscopesGroup = [[VWWSynthesizerGroup alloc]initWithDictionary:gyroscopesDictionary];
+    } else {
+        self.gyroscopesGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                   amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                   amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    }
     self.gyroscopesGroup.muted = YES;
     [self.gyroscopesGroup start];
     
     
     // Magnetometers
-    self.magnetometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                  amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
-                                                                  amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    NSDictionary *magnetometersDictionary = [VWWUserDefaults magnetometersSettings];
+    if(magnetometersDictionary){
+        self.magnetometersGroup = [[VWWSynthesizerGroup alloc]initWithDictionary:magnetometersDictionary];
+    } else {
+        self.magnetometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                      amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
+                                                                      amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    }
     self.magnetometersGroup.muted = YES;
     [self.magnetometersGroup start];
     
