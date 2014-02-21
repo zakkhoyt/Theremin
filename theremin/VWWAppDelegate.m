@@ -1,8 +1,8 @@
 //
 //  VWWAppDelegate.m
-//  theremin
+//  Synthesizer
 //
-//  Created by Zakk Hoyt on 2/21/14.
+//  Created by Zakk Hoyt on 1/9/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
@@ -12,7 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    [self setupDefaults];
+    [self setupAppearance];
+    
     return YES;
 }
 							
@@ -42,5 +45,56 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+-(void)setupDefaults{
+    
+}
+
+-(void)setupAppearance{
+//        [self printFonts];
+//    
+//    // PricedownBl-Regular
+////    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:20.0];
+////    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20.0];
+//    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
+////    UIFont *font = [UIFont fontWithName:@"Dina'sHandwritingRegular" size:17.0];
+////    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0];
+//
+//    [UIButton.appearance setFont:font];
+////    [UIButton.appearance.titleLabel setFont:font];
+//    [UILabel.appearance setFont:font];
+//    [UIBarButtonItem.appearance setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
+//    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName : font}];
+//    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
+//
+//    
+//    
+//
+//    VWW_LOG_INFO(@"");
+    
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    //    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+//    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
+
+    
+}
+
+
+-(void)printFonts{
+    VWW_LOG_DEBUG(@"\nListing fonts installed on this device:\n");
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"family:\t%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"name:\t\t%@", name);
+        }
+    }
+}
+
 
 @end

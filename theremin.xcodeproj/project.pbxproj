@@ -15,13 +15,68 @@
 		C60DAA3E18B7DB9F000F0AD1 /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */; };
 		C60DAA4118B7DB9F000F0AD1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA3F18B7DB9F000F0AD1 /* Main_iPhone.storyboard */; };
 		C60DAA4418B7DB9F000F0AD1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */; };
-		C60DAA4718B7DB9F000F0AD1 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA4618B7DB9F000F0AD1 /* VWWViewController.m */; };
 		C60DAA4918B7DB9F000F0AD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */; };
 		C60DAA5018B7DB9F000F0AD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DAA4F18B7DB9F000F0AD1 /* XCTest.framework */; };
 		C60DAA5118B7DB9F000F0AD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DAA2D18B7DB9F000F0AD1 /* Foundation.framework */; };
 		C60DAA5218B7DB9F000F0AD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DAA3118B7DB9F000F0AD1 /* UIKit.framework */; };
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
+		C6DFF20418B7DDA900B9F94B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */; };
+		C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF26B18B7DED000B9F94B /* readme.markdown */; };
+		C6DFF39818B7E03300B9F94B /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */; };
+		C6DFF39918B7E03300B9F94B /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF30618B7E03300B9F94B /* about.html */; };
+		C6DFF39A18B7E03300B9F94B /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30818B7E03300B9F94B /* VWWAboutViewController.m */; };
+		C6DFF39B18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30A18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m */; };
+		C6DFF39C18B7E03300B9F94B /* VWWAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30C18B7E03300B9F94B /* VWWAxisTableViewCell.m */; };
+		C6DFF39D18B7E03300B9F94B /* VWWDevicesClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30E18B7E03300B9F94B /* VWWDevicesClientViewController.m */; };
+		C6DFF39E18B7E03300B9F94B /* VWWDevicesServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31018B7E03300B9F94B /* VWWDevicesServerViewController.m */; };
+		C6DFF39F18B7E03300B9F94B /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31218B7E03300B9F94B /* VWWDevicesViewController.m */; };
+		C6DFF3A018B7E03300B9F94B /* VWWEffectParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */; };
+		C6DFF3A118B7E03300B9F94B /* VWWEffectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31618B7E03300B9F94B /* VWWEffectTableViewCell.m */; };
+		C6DFF3A218B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31818B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m */; };
+		C6DFF3A318B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */; };
+		C6DFF3A418B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31C18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m */; };
+		C6DFF3A518B7E03300B9F94B /* VWWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF31E18B7E03300B9F94B /* VWWSettingsTableViewController.m */; };
+		C6DFF3A618B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */; };
+		C6DFF3A718B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32218B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m */; };
+		C6DFF3A818B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32418B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m */; };
+		C6DFF3AA18B7E03300B9F94B /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32818B7E03300B9F94B /* VWWTouchViewController.m */; };
+		C6DFF3AB18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32A18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m */; };
+		C6DFF3AC18B7E03300B9F94B /* VWWWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32C18B7E03300B9F94B /* VWWWaveformTableViewCell.m */; };
+		C6DFF3AD18B7E03300B9F94B /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF32E18B7E03300B9F94B /* VWWWelcomeViewController.m */; };
+		C6DFF3AE18B7E03300B9F94B /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF33218B7E03300B9F94B /* VWWBonjourClientController.m */; };
+		C6DFF3AF18B7E03300B9F94B /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF33518B7E03300B9F94B /* VWWBonjourServerController.m */; };
+		C6DFF3B018B7E03300B9F94B /* VWWMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF33818B7E03300B9F94B /* VWWMotionMonitor.m */; };
+		C6DFF3B318B7E03300B9F94B /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF33F18B7E03300B9F94B /* VWWSynthesizersController.m */; };
+		C6DFF3BB18B7E03300B9F94B /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF35018B7E03300B9F94B /* VWWGeneralSettings.m */; };
+		C6DFF3BC18B7E03300B9F94B /* VWWMotionAxes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF35218B7E03300B9F94B /* VWWMotionAxes.m */; };
+		C6DFF3BD18B7E03300B9F94B /* VWWMotionAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF35418B7E03300B9F94B /* VWWMotionAxis.m */; };
+		C6DFF3BE18B7E03300B9F94B /* dinas_handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35718B7E03300B9F94B /* dinas_handwriting.ttf */; };
+		C6DFF3BF18B7E03300B9F94B /* pricedown.otf in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35818B7E03300B9F94B /* pricedown.otf */; };
+		C6DFF3C018B7E03300B9F94B /* pricedown.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35918B7E03300B9F94B /* pricedown.ttf */; };
+		C6DFF3C118B7E03300B9F94B /* theremin@2x~ipad.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35B18B7E03300B9F94B /* theremin@2x~ipad.psd */; };
+		C6DFF3C218B7E03300B9F94B /* theremin@2x~iphone.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35C18B7E03300B9F94B /* theremin@2x~iphone.psd */; };
+		C6DFF3C318B7E03300B9F94B /* theremin_short@2x~iphone.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35D18B7E03300B9F94B /* theremin_short@2x~iphone.psd */; };
+		C6DFF3C418B7E03300B9F94B /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35E18B7E03300B9F94B /* sawtooth_256x256.png */; };
+		C6DFF3C518B7E03300B9F94B /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF35F18B7E03300B9F94B /* sine_256x256.png */; };
+		C6DFF3C618B7E03300B9F94B /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF36018B7E03300B9F94B /* square_256x256.png */; };
+		C6DFF3C718B7E03300B9F94B /* theremin_1024.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF36118B7E03300B9F94B /* theremin_1024.psd */; };
+		C6DFF3C818B7E03300B9F94B /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF36218B7E03300B9F94B /* triangle_256x256.png */; };
+		C6DFF3C918B7E03300B9F94B /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36618B7E03300B9F94B /* CADebugMacros.cpp */; };
+		C6DFF3CA18B7E03300B9F94B /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */; };
+		C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36C18B7E03300B9F94B /* CAXException.cpp */; };
+		C6DFF3D018B7E03300B9F94B /* VWWSynthesizerC.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF37A18B7E03300B9F94B /* VWWSynthesizerC.mm */; };
+		C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF37D18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m */; };
+		C6DFF3D218B7E03300B9F94B /* VWWSynthesizerNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF38118B7E03300B9F94B /* VWWSynthesizerNotes.m */; };
+		C6DFF3D418B7E03300B9F94B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF38418B7E03300B9F94B /* README.txt */; };
+		C6DFF3D518B7E03300B9F94B /* VWWNormalizedSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF38618B7E03300B9F94B /* VWWNormalizedSynthesizer.mm */; };
+		C6DFF3D618B7E03300B9F94B /* VWWSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF38818B7E03300B9F94B /* VWWSynthesizer.mm */; };
+		C6DFF3D718B7E03300B9F94B /* VWWSynthesizerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF38A18B7E03300B9F94B /* VWWSynthesizerGroup.m */; };
+		C6DFF3D818B7E03300B9F94B /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF38F18B7E03300B9F94B /* AsyncSocket.m */; };
+		C6DFF3D918B7E03300B9F94B /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF39118B7E03300B9F94B /* AsyncUdpSocket.m */; };
+		C6DFF3DA18B7E03300B9F94B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF39418B7E03300B9F94B /* MBProgressHUD.m */; };
+		C6DFF3DB18B7E03300B9F94B /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF39718B7E03300B9F94B /* VWWUserDefaults.m */; };
+		C6DFF3DF18B7E03A00B9F94B /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF3DE18B7E03A00B9F94B /* VWWTouchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +102,126 @@
 		C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
 		C60DAA4018B7DB9F000F0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		C60DAA4318B7DB9F000F0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		C60DAA4518B7DB9F000F0AD1 /* VWWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
-		C60DAA4618B7DB9F000F0AD1 /* VWWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C60DAA4E18B7DB9F000F0AD1 /* thereminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thereminTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60DAA4F18B7DB9F000F0AD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C60DAA5718B7DB9F000F0AD1 /* thereminTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "thereminTests-Info.plist"; sourceTree = "<group>"; };
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
+		C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C6DFF26B18B7DED000B9F94B /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.markdown; sourceTree = "<group>"; };
+		C6DFF30218B7E03300B9F94B /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		C6DFF30618B7E03300B9F94B /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		C6DFF30718B7E03300B9F94B /* VWWAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAboutViewController.h; sourceTree = "<group>"; };
+		C6DFF30818B7E03300B9F94B /* VWWAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAboutViewController.m; sourceTree = "<group>"; };
+		C6DFF30918B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAmplitudeParametersTableViewController.h; sourceTree = "<group>"; };
+		C6DFF30A18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAmplitudeParametersTableViewController.m; sourceTree = "<group>"; };
+		C6DFF30B18B7E03300B9F94B /* VWWAxisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAxisTableViewCell.h; sourceTree = "<group>"; };
+		C6DFF30C18B7E03300B9F94B /* VWWAxisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAxisTableViewCell.m; sourceTree = "<group>"; };
+		C6DFF30D18B7E03300B9F94B /* VWWDevicesClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesClientViewController.h; sourceTree = "<group>"; };
+		C6DFF30E18B7E03300B9F94B /* VWWDevicesClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesClientViewController.m; sourceTree = "<group>"; };
+		C6DFF30F18B7E03300B9F94B /* VWWDevicesServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesServerViewController.h; sourceTree = "<group>"; };
+		C6DFF31018B7E03300B9F94B /* VWWDevicesServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesServerViewController.m; sourceTree = "<group>"; };
+		C6DFF31118B7E03300B9F94B /* VWWDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesViewController.h; sourceTree = "<group>"; };
+		C6DFF31218B7E03300B9F94B /* VWWDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesViewController.m; sourceTree = "<group>"; };
+		C6DFF31318B7E03300B9F94B /* VWWEffectParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWEffectParametersTableViewController.h; sourceTree = "<group>"; };
+		C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWEffectParametersTableViewController.m; sourceTree = "<group>"; };
+		C6DFF31518B7E03300B9F94B /* VWWEffectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWEffectTableViewCell.h; sourceTree = "<group>"; };
+		C6DFF31618B7E03300B9F94B /* VWWEffectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWEffectTableViewCell.m; sourceTree = "<group>"; };
+		C6DFF31718B7E03300B9F94B /* VWWFrequencyParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWFrequencyParametersTableViewController.h; sourceTree = "<group>"; };
+		C6DFF31818B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWFrequencyParametersTableViewController.m; sourceTree = "<group>"; };
+		C6DFF31918B7E03300B9F94B /* VWWGeneralSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6DFF31B18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSensitivityParameterTableViewController.h; sourceTree = "<group>"; };
+		C6DFF31C18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSensitivityParameterTableViewController.m; sourceTree = "<group>"; };
+		C6DFF31D18B7E03300B9F94B /* VWWSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6DFF31E18B7E03300B9F94B /* VWWSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6DFF31F18B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWStatisticsMotionSensorsTableViewController.h; sourceTree = "<group>"; };
+		C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWStatisticsMotionSensorsTableViewController.m; sourceTree = "<group>"; };
+		C6DFF32118B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerAxesSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6DFF32218B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerAxesSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6DFF32318B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerAxisSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6DFF32418B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerAxisSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6DFF32718B7E03300B9F94B /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
+		C6DFF32818B7E03300B9F94B /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
+		C6DFF32918B7E03300B9F94B /* VWWWaveformParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformParametersTableViewController.h; sourceTree = "<group>"; };
+		C6DFF32A18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformParametersTableViewController.m; sourceTree = "<group>"; };
+		C6DFF32B18B7E03300B9F94B /* VWWWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformTableViewCell.h; sourceTree = "<group>"; };
+		C6DFF32C18B7E03300B9F94B /* VWWWaveformTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformTableViewCell.m; sourceTree = "<group>"; };
+		C6DFF32D18B7E03300B9F94B /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
+		C6DFF32E18B7E03300B9F94B /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
+		C6DFF33118B7E03300B9F94B /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
+		C6DFF33218B7E03300B9F94B /* VWWBonjourClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourClientController.m; sourceTree = "<group>"; };
+		C6DFF33318B7E03300B9F94B /* VWWBonjourDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourDefines.h; sourceTree = "<group>"; };
+		C6DFF33418B7E03300B9F94B /* VWWBonjourServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourServerController.h; sourceTree = "<group>"; };
+		C6DFF33518B7E03300B9F94B /* VWWBonjourServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourServerController.m; sourceTree = "<group>"; };
+		C6DFF33718B7E03300B9F94B /* VWWMotionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionMonitor.h; sourceTree = "<group>"; };
+		C6DFF33818B7E03300B9F94B /* VWWMotionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionMonitor.m; sourceTree = "<group>"; };
+		C6DFF33E18B7E03300B9F94B /* VWWSynthesizersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizersController.h; sourceTree = "<group>"; };
+		C6DFF33F18B7E03300B9F94B /* VWWSynthesizersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizersController.m; sourceTree = "<group>"; };
+		C6DFF34F18B7E03300B9F94B /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
+		C6DFF35018B7E03300B9F94B /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
+		C6DFF35118B7E03300B9F94B /* VWWMotionAxes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionAxes.h; sourceTree = "<group>"; };
+		C6DFF35218B7E03300B9F94B /* VWWMotionAxes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionAxes.m; sourceTree = "<group>"; };
+		C6DFF35318B7E03300B9F94B /* VWWMotionAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionAxis.h; sourceTree = "<group>"; };
+		C6DFF35418B7E03300B9F94B /* VWWMotionAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionAxis.m; sourceTree = "<group>"; };
+		C6DFF35718B7E03300B9F94B /* dinas_handwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dinas_handwriting.ttf; sourceTree = "<group>"; };
+		C6DFF35818B7E03300B9F94B /* pricedown.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pricedown.otf; sourceTree = "<group>"; };
+		C6DFF35918B7E03300B9F94B /* pricedown.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pricedown.ttf; sourceTree = "<group>"; };
+		C6DFF35B18B7E03300B9F94B /* theremin@2x~ipad.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "theremin@2x~ipad.psd"; sourceTree = "<group>"; };
+		C6DFF35C18B7E03300B9F94B /* theremin@2x~iphone.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "theremin@2x~iphone.psd"; sourceTree = "<group>"; };
+		C6DFF35D18B7E03300B9F94B /* theremin_short@2x~iphone.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "theremin_short@2x~iphone.psd"; sourceTree = "<group>"; };
+		C6DFF35E18B7E03300B9F94B /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sawtooth_256x256.png; sourceTree = "<group>"; };
+		C6DFF35F18B7E03300B9F94B /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sine_256x256.png; sourceTree = "<group>"; };
+		C6DFF36018B7E03300B9F94B /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square_256x256.png; sourceTree = "<group>"; };
+		C6DFF36118B7E03300B9F94B /* theremin_1024.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = theremin_1024.psd; sourceTree = "<group>"; };
+		C6DFF36218B7E03300B9F94B /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_256x256.png; sourceTree = "<group>"; };
+		C6DFF36618B7E03300B9F94B /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		C6DFF36718B7E03300B9F94B /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		C6DFF36818B7E03300B9F94B /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		C6DFF36918B7E03300B9F94B /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		C6DFF36B18B7E03300B9F94B /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		C6DFF36C18B7E03300B9F94B /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		C6DFF36D18B7E03300B9F94B /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		C6DFF37018B7E03300B9F94B /* VWWSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsKeys.h; sourceTree = "<group>"; };
+		C6DFF37118B7E03300B9F94B /* VWWSynthesizerFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerFileSystem.h; sourceTree = "<group>"; };
+		C6DFF37218B7E03300B9F94B /* VWWSynthesizerFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerFileSystem.m; sourceTree = "<group>"; };
+		C6DFF37318B7E03300B9F94B /* VWWSynthesizerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInput.h; sourceTree = "<group>"; };
+		C6DFF37418B7E03300B9F94B /* VWWSynthesizerInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInput.mm; sourceTree = "<group>"; };
+		C6DFF37518B7E03300B9F94B /* VWWSynthesizerInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInputAxis.h; sourceTree = "<group>"; };
+		C6DFF37618B7E03300B9F94B /* VWWSynthesizerInputAxis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInputAxis.mm; sourceTree = "<group>"; };
+		C6DFF37718B7E03300B9F94B /* VWWSynthesizerInputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInputs.h; sourceTree = "<group>"; };
+		C6DFF37818B7E03300B9F94B /* VWWSynthesizerInputs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInputs.mm; sourceTree = "<group>"; };
+		C6DFF37918B7E03300B9F94B /* VWWSynthesizerC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerC.h; sourceTree = "<group>"; };
+		C6DFF37A18B7E03300B9F94B /* VWWSynthesizerC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerC.mm; sourceTree = "<group>"; };
+		C6DFF37B18B7E03300B9F94B /* VWWSynthesizerDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerDefaults.h; sourceTree = "<group>"; };
+		C6DFF37C18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerEffectNoteKey.h; sourceTree = "<group>"; };
+		C6DFF37D18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerEffectNoteKey.m; sourceTree = "<group>"; };
+		C6DFF37E18B7E03300B9F94B /* VWWSynthesizerKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerKeys.h; sourceTree = "<group>"; };
+		C6DFF37F18B7E03300B9F94B /* VWWSynthesizerMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerMath.h; sourceTree = "<group>"; };
+		C6DFF38018B7E03300B9F94B /* VWWSynthesizerNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerNotes.h; sourceTree = "<group>"; };
+		C6DFF38118B7E03300B9F94B /* VWWSynthesizerNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerNotes.m; sourceTree = "<group>"; };
+		C6DFF38418B7E03300B9F94B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C6DFF38518B7E03300B9F94B /* VWWNormalizedSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWNormalizedSynthesizer.h; sourceTree = "<group>"; };
+		C6DFF38618B7E03300B9F94B /* VWWNormalizedSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWNormalizedSynthesizer.mm; sourceTree = "<group>"; };
+		C6DFF38718B7E03300B9F94B /* VWWSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizer.h; sourceTree = "<group>"; };
+		C6DFF38818B7E03300B9F94B /* VWWSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizer.mm; sourceTree = "<group>"; };
+		C6DFF38918B7E03300B9F94B /* VWWSynthesizerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerGroup.h; sourceTree = "<group>"; };
+		C6DFF38A18B7E03300B9F94B /* VWWSynthesizerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerGroup.m; sourceTree = "<group>"; };
+		C6DFF38B18B7E03300B9F94B /* VWWSynthesizerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerTypes.h; sourceTree = "<group>"; };
+		C6DFF38E18B7E03300B9F94B /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		C6DFF38F18B7E03300B9F94B /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		C6DFF39018B7E03300B9F94B /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		C6DFF39118B7E03300B9F94B /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		C6DFF39318B7E03300B9F94B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C6DFF39418B7E03300B9F94B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C6DFF39618B7E03300B9F94B /* VWWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUserDefaults.h; sourceTree = "<group>"; };
+		C6DFF39718B7E03300B9F94B /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
+		C6DFF3DD18B7E03A00B9F94B /* VWWTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchView.h; sourceTree = "<group>"; };
+		C6DFF3DE18B7E03A00B9F94B /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchView.m; sourceTree = "<group>"; };
+		C6DFF3E018B7E05000B9F94B /* VWWUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DFF20418B7DDA900B9F94B /* AudioToolbox.framework in Frameworks */,
 				C60DAA3018B7DB9F000F0AD1 /* CoreGraphics.framework in Frameworks */,
 				C60DAA3218B7DB9F000F0AD1 /* UIKit.framework in Frameworks */,
 				C60DAA2E18B7DB9F000F0AD1 /* Foundation.framework in Frameworks */,
@@ -103,6 +271,7 @@
 		C60DAA2C18B7DB9F000F0AD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */,
 				C60DAA2D18B7DB9F000F0AD1 /* Foundation.framework */,
 				C60DAA2F18B7DB9F000F0AD1 /* CoreGraphics.framework */,
 				C60DAA3118B7DB9F000F0AD1 /* UIKit.framework */,
@@ -114,14 +283,18 @@
 		C60DAA3318B7DB9F000F0AD1 /* theremin */ = {
 			isa = PBXGroup;
 			children = (
-				C60DAA3C18B7DB9F000F0AD1 /* VWWAppDelegate.h */,
-				C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */,
-				C60DAA3F18B7DB9F000F0AD1 /* Main_iPhone.storyboard */,
-				C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */,
-				C60DAA4518B7DB9F000F0AD1 /* VWWViewController.h */,
-				C60DAA4618B7DB9F000F0AD1 /* VWWViewController.m */,
+				C6DFF3DC18B7E03A00B9F94B /* View */,
+				C6DFF30118B7E03300B9F94B /* Categories */,
+				C6DFF30418B7E03300B9F94B /* Controller */,
+				C6DFF34E18B7E03300B9F94B /* Model */,
+				C6DFF35518B7E03300B9F94B /* Resources */,
+				C6DFF36318B7E03300B9F94B /* Synthesizer */,
+				C6DFF38C18B7E03300B9F94B /* ThirdParty */,
+				C6DFF39518B7E03300B9F94B /* Utilities */,
 				C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */,
+				C6DFF26B18B7DED000B9F94B /* readme.markdown */,
 				C60DAA3418B7DB9F000F0AD1 /* Supporting Files */,
+				C6DFF20518B7DEB900B9F94B /* UserInterface */,
 			);
 			path = theremin;
 			sourceTree = "<group>";
@@ -129,6 +302,8 @@
 		C60DAA3418B7DB9F000F0AD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C60DAA3C18B7DB9F000F0AD1 /* VWWAppDelegate.h */,
+				C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */,
 				C60DAA3518B7DB9F000F0AD1 /* theremin-Info.plist */,
 				C60DAA3618B7DB9F000F0AD1 /* InfoPlist.strings */,
 				C60DAA3918B7DB9F000F0AD1 /* main.m */,
@@ -153,6 +328,287 @@
 				C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6DFF20518B7DEB900B9F94B /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C60DAA3F18B7DB9F000F0AD1 /* Main_iPhone.storyboard */,
+				C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		C6DFF30118B7E03300B9F94B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30218B7E03300B9F94B /* NSTimer+Blocks.h */,
+				C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C6DFF30418B7E03300B9F94B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30518B7E03300B9F94B /* GUI */,
+				C6DFF32F18B7E03300B9F94B /* NonGUI */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C6DFF30518B7E03300B9F94B /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF30618B7E03300B9F94B /* about.html */,
+				C6DFF30718B7E03300B9F94B /* VWWAboutViewController.h */,
+				C6DFF30818B7E03300B9F94B /* VWWAboutViewController.m */,
+				C6DFF30918B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.h */,
+				C6DFF30A18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m */,
+				C6DFF30B18B7E03300B9F94B /* VWWAxisTableViewCell.h */,
+				C6DFF30C18B7E03300B9F94B /* VWWAxisTableViewCell.m */,
+				C6DFF30D18B7E03300B9F94B /* VWWDevicesClientViewController.h */,
+				C6DFF30E18B7E03300B9F94B /* VWWDevicesClientViewController.m */,
+				C6DFF30F18B7E03300B9F94B /* VWWDevicesServerViewController.h */,
+				C6DFF31018B7E03300B9F94B /* VWWDevicesServerViewController.m */,
+				C6DFF31118B7E03300B9F94B /* VWWDevicesViewController.h */,
+				C6DFF31218B7E03300B9F94B /* VWWDevicesViewController.m */,
+				C6DFF31318B7E03300B9F94B /* VWWEffectParametersTableViewController.h */,
+				C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */,
+				C6DFF31518B7E03300B9F94B /* VWWEffectTableViewCell.h */,
+				C6DFF31618B7E03300B9F94B /* VWWEffectTableViewCell.m */,
+				C6DFF31718B7E03300B9F94B /* VWWFrequencyParametersTableViewController.h */,
+				C6DFF31818B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m */,
+				C6DFF31918B7E03300B9F94B /* VWWGeneralSettingsTableViewController.h */,
+				C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */,
+				C6DFF31B18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.h */,
+				C6DFF31C18B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m */,
+				C6DFF31D18B7E03300B9F94B /* VWWSettingsTableViewController.h */,
+				C6DFF31E18B7E03300B9F94B /* VWWSettingsTableViewController.m */,
+				C6DFF31F18B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.h */,
+				C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */,
+				C6DFF32118B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.h */,
+				C6DFF32218B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m */,
+				C6DFF32318B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.h */,
+				C6DFF32418B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m */,
+				C6DFF32718B7E03300B9F94B /* VWWTouchViewController.h */,
+				C6DFF32818B7E03300B9F94B /* VWWTouchViewController.m */,
+				C6DFF32918B7E03300B9F94B /* VWWWaveformParametersTableViewController.h */,
+				C6DFF32A18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m */,
+				C6DFF32B18B7E03300B9F94B /* VWWWaveformTableViewCell.h */,
+				C6DFF32C18B7E03300B9F94B /* VWWWaveformTableViewCell.m */,
+				C6DFF32D18B7E03300B9F94B /* VWWWelcomeViewController.h */,
+				C6DFF32E18B7E03300B9F94B /* VWWWelcomeViewController.m */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		C6DFF32F18B7E03300B9F94B /* NonGUI */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF3E118B7F88200B9F94B /* Synthesizer */,
+				C6DFF33018B7E03300B9F94B /* Bonjour */,
+				C6DFF33618B7E03300B9F94B /* Motion */,
+			);
+			path = NonGUI;
+			sourceTree = "<group>";
+		};
+		C6DFF33018B7E03300B9F94B /* Bonjour */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF33118B7E03300B9F94B /* VWWBonjourClientController.h */,
+				C6DFF33218B7E03300B9F94B /* VWWBonjourClientController.m */,
+				C6DFF33318B7E03300B9F94B /* VWWBonjourDefines.h */,
+				C6DFF33418B7E03300B9F94B /* VWWBonjourServerController.h */,
+				C6DFF33518B7E03300B9F94B /* VWWBonjourServerController.m */,
+			);
+			path = Bonjour;
+			sourceTree = "<group>";
+		};
+		C6DFF33618B7E03300B9F94B /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF33718B7E03300B9F94B /* VWWMotionMonitor.h */,
+				C6DFF33818B7E03300B9F94B /* VWWMotionMonitor.m */,
+			);
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		C6DFF34E18B7E03300B9F94B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF34F18B7E03300B9F94B /* VWWGeneralSettings.h */,
+				C6DFF35018B7E03300B9F94B /* VWWGeneralSettings.m */,
+				C6DFF35118B7E03300B9F94B /* VWWMotionAxes.h */,
+				C6DFF35218B7E03300B9F94B /* VWWMotionAxes.m */,
+				C6DFF35318B7E03300B9F94B /* VWWMotionAxis.h */,
+				C6DFF35418B7E03300B9F94B /* VWWMotionAxis.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6DFF35518B7E03300B9F94B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF35618B7E03300B9F94B /* Fonts */,
+				C6DFF35A18B7E03300B9F94B /* Images */,
+				C6DFF35E18B7E03300B9F94B /* sawtooth_256x256.png */,
+				C6DFF35F18B7E03300B9F94B /* sine_256x256.png */,
+				C6DFF36018B7E03300B9F94B /* square_256x256.png */,
+				C6DFF36118B7E03300B9F94B /* theremin_1024.psd */,
+				C6DFF36218B7E03300B9F94B /* triangle_256x256.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6DFF35618B7E03300B9F94B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF35718B7E03300B9F94B /* dinas_handwriting.ttf */,
+				C6DFF35818B7E03300B9F94B /* pricedown.otf */,
+				C6DFF35918B7E03300B9F94B /* pricedown.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C6DFF35A18B7E03300B9F94B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF35B18B7E03300B9F94B /* theremin@2x~ipad.psd */,
+				C6DFF35C18B7E03300B9F94B /* theremin@2x~iphone.psd */,
+				C6DFF35D18B7E03300B9F94B /* theremin_short@2x~iphone.psd */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C6DFF36318B7E03300B9F94B /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF36418B7E03300B9F94B /* Classes */,
+				C6DFF38418B7E03300B9F94B /* README.txt */,
+				C6DFF38518B7E03300B9F94B /* VWWNormalizedSynthesizer.h */,
+				C6DFF38618B7E03300B9F94B /* VWWNormalizedSynthesizer.mm */,
+				C6DFF38718B7E03300B9F94B /* VWWSynthesizer.h */,
+				C6DFF38818B7E03300B9F94B /* VWWSynthesizer.mm */,
+				C6DFF38918B7E03300B9F94B /* VWWSynthesizerGroup.h */,
+				C6DFF38A18B7E03300B9F94B /* VWWSynthesizerGroup.m */,
+				C6DFF38B18B7E03300B9F94B /* VWWSynthesizerTypes.h */,
+			);
+			path = Synthesizer;
+			sourceTree = "<group>";
+		};
+		C6DFF36418B7E03300B9F94B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF36518B7E03300B9F94B /* Apple */,
+				C6DFF36E18B7E03300B9F94B /* VWW */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C6DFF36518B7E03300B9F94B /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF36618B7E03300B9F94B /* CADebugMacros.cpp */,
+				C6DFF36718B7E03300B9F94B /* CADebugMacros.h */,
+				C6DFF36818B7E03300B9F94B /* CADebugPrintf.h */,
+				C6DFF36918B7E03300B9F94B /* CAMath.h */,
+				C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */,
+				C6DFF36B18B7E03300B9F94B /* CAStreamBasicDescription.h */,
+				C6DFF36C18B7E03300B9F94B /* CAXException.cpp */,
+				C6DFF36D18B7E03300B9F94B /* CAXException.h */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		C6DFF36E18B7E03300B9F94B /* VWW */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF36F18B7E03300B9F94B /* ToBeRefactored */,
+				C6DFF37918B7E03300B9F94B /* VWWSynthesizerC.h */,
+				C6DFF37A18B7E03300B9F94B /* VWWSynthesizerC.mm */,
+				C6DFF37B18B7E03300B9F94B /* VWWSynthesizerDefaults.h */,
+				C6DFF37C18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.h */,
+				C6DFF37D18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m */,
+				C6DFF37E18B7E03300B9F94B /* VWWSynthesizerKeys.h */,
+				C6DFF37F18B7E03300B9F94B /* VWWSynthesizerMath.h */,
+				C6DFF38018B7E03300B9F94B /* VWWSynthesizerNotes.h */,
+				C6DFF38118B7E03300B9F94B /* VWWSynthesizerNotes.m */,
+			);
+			path = VWW;
+			sourceTree = "<group>";
+		};
+		C6DFF36F18B7E03300B9F94B /* ToBeRefactored */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF37018B7E03300B9F94B /* VWWSettingsKeys.h */,
+				C6DFF37118B7E03300B9F94B /* VWWSynthesizerFileSystem.h */,
+				C6DFF37218B7E03300B9F94B /* VWWSynthesizerFileSystem.m */,
+				C6DFF37318B7E03300B9F94B /* VWWSynthesizerInput.h */,
+				C6DFF37418B7E03300B9F94B /* VWWSynthesizerInput.mm */,
+				C6DFF37518B7E03300B9F94B /* VWWSynthesizerInputAxis.h */,
+				C6DFF37618B7E03300B9F94B /* VWWSynthesizerInputAxis.mm */,
+				C6DFF37718B7E03300B9F94B /* VWWSynthesizerInputs.h */,
+				C6DFF37818B7E03300B9F94B /* VWWSynthesizerInputs.mm */,
+			);
+			path = ToBeRefactored;
+			sourceTree = "<group>";
+		};
+		C6DFF38C18B7E03300B9F94B /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF38D18B7E03300B9F94B /* CocoaAsyncSocket */,
+				C6DFF39218B7E03300B9F94B /* MBProgressHUD */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C6DFF38D18B7E03300B9F94B /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF38E18B7E03300B9F94B /* AsyncSocket.h */,
+				C6DFF38F18B7E03300B9F94B /* AsyncSocket.m */,
+				C6DFF39018B7E03300B9F94B /* AsyncUdpSocket.h */,
+				C6DFF39118B7E03300B9F94B /* AsyncUdpSocket.m */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		C6DFF39218B7E03300B9F94B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF39318B7E03300B9F94B /* MBProgressHUD.h */,
+				C6DFF39418B7E03300B9F94B /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		C6DFF39518B7E03300B9F94B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF3E018B7E05000B9F94B /* VWWUtilities.h */,
+				C6DFF39618B7E03300B9F94B /* VWWUserDefaults.h */,
+				C6DFF39718B7E03300B9F94B /* VWWUserDefaults.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C6DFF3DC18B7E03A00B9F94B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF3DD18B7E03A00B9F94B /* VWWTouchView.h */,
+				C6DFF3DE18B7E03A00B9F94B /* VWWTouchView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C6DFF3E118B7F88200B9F94B /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C6DFF33E18B7E03300B9F94B /* VWWSynthesizersController.h */,
+				C6DFF33F18B7E03300B9F94B /* VWWSynthesizersController.m */,
+			);
+			name = Synthesizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +688,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DFF39918B7E03300B9F94B /* about.html in Resources */,
+				C6DFF3BE18B7E03300B9F94B /* dinas_handwriting.ttf in Resources */,
+				C6DFF3C018B7E03300B9F94B /* pricedown.ttf in Resources */,
+				C6DFF3C318B7E03300B9F94B /* theremin_short@2x~iphone.psd in Resources */,
 				C60DAA4418B7DB9F000F0AD1 /* Main_iPad.storyboard in Resources */,
 				C60DAA4918B7DB9F000F0AD1 /* Images.xcassets in Resources */,
 				C60DAA4118B7DB9F000F0AD1 /* Main_iPhone.storyboard in Resources */,
+				C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */,
+				C6DFF3C818B7E03300B9F94B /* triangle_256x256.png in Resources */,
+				C6DFF3C718B7E03300B9F94B /* theremin_1024.psd in Resources */,
+				C6DFF3D418B7E03300B9F94B /* README.txt in Resources */,
+				C6DFF3C618B7E03300B9F94B /* square_256x256.png in Resources */,
+				C6DFF3C218B7E03300B9F94B /* theremin@2x~iphone.psd in Resources */,
+				C6DFF3C118B7E03300B9F94B /* theremin@2x~ipad.psd in Resources */,
 				C60DAA3818B7DB9F000F0AD1 /* InfoPlist.strings in Resources */,
+				C6DFF3C518B7E03300B9F94B /* sine_256x256.png in Resources */,
+				C6DFF3C418B7E03300B9F94B /* sawtooth_256x256.png in Resources */,
+				C6DFF3BF18B7E03300B9F94B /* pricedown.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +724,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60DAA4718B7DB9F000F0AD1 /* VWWViewController.m in Sources */,
+				C6DFF3A318B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m in Sources */,
+				C6DFF3AD18B7E03300B9F94B /* VWWWelcomeViewController.m in Sources */,
+				C6DFF39E18B7E03300B9F94B /* VWWDevicesServerViewController.m in Sources */,
+				C6DFF3A418B7E03300B9F94B /* VWWSensitivityParameterTableViewController.m in Sources */,
+				C6DFF3AC18B7E03300B9F94B /* VWWWaveformTableViewCell.m in Sources */,
+				C6DFF3AB18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m in Sources */,
+				C6DFF3A818B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
+				C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */,
+				C6DFF3D718B7E03300B9F94B /* VWWSynthesizerGroup.m in Sources */,
+				C6DFF3A618B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m in Sources */,
+				C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */,
+				C6DFF3BB18B7E03300B9F94B /* VWWGeneralSettings.m in Sources */,
+				C6DFF39818B7E03300B9F94B /* NSTimer+Blocks.m in Sources */,
+				C6DFF3CA18B7E03300B9F94B /* CAStreamBasicDescription.cpp in Sources */,
+				C6DFF3D218B7E03300B9F94B /* VWWSynthesizerNotes.m in Sources */,
+				C6DFF39D18B7E03300B9F94B /* VWWDevicesClientViewController.m in Sources */,
+				C6DFF3C918B7E03300B9F94B /* CADebugMacros.cpp in Sources */,
+				C6DFF3D618B7E03300B9F94B /* VWWSynthesizer.mm in Sources */,
+				C6DFF3A018B7E03300B9F94B /* VWWEffectParametersTableViewController.m in Sources */,
+				C6DFF3BC18B7E03300B9F94B /* VWWMotionAxes.m in Sources */,
+				C6DFF39C18B7E03300B9F94B /* VWWAxisTableViewCell.m in Sources */,
+				C6DFF3D018B7E03300B9F94B /* VWWSynthesizerC.mm in Sources */,
+				C6DFF39A18B7E03300B9F94B /* VWWAboutViewController.m in Sources */,
 				C60DAA3A18B7DB9F000F0AD1 /* main.m in Sources */,
+				C6DFF39F18B7E03300B9F94B /* VWWDevicesViewController.m in Sources */,
+				C6DFF3D518B7E03300B9F94B /* VWWNormalizedSynthesizer.mm in Sources */,
+				C6DFF3AF18B7E03300B9F94B /* VWWBonjourServerController.m in Sources */,
+				C6DFF3D818B7E03300B9F94B /* AsyncSocket.m in Sources */,
+				C6DFF3DB18B7E03300B9F94B /* VWWUserDefaults.m in Sources */,
+				C6DFF3A118B7E03300B9F94B /* VWWEffectTableViewCell.m in Sources */,
+				C6DFF3D918B7E03300B9F94B /* AsyncUdpSocket.m in Sources */,
 				C60DAA3E18B7DB9F000F0AD1 /* VWWAppDelegate.m in Sources */,
+				C6DFF3A518B7E03300B9F94B /* VWWSettingsTableViewController.m in Sources */,
+				C6DFF39B18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m in Sources */,
+				C6DFF3B018B7E03300B9F94B /* VWWMotionMonitor.m in Sources */,
+				C6DFF3B318B7E03300B9F94B /* VWWSynthesizersController.m in Sources */,
+				C6DFF3AA18B7E03300B9F94B /* VWWTouchViewController.m in Sources */,
+				C6DFF3AE18B7E03300B9F94B /* VWWBonjourClientController.m in Sources */,
+				C6DFF3BD18B7E03300B9F94B /* VWWMotionAxis.m in Sources */,
+				C6DFF3A218B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m in Sources */,
+				C6DFF3A718B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m in Sources */,
+				C6DFF3DA18B7E03300B9F94B /* MBProgressHUD.m in Sources */,
+				C6DFF3DF18B7E03A00B9F94B /* VWWTouchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,10 +903,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zachary Hoyt (F447J9YBA9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D985C8F4-5D0D-47C4-A05B-F82F58FB6AB1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,10 +919,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zachary Hoyt (F447J9YBA9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D985C8F4-5D0D-47C4-A05B-F82F58FB6AB1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -475,6 +990,7 @@
 				C60DAA6118B7DB9F000F0AD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C60DAA6218B7DB9F000F0AD1 /* Build configuration list for PBXNativeTarget "thereminTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +999,7 @@
 				C60DAA6418B7DB9F000F0AD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,8 +1,8 @@
 //
 //  VWWAppDelegate.h
-//  theremin
+//  Synthesizer
 //
-//  Created by Zakk Hoyt on 2/21/14.
+//  Created by Zakk Hoyt on 1/9/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
