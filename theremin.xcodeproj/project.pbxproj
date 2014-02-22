@@ -22,7 +22,6 @@
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
 		C610D4AB18B8055800999A3D /* theremin.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C610D4AA18B8055800999A3D /* theremin.entitlements */; };
-		C6DFF20418B7DDA900B9F94B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */; };
 		C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF26B18B7DED000B9F94B /* readme.markdown */; };
 		C6DFF39818B7E03300B9F94B /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */; };
 		C6DFF39918B7E03300B9F94B /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF30618B7E03300B9F94B /* about.html */; };
@@ -79,6 +78,9 @@
 		C6DFF3DF18B7E03A00B9F94B /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF3DE18B7E03A00B9F94B /* VWWTouchView.m */; };
 		C6DFF3E618B7FA2600B9F94B /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF3E518B7FA2600B9F94B /* VWWSynthesizersController.m */; };
 		C6DFF3E818B7FC8B00B9F94B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DFF3E718B7FC8B00B9F94B /* CoreAudio.framework */; };
+		CF841D0F18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */; };
+		CF841D1118B836DB00003777 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF841D1018B836DB00003777 /* AudioToolbox.framework */; };
+		CF841D1418B83A0300003777 /* VWWBonjourModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF841D1318B83A0300003777 /* VWWBonjourModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,6 @@
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
 		C610D4AA18B8055800999A3D /* theremin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theremin.entitlements; sourceTree = "<group>"; };
-		C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C6DFF26B18B7DED000B9F94B /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.markdown; sourceTree = "<group>"; };
 		C6DFF30218B7E03300B9F94B /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
@@ -226,6 +227,11 @@
 		C6DFF3E418B7FA2600B9F94B /* VWWSynthesizersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizersController.h; sourceTree = "<group>"; };
 		C6DFF3E518B7FA2600B9F94B /* VWWSynthesizersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizersController.m; sourceTree = "<group>"; };
 		C6DFF3E718B7FC8B00B9F94B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		CF841D0D18B833B700003777 /* VWWAutotuneKeysTableViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAutotuneKeysTableViewControllers.h; sourceTree = "<group>"; };
+		CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAutotuneKeysTableViewControllers.m; sourceTree = "<group>"; };
+		CF841D1018B836DB00003777 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CF841D1218B83A0300003777 /* VWWBonjourModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourModel.h; sourceTree = "<group>"; };
+		CF841D1318B83A0300003777 /* VWWBonjourModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6DFF3E818B7FC8B00B9F94B /* CoreAudio.framework in Frameworks */,
-				C6DFF20418B7DDA900B9F94B /* AudioToolbox.framework in Frameworks */,
 				C60DAA3018B7DB9F000F0AD1 /* CoreGraphics.framework in Frameworks */,
+				CF841D1118B836DB00003777 /* AudioToolbox.framework in Frameworks */,
 				C60DAA3218B7DB9F000F0AD1 /* UIKit.framework in Frameworks */,
 				C60DAA2E18B7DB9F000F0AD1 /* Foundation.framework in Frameworks */,
 			);
@@ -276,8 +282,8 @@
 		C60DAA2C18B7DB9F000F0AD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF841D1018B836DB00003777 /* AudioToolbox.framework */,
 				C6DFF3E718B7FC8B00B9F94B /* CoreAudio.framework */,
-				C6DFF20318B7DDA900B9F94B /* AudioToolbox.framework */,
 				C60DAA2D18B7DB9F000F0AD1 /* Foundation.framework */,
 				C60DAA2F18B7DB9F000F0AD1 /* CoreGraphics.framework */,
 				C60DAA3118B7DB9F000F0AD1 /* UIKit.framework */,
@@ -401,6 +407,7 @@
 		C610D4B218B80A7D00999A3D /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				CF841D0C18B8339200003777 /* Keys */,
 				C610D4B718B80AD600999A3D /* Cell */,
 				C6DFF31318B7E03300B9F94B /* VWWEffectParametersTableViewController.h */,
 				C6DFF31418B7E03300B9F94B /* VWWEffectParametersTableViewController.m */,
@@ -586,6 +593,8 @@
 				C6DFF35218B7E03300B9F94B /* VWWMotionAxes.m */,
 				C6DFF35318B7E03300B9F94B /* VWWMotionAxis.h */,
 				C6DFF35418B7E03300B9F94B /* VWWMotionAxis.m */,
+				CF841D1218B83A0300003777 /* VWWBonjourModel.h */,
+				CF841D1318B83A0300003777 /* VWWBonjourModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -762,6 +771,15 @@
 			path = Synthesizer;
 			sourceTree = "<group>";
 		};
+		CF841D0C18B8339200003777 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				CF841D0D18B833B700003777 /* VWWAutotuneKeysTableViewControllers.h */,
+				CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */,
+			);
+			name = Keys;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -811,8 +829,12 @@
 				ORGANIZATIONNAME = "Zakk Hoyt";
 				TargetAttributes = {
 					C60DAA2918B7DB9F000F0AD1 = {
+						DevelopmentTeam = J7U74N85YF;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
 								enabled = 1;
 							};
 						};
@@ -891,6 +913,7 @@
 				C6DFF3AB18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m in Sources */,
 				C6DFF3A818B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
 				C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */,
+				CF841D1418B83A0300003777 /* VWWBonjourModel.m in Sources */,
 				C6DFF3D718B7E03300B9F94B /* VWWSynthesizerGroup.m in Sources */,
 				C6DFF3A618B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m in Sources */,
 				C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */,
@@ -902,6 +925,7 @@
 				C6DFF39D18B7E03300B9F94B /* VWWDevicesClientViewController.m in Sources */,
 				C6DFF3C918B7E03300B9F94B /* CADebugMacros.cpp in Sources */,
 				C6DFF3D618B7E03300B9F94B /* VWWSynthesizer.mm in Sources */,
+				CF841D0F18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m in Sources */,
 				C6DFF3A018B7E03300B9F94B /* VWWEffectParametersTableViewController.m in Sources */,
 				C6DFF3BC18B7E03300B9F94B /* VWWMotionAxes.m in Sources */,
 				C6DFF39C18B7E03300B9F94B /* VWWAxisTableViewCell.m in Sources */,
@@ -1068,12 +1092,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
+				PROVISIONING_PROFILE = "8B97E1EA-0040-4C92-BD09-63CC5D9BF882";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1086,12 +1111,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
+				PROVISIONING_PROFILE = "8B97E1EA-0040-4C92-BD09-63CC5D9BF882";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -12,6 +12,7 @@
 #import "NSTimer+Blocks.h"
 
 
+#import "VWWBonjourModel.h"
 
 @interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
@@ -41,6 +42,11 @@
     
     [self setupSynthesizers];
     
+    
+//    self.infoLabel.alpha = 0.0;
+
+    
+    
 
     
 //    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
@@ -62,19 +68,7 @@
     [super viewDidAppear:animated];
     if(self.hasLoaded == NO){
         self.hasLoaded = YES;
-        CGFloat x = self.infoLabel.frame.origin.x;
-        CGFloat y = -(self.infoLabel.frame.size.height);
-        CGFloat w = self.infoLabel.frame.size.width;
-        CGFloat h = self.infoLabel.frame.size.height;
-        CGRect aboveScreenRect = CGRectMake(x, y, w, h);
-        [UIView animateWithDuration:1.0 delay:5.0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.infoLabel.alpha = 0.0;
-            self.infoLabel.frame = aboveScreenRect;
-        } completion:^(BOOL finished) {
-            
-            self.infoLabel.hidden = YES;
-        }];
-        
+        [self showInfoLabel];
     }
 
 }
@@ -97,6 +91,39 @@
 
 #pragma mark Private methods
 
+-(void)showInfoLabel{
+    
+    CGRect centeredRect = self.infoLabel.frame;
+    CGFloat x = self.infoLabel.frame.origin.x;
+    CGFloat y = self.view.bounds.size.height;
+    CGFloat w = self.infoLabel.frame.size.width;
+    CGFloat h = self.infoLabel.frame.size.height;
+    CGRect belowScreenRect = CGRectMake(x, y, w, h);
+    self.infoLabel.frame = belowScreenRect;
+    
+    [UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.infoLabel.alpha = 1.0;
+        self.infoLabel.frame = centeredRect;
+    } completion:^(BOOL finished) {
+        self.infoLabel.hidden = NO;
+    }];
+}
+
+-(void)hideInfoLabel{
+    CGFloat x = self.infoLabel.frame.origin.x;
+    CGFloat y = -(self.infoLabel.frame.size.height);
+    CGFloat w = self.infoLabel.frame.size.width;
+    CGFloat h = self.infoLabel.frame.size.height;
+    CGRect aboveScreenRect = CGRectMake(x, y, w, h);
+    [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.infoLabel.alpha = 0.0;
+        self.infoLabel.frame = aboveScreenRect;
+    } completion:^(BOOL finished) {
+        
+        self.infoLabel.hidden = YES;
+    }];
+
+}
 
 -(void)setupSynthesizers{
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
@@ -156,10 +183,23 @@
     self.synthesizersController.touchscreenGroup.ySynthesizer.muted = NO;
     
     [self updateFrequenciesWithArray:array];
+    
+    
+    
+    [self hideInfoLabel];
+    
+    
+    
+
 }
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesMovedWithArray:(NSArray*)array{
     [self updateFrequenciesWithArray:array];
+    
+//    VWWBonjourModel *bm = [[VWWBonjourModel alloc]init];
+//    NSDictionary *d = [bm dictionaryRepresentation];
+//    VWW_LOG_INFO(@"inspect bounour model dictionary here");
+
 }
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesEndedWithArray:(NSArray*)array{

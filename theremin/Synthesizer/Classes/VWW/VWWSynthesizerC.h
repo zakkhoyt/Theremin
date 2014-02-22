@@ -24,7 +24,7 @@
 @property double sinPhase;
 @property double theta;
 @property (readonly) bool isRunning;
-@property VWWKeyType keyType;
+@property VWWAutoTuneType keyType;
 
 -(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency;
 - (void)start;

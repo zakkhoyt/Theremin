@@ -36,20 +36,22 @@ typedef enum{
 } VWWInputType;
 
 typedef enum{
-    VWWKeyTypeChromatic = 0,
-    VWWKeyTypeAMinor,
-    VWWKeyTypeAMajor,
-    VWWKeyTypeBMinor,
-    VWWKeyTypeBMajor,
-    VWWKeyTypeCMajor,
-    VWWKeyTypeDMinor,
-    VWWKeyTypeDMajor,
-    VWWKeyTypeEMinor,
-    VWWKeyTypeEMajor,
-    VWWKeyTypeFMajor,
-    VWWKeyTypeGMinor,
-    VWWKeyTypeGMajor,
-} VWWKeyType;
+    VWWAutoTuneTypeChromatic = 0,
+    VWWAutoTuneTypeAMinor,
+    VWWAutoTuneTypeAMajor,
+    VWWAutoTuneTypeBMinor,
+    VWWAutoTuneTypeBMajor,
+    VWWAutoTuneTypeCMinor,
+    VWWAutoTuneTypeCMajor,
+    VWWAutoTuneTypeDMinor,
+    VWWAutoTuneTypeDMajor,
+    VWWAutoTuneTypeEMinor,
+    VWWAutoTuneTypeEMajor,
+    VWWAutoTuneTypeFMinor,
+    VWWAutoTuneTypeFMajor,
+    VWWAutoTuneTypeGMinor,
+    VWWAutoTuneTypeGMajor,
+} VWWAutoTuneType;
 
 typedef enum{
     VWWEffectTypeNone = 0x00,
@@ -57,5 +59,9 @@ typedef enum{
     VWWEffectTypeLinearize = 0x02,
     VWWEffectTypeThrottle = 0x04,
 } VWWEffectType;
+
+
+
+
 
 #endif

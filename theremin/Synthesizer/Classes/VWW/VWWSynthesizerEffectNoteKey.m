@@ -26,74 +26,74 @@ static __attribute ((unused)) NSString* kKeyChromatic = @"chromatic";
 @implementation VWWSynthesizerEffectNoteKey
 -(NSString*)stringForKey{
     switch(self.key){
-        case VWWKeyTypeAMinor:
+        case VWWAutoTuneTypeAMinor:
             return kKeyAMinor;
-        case VWWKeyTypeAMajor:
+        case VWWAutoTuneTypeAMajor:
             return kKeyAMajor;
-        case VWWKeyTypeBMinor:
+        case VWWAutoTuneTypeBMinor:
             return kKeyBMinor;
-        case VWWKeyTypeBMajor:
+        case VWWAutoTuneTypeBMajor:
             return kKeyBMajor;
-        case VWWKeyTypeCMajor:
+        case VWWAutoTuneTypeCMajor:
             return kKeyCMajor;
-        case VWWKeyTypeDMinor:
+        case VWWAutoTuneTypeDMinor:
             return kKeyDMinor;
-        case VWWKeyTypeDMajor:
+        case VWWAutoTuneTypeDMajor:
             return kKeyDMajor;
-        case VWWKeyTypeEMinor:
+        case VWWAutoTuneTypeEMinor:
             return kKeyEMinor;
-        case VWWKeyTypeEMajor:
+        case VWWAutoTuneTypeEMajor:
             return kKeyEMajor;
-        case VWWKeyTypeFMajor:
+        case VWWAutoTuneTypeFMajor:
             return kKeyFMajor;
-        case VWWKeyTypeGMinor:
+        case VWWAutoTuneTypeGMinor:
             return kKeyAMinor;
-        case VWWKeyTypeGMajor:
+        case VWWAutoTuneTypeGMajor:
             return kKeyAMajor;
-        case VWWKeyTypeChromatic:
+        case VWWAutoTuneTypeChromatic:
         default:
             return kKeyChromatic;
     }
 }
--(VWWKeyType)keyFromString:(NSString*)keyString{
+-(VWWAutoTuneType)keyFromString:(NSString*)keyString{
     if([keyString isEqualToString:kKeyAMinor]){
-        return VWWKeyTypeAMinor;
+        return VWWAutoTuneTypeAMinor;
     }
     else if([keyString isEqualToString:kKeyAMajor]){
-        return VWWKeyTypeAMajor;
+        return VWWAutoTuneTypeAMajor;
     }
     else if([keyString isEqualToString:kKeyBMinor]){
-        return VWWKeyTypeBMinor;
+        return VWWAutoTuneTypeBMinor;
     }
     else if([keyString isEqualToString:kKeyBMajor]){
-        return VWWKeyTypeBMajor;
+        return VWWAutoTuneTypeBMajor;
     }
     else if([keyString isEqualToString:kKeyCMajor]){
-        return VWWKeyTypeCMajor;
+        return VWWAutoTuneTypeCMajor;
     }
     else if([keyString isEqualToString:kKeyDMinor]){
-        return VWWKeyTypeDMinor;
+        return VWWAutoTuneTypeDMinor;
     }
     else if([keyString isEqualToString:kKeyDMajor]){
-        return VWWKeyTypeDMajor;
+        return VWWAutoTuneTypeDMajor;
     }
     else if([keyString isEqualToString:kKeyEMinor]){
-        return VWWKeyTypeEMinor;
+        return VWWAutoTuneTypeEMinor;
     }
     else if([keyString isEqualToString:kKeyEMajor]){
-        return VWWKeyTypeEMajor;
+        return VWWAutoTuneTypeEMajor;
     }
     else if([keyString isEqualToString:kKeyFMajor]){
-        return VWWKeyTypeFMajor;
+        return VWWAutoTuneTypeFMajor;
     }
     else if([keyString isEqualToString:kKeyGMinor]){
-        return VWWKeyTypeGMinor;
+        return VWWAutoTuneTypeGMinor;
     }
     else if([keyString isEqualToString:kKeyGMajor]){
-        return VWWKeyTypeGMajor;
+        return VWWAutoTuneTypeGMajor;
     }
     else /* if([keyString isEqualToString:kKeyChromatic]) */ {
-        return VWWKeyTypeChromatic;
+        return VWWAutoTuneTypeChromatic;
     }
 }
 

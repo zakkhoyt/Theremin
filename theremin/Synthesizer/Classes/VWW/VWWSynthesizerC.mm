@@ -115,7 +115,7 @@ OSStatus RenderTone( void* inRefCon,
         _amplitude = amplitude;
         _muted = NO;
         _waveType = VWWWaveTypeSine;
-        _keyType = VWWKeyTypeChromatic;
+        _keyType = VWWAutoTuneTypeChromatic;
         _isRunning = NO;
         _theta = 0;
         _notes = [[VWWSynthesizerNotes alloc]init];

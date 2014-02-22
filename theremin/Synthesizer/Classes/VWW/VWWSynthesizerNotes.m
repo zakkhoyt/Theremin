@@ -52,38 +52,38 @@
     return [[VWWSynthesizerNotes sharedInstance]getClosestNote:frequency];
 }
 
-+(float)getClosestNoteForFrequency:(float)frequency inKey:(VWWKeyType)key{
++(float)getClosestNoteForFrequency:(float)frequency inKey:(VWWAutoTuneType)key{
     NSArray *notesForKey = [[VWWSynthesizerNotes sharedInstance] notesForKey:key];
     return [[VWWSynthesizerNotes sharedInstance]getClosestNoteForFrequency:frequency notes:notesForKey];
 }
 
 
 
--(NSArray*)notesForKey:(VWWKeyType)key{
+-(NSArray*)notesForKey:(VWWAutoTuneType)key{
     switch(key){
-        case VWWKeyTypeAMinor:
+        case VWWAutoTuneTypeAMinor:
             return self.notesInAMinor;
-        case VWWKeyTypeAMajor:
+        case VWWAutoTuneTypeAMajor:
             return self.notesInAMajor;
-        case VWWKeyTypeBMinor:
+        case VWWAutoTuneTypeBMinor:
             return self.notesInBMinor;
-        case VWWKeyTypeBMajor:
+        case VWWAutoTuneTypeBMajor:
             return self.notesInBMajor;
-        case VWWKeyTypeCMajor:
+        case VWWAutoTuneTypeCMajor:
             return self.notesInCMajor;
-        case VWWKeyTypeDMinor:
+        case VWWAutoTuneTypeDMinor:
             return self.notesInDMinor;
-        case VWWKeyTypeDMajor:
+        case VWWAutoTuneTypeDMajor:
             return self.notesInDMajor;
-        case VWWKeyTypeEMinor:
+        case VWWAutoTuneTypeEMinor:
             return self.notesInEMinor;
-        case VWWKeyTypeFMajor:
+        case VWWAutoTuneTypeFMajor:
             return self.notesInEMajor;
-        case VWWKeyTypeGMinor:
+        case VWWAutoTuneTypeGMinor:
             return self.notesInGMinor;
-        case VWWKeyTypeGMajor:
+        case VWWAutoTuneTypeGMajor:
             return self.notesInGMajor;
-        case VWWKeyTypeChromatic:
+        case VWWAutoTuneTypeChromatic:
         default:
             return self.notesInChromatic;
     }

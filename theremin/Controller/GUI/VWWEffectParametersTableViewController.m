@@ -10,8 +10,11 @@
 #import "VWWSynthesizerGroup.h"
 #import "VWWEffectTableViewCell.h"
 #import "VWWSynthesizersController.h"
+#import "VWWAutotuneKeysTableViewControllers.h"
 
-@interface VWWEffectParametersTableViewController ()
+static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKeys";
+
+@interface VWWEffectParametersTableViewController () <VWWEffectTableViewCellDelegate>
 
 @end
 
@@ -50,6 +53,13 @@
 }
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueEffectParametersToKeys]){
+//        VWWAutotuneKeysTableViewControllers *vc = segue.destinationViewController;
+        
+    }
+}
+
 
 #pragma mark UITableViewDataSource
 
@@ -64,7 +74,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VWWEffectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWEffectTableViewCell"];
     cell.effectType = (VWWEffectType)indexPath.row;
-    
+    cell.delegate = self;
     if(indexPath.section == VWWAxisTypeX){
         if(indexPath.row == (NSInteger)self.synthesizerGroup.xSynthesizer.effectType){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -132,6 +142,9 @@
     
 }
 
-
+#pragma mark VWWEffectTableViewCellDelegate
+-(void)effectTableViewCellEffectConfigButtonTouchUpInside:(VWWEffectTableViewCell*)sender{
+    [self performSegueWithIdentifier:VWWSegueEffectParametersToKeys sender:self];
+}
 
 @end

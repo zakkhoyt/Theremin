@@ -10,6 +10,7 @@
 
 @interface VWWEffectTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *effectTypeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *effectConfigButton;
 
 @end
 
@@ -28,9 +29,17 @@
     _effectType = effectType;
     if(_effectType == VWWEffectTypeNone){
         self.effectTypeLabel.text = @"None";
+        self.effectConfigButton.hidden = YES;
     } else if(_effectType == VWWEffectTypeAutoTune){
         self.effectTypeLabel.text = @"Autotune";
+        self.effectConfigButton.hidden = NO;
     }
 }
+
+- (IBAction)effectConfigButtonTouchUpInside:(id)sender {
+    [self.delegate effectTableViewCellEffectConfigButtonTouchUpInside:self];
+}
+
+
 
 @end

@@ -14,7 +14,7 @@ const float VWWGeneralSettingsFrequencyMax = 18000.0;
 const float VWWGeneralSettingsFrequencyDefaultMin = 30.0;
 const float VWWGeneralSettingsFrequencyDefaultMax = 2000.0;
 const float VWWGeneralSettingsFrequencyNormalized = 1.0;
-const float VWWGeneralSettingsAmplitude = 1.0;
+const float VWWGeneralSettingsAmplitudeDefault = 0.8;
 
 @implementation VWWGeneralSettings
 +(VWWGeneralSettings*)sharedInstance{
@@ -34,7 +34,7 @@ const float VWWGeneralSettingsAmplitude = 1.0;
         self.frequencyDefaultMin = VWWGeneralSettingsFrequencyDefaultMin;
         self.frequencyDefaultMax = VWWGeneralSettingsFrequencyDefaultMax;
         self.frequencyNormalized = VWWGeneralSettingsFrequencyNormalized;
-        self.amplitude = VWWGeneralSettingsAmplitude;
+        self.amplitudeDefault = VWWGeneralSettingsAmplitudeDefault;
     }
     return self;
 }
@@ -59,8 +59,8 @@ const float VWWGeneralSettingsAmplitude = 1.0;
         NSNumber *frequencyNormalized = dictionary[VWWGeneralSettingsFrequencyNormalizedKey];
         self.frequencyNormalized = frequencyNormalized.floatValue;
         
-        NSNumber *amplitude = dictionary[VWWGeneralSettingsAmplitudeKey];
-        self.amplitude = amplitude.floatValue;
+        NSNumber *amplitudeDefault = dictionary[VWWGeneralSettingsAmplitudeDefaultKey];
+        self.amplitudeDefault = amplitudeDefault.floatValue;
         
     }
     return self;
@@ -73,7 +73,7 @@ const float VWWGeneralSettingsAmplitude = 1.0;
                                  VWWGeneralSettingsFrequencyDefaultMinKey : @(self.frequencyDefaultMin),
                                  VWWGeneralSettingsFrequencyDefaultMaxKey : @(self.frequencyDefaultMax),
                                  VWWGeneralSettingsFrequencyNormalizedKey : @(self.frequencyNormalized),
-                                 VWWGeneralSettingsAmplitudeKey : @(self.amplitude)};
+                                 VWWGeneralSettingsAmplitudeDefaultKey : @(self.amplitudeDefault)};
     return dictionary;
 }
 

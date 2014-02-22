@@ -128,13 +128,13 @@
     }
 }
 
--(void)setKeyType:(VWWKeyType)keyType{
+-(void)setKeyType:(VWWAutoTuneType)keyType{
     @synchronized(self){
         self.synthesizer.keyType = keyType;
     }
 }
 
--(VWWKeyType)keyType{
+-(VWWAutoTuneType)keyType{
     @synchronized(self){
         return self.synthesizer.keyType;
     }
@@ -180,7 +180,7 @@
         self.synthesizer.effectType = (VWWEffectType)effectType.integerValue;
 
         NSNumber *keyType = dictionary[VWWSynthesizerKeyTypeKey];
-        self.synthesizer.keyType = (VWWKeyType)keyType.integerValue;
+        self.synthesizer.keyType = (VWWAutoTuneType)keyType.integerValue;
 
         NSNumber *sinPhase = dictionary[VWWSynthesizerSinPhaseKey];
         self.synthesizer.sinPhase = sinPhase.doubleValue;

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F11C4AD6-BBA3-4E72-AC4D-C92180E16C30</string>
+	<string>10C7743D-9AB8-47EF-A88D-544039081D11</string>
 	<key>IDESourceControlProjectName</key>
 	<string>theremin</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>085AC087-2635-4559-97B0-75FE1D7CABBF</key>
-		<string>ssh://github.com/zakkhoyt/Theremin2.git</string>
+		<key>39C5FE88-F0E9-4BFC-A976-911B0DA54E7A</key>
+		<string>ssh://github.com/zakkhoyt/Theremin2</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>theremin.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>085AC087-2635-4559-97B0-75FE1D7CABBF</key>
+		<key>39C5FE88-F0E9-4BFC-A976-911B0DA54E7A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/zakkhoyt/Theremin2.git</string>
+	<string>ssh://github.com/zakkhoyt/Theremin2</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>085AC087-2635-4559-97B0-75FE1D7CABBF</string>
+	<string>39C5FE88-F0E9-4BFC-A976-911B0DA54E7A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>085AC087-2635-4559-97B0-75FE1D7CABBF</string>
+			<string>39C5FE88-F0E9-4BFC-A976-911B0DA54E7A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>theremin</string>
+			<string>Theremin2</string>
 		</dict>
 	</array>
 </dict>

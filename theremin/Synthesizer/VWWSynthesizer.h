@@ -102,13 +102,13 @@
 /**
  * Return the keyType
  */
--(VWWKeyType)keyType;
+-(VWWAutoTuneType)keyType;
 
 /**
  * Set the key type
  * @param keyType such as chromatic, C Major, etc...
  */
--(void)setKeyType:(VWWKeyType)keyType;
+-(void)setKeyType:(VWWAutoTuneType)keyType;
 
 
 /**

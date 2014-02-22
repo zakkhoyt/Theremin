@@ -17,7 +17,7 @@
 @property (nonatomic) float frequencyDefaultMin;
 @property (nonatomic) float frequencyDefaultMax;
 @property (nonatomic) float frequencyNormalized;
-@property (nonatomic) float amplitude;
+@property (nonatomic) float amplitudeDefault;
 
 
 //// Stored settings for synthesizers
