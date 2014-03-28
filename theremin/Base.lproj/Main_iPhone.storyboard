@@ -568,41 +568,12 @@ Homepage: http://minterart.tumblr.com</string>
                     <navigationItem key="navigationItem" id="Ku4-8I-F4I"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="backgroundImageView" destination="SaS-lN-FrH" id="pdu-hE-Rep"/>
                         <outlet property="textView" destination="tfb-wP-H86" id="GjY-GL-9La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgV-Nb-VEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2193" y="2336"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GoS-d8-etQ">
-            <objects>
-                <viewController id="Xzi-wl-m3p" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ye9-50-B7X"/>
-                        <viewControllerLayoutGuide type="bottom" id="4EZ-G1-mkq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="twh-4z-BCp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="vww_320" translatesAutoresizingMaskIntoConstraints="NO" id="SaS-lN-FrH">
-                                <rect key="frame" x="-79" y="335" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="9C3-x2-d12"/>
-                                    <constraint firstAttribute="width" constant="320" id="iJD-5f-yts"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LPj-jN-JeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2595" y="2336"/>
         </scene>
         <!--General Settings Table View Controller - General-->
         <scene sceneID="pum-Sd-Wax">
@@ -2275,7 +2246,6 @@ Homepage: http://minterart.tumblr.com</string>
     </scenes>
     <resources>
         <image name="sine_256x256.png" width="256" height="256"/>
-        <image name="vww_320" width="320" height="320"/>
     </resources>
     <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
