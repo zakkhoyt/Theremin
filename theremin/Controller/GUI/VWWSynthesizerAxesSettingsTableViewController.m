@@ -168,7 +168,20 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 #pragma mark UITableViewDataSource
 
-
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    const CGFloat kHeight = 20;
+//    const CGFloat kYBorder = 4;
+//    
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, kHeight)];
+//    headerView.backgroundColor = [UIColor yellowColor];
+//
+//    UILabel *labelHeader = [[UILabel alloc] initWithFrame:CGRectMake (10, kYBorder ,tableView.bounds.size.width,kHeight - 2*kYBorder)];
+//    labelHeader.backgroundColor = [UIColor redColor];
+//    labelHeader.textColor = [UIColor whiteColor];
+//    labelHeader.text = [NSString stringWithFormat:@"Testing %ld", (long)section];
+//    [headerView addSubview:labelHeader];
+//    return headerView;
+//}
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:

@@ -1107,7 +1107,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2177" y="-1186"/>
         </scene>
-        <!--Synthesizer Axis Settings Table View Controller-->
+        <!--Synthesizer Axis Settings Table View Controller - Configure-->
         <scene sceneID="Dz6-QO-nXM">
             <objects>
                 <tableViewController id="Jcu-7A-RZ0" customClass="VWWSynthesizerAxisSettingsTableViewController" sceneMemberID="viewController">
@@ -1256,7 +1256,7 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="Jcu-7A-RZ0" id="2ik-HE-vyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="T2Y-J9-ooX"/>
+                    <navigationItem key="navigationItem" title="Configure" id="T2Y-J9-ooX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="amplitudeSummaryLabel" destination="xRA-y8-TQl" id="XBU-LW-NFx"/>

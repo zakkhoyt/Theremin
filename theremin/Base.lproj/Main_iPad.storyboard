@@ -479,7 +479,7 @@
             </objects>
             <point key="canvasLocation" x="1737" y="2485"/>
         </scene>
-        <!--About View Controller-->
+        <!--About View Controller - About-->
         <scene sceneID="bQv-en-cNW">
             <objects>
                 <viewController id="Fbu-uL-xCL" customClass="VWWAboutViewController" sceneMemberID="viewController">
@@ -526,7 +526,7 @@ Homepage: http://minterart.tumblr.com</string>
                             <constraint firstItem="10p-i0-DBr" firstAttribute="top" secondItem="OAi-My-W0E" secondAttribute="bottom" id="qbt-ld-8WH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SWa-fk-z4s"/>
+                    <navigationItem key="navigationItem" title="About" id="SWa-fk-z4s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ph-nU-sei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1035,7 +1035,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="1561" y="-3066"/>
         </scene>
-        <!--Synthesizer Axis Settings Table View Controller-->
+        <!--Synthesizer Axis Settings Table View Controller - Configure-->
         <scene sceneID="Q2Y-dQ-mX1">
             <objects>
                 <tableViewController id="5oR-9G-Fk1" customClass="VWWSynthesizerAxisSettingsTableViewController" sceneMemberID="viewController">
@@ -1184,7 +1184,7 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="5oR-9G-Fk1" id="Noa-4q-dQa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="doT-BQ-yXc"/>
+                    <navigationItem key="navigationItem" title="Configure" id="doT-BQ-yXc"/>
                     <connections>
                         <outlet property="amplitudeSummaryLabel" destination="qlI-Xd-x24" id="IhW-9m-qNP"/>
                         <outlet property="effectSummaryLabel" destination="erg-Aw-PKc" id="HaC-85-jxY"/>
