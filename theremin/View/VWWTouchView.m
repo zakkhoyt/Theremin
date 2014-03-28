@@ -42,7 +42,8 @@
         fire.lifetime = 1.0;
         fire.lifetimeRange = 0;
         fire.color = [[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.4] CGColor];
-        fire.contents = (id)[[UIImage imageNamed:@"atom"] CGImage];
+        UIImage *emitterImage = [UIImage imageNamed:@"atom"];
+        fire.contents = (id)[emitterImage CGImage];
         [fire setName:@"fire"];
         
         fire.velocity = 10;

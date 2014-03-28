@@ -295,18 +295,18 @@
 		C60DAA3318B7DB9F000F0AD1 /* theremin */ = {
 			isa = PBXGroup;
 			children = (
-				C6DFF3DC18B7E03A00B9F94B /* View */,
 				C6DFF30118B7E03300B9F94B /* Categories */,
 				C6DFF30418B7E03300B9F94B /* Controller */,
+				C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */,
 				C6DFF34E18B7E03300B9F94B /* Model */,
+				C6DFF26B18B7DED000B9F94B /* readme.markdown */,
 				C6DFF35518B7E03300B9F94B /* Resources */,
+				C60DAA3418B7DB9F000F0AD1 /* Supporting Files */,
 				C6DFF36318B7E03300B9F94B /* Synthesizer */,
 				C6DFF38C18B7E03300B9F94B /* ThirdParty */,
-				C6DFF39518B7E03300B9F94B /* Utilities */,
-				C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */,
-				C6DFF26B18B7DED000B9F94B /* readme.markdown */,
-				C60DAA3418B7DB9F000F0AD1 /* Supporting Files */,
 				C6DFF20518B7DEB900B9F94B /* UserInterface */,
+				C6DFF39518B7E03300B9F94B /* Utilities */,
+				C6DFF3DC18B7E03A00B9F94B /* View */,
 			);
 			path = theremin;
 			sourceTree = "<group>";
