@@ -34,12 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.tableView.backgroundColor = nil;
+        self.tableView.backgroundColor = [UIColor darkGrayColor];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +49,18 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self updateControls];
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        NSInteger sectionCount = [self.tableView numberOfSections];
+        for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
+            NSInteger cellCount = [self.tableView numberOfRowsInSection:sectionIndex];
+            for(NSUInteger cellIndex = 0; cellIndex < cellCount; cellIndex++){
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                cell.backgroundColor = [UIColor clearColor];
+            }
+        }
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

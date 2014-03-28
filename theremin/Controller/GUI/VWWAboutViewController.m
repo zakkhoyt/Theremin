@@ -9,9 +9,11 @@
 #import "VWWAboutViewController.h"
 #import "MBProgressHUD.h"
 
-@interface VWWAboutViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface VWWAboutViewController () <UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
 
 
 @end
@@ -46,6 +48,7 @@
 //    @"</html>";
 //    [self.webView loadHTMLString:htmlString baseURL:nil];
 
+//    self.textView.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.bounds.size.height, 0, 0, 0);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -53,5 +56,8 @@
     
 //    [MBProgressHUD hideHUDForView:self.view animated:YES];
 //    self.backgroundImageView.image = [UIImage imageNamed:@"LaunchImage"];
+
 }
+
+
 @end

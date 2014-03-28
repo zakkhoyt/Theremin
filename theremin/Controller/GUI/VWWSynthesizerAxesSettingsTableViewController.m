@@ -63,14 +63,8 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.tableView.backgroundColor = nil;
+        self.tableView.backgroundView = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
     }
 
@@ -79,6 +73,18 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self updateControls];
+    
+    
+    
+    NSInteger sectionCount = [self.tableView numberOfSections];
+    for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
+        NSInteger cellCount = [self.tableView numberOfRowsInSection:sectionIndex];
+        for(NSUInteger cellIndex = 0; cellIndex < cellCount; cellIndex++){
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.backgroundColor = [UIColor clearColor];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -161,6 +167,7 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 
 #pragma mark UITableViewDataSource
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {

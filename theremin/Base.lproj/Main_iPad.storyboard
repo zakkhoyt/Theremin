@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="anK-tO-EfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="anK-tO-EfJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Touch View Controller-->
@@ -311,6 +311,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="0gG-j0-9zA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="airPlayTableViewCell" destination="rrQ-N8-5xS" id="enn-Eg-9f2"/>
                     </connections>
@@ -490,12 +491,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vww_320" translatesAutoresizingMaskIntoConstraints="NO" id="MAD-21-MqM">
-                                <rect key="frame" x="0.0" y="340" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-My-W0E">
-                                <rect key="frame" x="0.0" y="63" width="320" height="937"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
                                 <string key="text">About:
@@ -521,20 +518,15 @@ Homepage: http://minterart.tumblr.com</string>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="MAD-21-MqM" firstAttribute="leading" secondItem="iau-ZD-Bu5" secondAttribute="leading" id="3S6-vU-wD4"/>
-                            <constraint firstItem="OAi-My-W0E" firstAttribute="top" secondItem="iau-ZD-Bu5" secondAttribute="top" constant="63" id="3YL-cG-irM"/>
-                            <constraint firstAttribute="trailing" secondItem="OAi-My-W0E" secondAttribute="trailing" id="JEf-CV-GAr"/>
-                            <constraint firstItem="MAD-21-MqM" firstAttribute="centerY" secondItem="iau-ZD-Bu5" secondAttribute="centerY" id="She-Zt-8od"/>
-                            <constraint firstItem="10p-i0-DBr" firstAttribute="top" secondItem="OAi-My-W0E" secondAttribute="bottom" id="vdr-tm-4pj"/>
-                            <constraint firstItem="OAi-My-W0E" firstAttribute="leading" secondItem="iau-ZD-Bu5" secondAttribute="leading" id="y43-G6-s9w"/>
+                            <constraint firstItem="OAi-My-W0E" firstAttribute="leading" secondItem="iau-ZD-Bu5" secondAttribute="leading" id="R5G-tM-JKQ"/>
+                            <constraint firstItem="OAi-My-W0E" firstAttribute="top" secondItem="iau-ZD-Bu5" secondAttribute="top" id="Vpg-5l-JWg"/>
+                            <constraint firstAttribute="trailing" secondItem="OAi-My-W0E" secondAttribute="trailing" id="YaZ-rL-3ab"/>
+                            <constraint firstItem="10p-i0-DBr" firstAttribute="top" secondItem="OAi-My-W0E" secondAttribute="bottom" id="qbt-ld-8WH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SWa-fk-z4s"/>
-                    <connections>
-                        <outlet property="backgroundImageView" destination="MAD-21-MqM" id="9LQ-nF-huq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ph-nU-sei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -656,7 +648,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RpP-z8-D25">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
@@ -665,7 +657,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-oJ-SCH">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-oJ-SCH">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
@@ -690,7 +682,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="niC-De-ioy">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="niC-De-ioy">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
@@ -1023,6 +1015,7 @@ Homepage: http://minterart.tumblr.com</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Theremin" id="pvm-rS-S8a"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="accelerometersXAxisSwitch" destination="gPz-hb-ym9" id="b0l-B3-xaW"/>
                         <outlet property="accelerometersYAxisSwitch" destination="aZX-Md-3na" id="6Ty-FP-hBO"/>
@@ -1063,7 +1056,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-kN-Kue">
                                                     <rect key="frame" x="30" y="39" width="257" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1089,7 +1082,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-3t-H8L">
                                                     <rect key="frame" x="30" y="39" width="257" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1115,7 +1108,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="qlI-Xd-x24">
                                                     <rect key="frame" x="30" y="39" width="257" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1141,7 +1134,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="erg-Aw-PKc">
                                                     <rect key="frame" x="30" y="39" width="257" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1167,7 +1160,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="etA-mS-gkV">
                                                     <rect key="frame" x="30" y="39" width="257" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1233,7 +1226,6 @@ Homepage: http://minterart.tumblr.com</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1396,7 +1388,7 @@ Homepage: http://minterart.tumblr.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pP2-f1-INU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5075" y="462"/>
+            <point key="canvasLocation" x="5107" y="454"/>
         </scene>
         <!--Amplitude Parameters Table View Controller - Amplitude-->
         <scene sceneID="2AQ-vC-khs">
@@ -1545,7 +1537,7 @@ Homepage: http://minterart.tumblr.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1k-T2-eKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4003" y="-1627"/>
+            <point key="canvasLocation" x="5113" y="-2070"/>
         </scene>
         <!--Frequency Parameters Table View Controller - Frequencies-->
         <scene sceneID="0Sd-JD-bYe">
@@ -1793,6 +1785,7 @@ Homepage: http://minterart.tumblr.com</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Frequencies" id="AsZ-eT-XnW"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="xFrequencyMaxSlider" destination="Jv6-5r-WMb" id="hN5-Mo-58f"/>
                         <outlet property="xFrequencyMaxTextField" destination="Y8T-uz-Zbk" id="37K-Fj-vls"/>
@@ -1810,7 +1803,7 @@ Homepage: http://minterart.tumblr.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydq-DM-dFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3997" y="-3294"/>
+            <point key="canvasLocation" x="5107" y="-3737"/>
         </scene>
         <!--Waveform Parameters Table View Controller - Waveform-->
         <scene sceneID="mWm-Q3-lDZ">
@@ -1858,7 +1851,7 @@ Homepage: http://minterart.tumblr.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HR-p8-EL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3997" y="-2463"/>
+            <point key="canvasLocation" x="5093" y="-2905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pJ9-k0-y4B">
@@ -1899,7 +1892,6 @@ Homepage: http://minterart.tumblr.com</string>
     </scenes>
     <resources>
         <image name="sine_256x256.png" width="256" height="256"/>
-        <image name="vww_320" width="320" height="320"/>
     </resources>
     <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

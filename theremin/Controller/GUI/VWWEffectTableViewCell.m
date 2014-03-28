@@ -29,10 +29,10 @@
     _effectType = effectType;
     if(_effectType == VWWEffectTypeNone){
         self.effectTypeLabel.text = @"None";
-        self.effectConfigButton.hidden = YES;
+//        self.effectConfigButton.hidden = YES;
     } else if(_effectType == VWWEffectTypeAutoTune){
         self.effectTypeLabel.text = @"Autotune";
-        self.effectConfigButton.hidden = NO;
+//        self.effectConfigButton.hidden = NO;
     }
 }
 
