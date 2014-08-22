@@ -13,6 +13,8 @@
 
 
 #import "VWWBonjourModel.h"
+@import AudioToolbox;
+@import AVFoundation;
 
 @interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
@@ -40,7 +42,7 @@
     
     self.touchView.delegate = self;
     
-    [self setupSynthesizers];
+    //[self setupSynthesizers];
     
     
 //    self.infoLabel.alpha = 0.0;
@@ -90,6 +92,12 @@
 //}
 
 #pragma mark Private methods
+
+-(void)addObservers{
+    
+}
+
+
 
 -(void)showInfoLabel{
     

@@ -10,7 +10,7 @@
 #import "VWWGeneralSettings.h"
 #import "VWWSynthesizerGroup.h" 
 #import "VWWSynthesizersController.h"
-
+#import "JAMAccurateSlider.h"
 const NSInteger VWWFrequencyParametersTableViewControllerXAxisSection = 0;
 const NSInteger VWWFrequencyParametersTableViewControllerYAxisSection = 1;
 const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
@@ -28,14 +28,14 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 @property (weak, nonatomic) IBOutlet UITextField *zFrequencyMaxTextField;
 
 
-@property (weak, nonatomic) IBOutlet UISlider *xFrequencyMinSlider;
-@property (weak, nonatomic) IBOutlet UISlider *xFrequencyMaxSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *xFrequencyMinSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *xFrequencyMaxSlider;
 
-@property (weak, nonatomic) IBOutlet UISlider *yFrequencyMinSlider;
-@property (weak, nonatomic) IBOutlet UISlider *yFrequencyMaxSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *yFrequencyMinSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *yFrequencyMaxSlider;
 
-@property (weak, nonatomic) IBOutlet UISlider *zFrequencyMinSlider;
-@property (weak, nonatomic) IBOutlet UISlider *zFrequencyMaxSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *zFrequencyMinSlider;
+@property (weak, nonatomic) IBOutlet JAMAccurateSlider *zFrequencyMaxSlider;
 
 @end
 
@@ -57,6 +57,13 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
         self.tableView.backgroundColor = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
     }
+    
+    self.xFrequencyMinSlider.roundValue = YES;
+    self.xFrequencyMaxSlider.roundValue = YES;
+    self.yFrequencyMinSlider.roundValue = YES;
+    self.yFrequencyMaxSlider.roundValue = YES;
+    self.zFrequencyMinSlider.roundValue = YES;
+    self.zFrequencyMaxSlider.roundValue = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{

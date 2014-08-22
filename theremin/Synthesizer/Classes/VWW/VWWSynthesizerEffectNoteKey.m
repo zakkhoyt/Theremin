@@ -23,6 +23,7 @@ static __attribute ((unused)) NSString* kKeyGMinor = @"gminor";
 static __attribute ((unused)) NSString* kKeyGMajor = @"gmajor";
 static __attribute ((unused)) NSString* kKeyChromatic = @"chromatic";
 
+
 @implementation VWWSynthesizerEffectNoteKey
 -(NSString*)stringForKey{
     switch(self.key){
