@@ -29,16 +29,12 @@
     _effectType = effectType;
     if(_effectType == VWWEffectTypeNone){
         self.effectTypeLabel.text = @"None";
-//        self.effectConfigButton.hidden = YES;
     } else if(_effectType == VWWEffectTypeAutoTune){
-        self.effectTypeLabel.text = @"Autotune";
-//        self.effectConfigButton.hidden = NO;
+        NSString *keyString = [VWWSynthesizerTypes stringFromKey:self.keyType];
+        self.effectTypeLabel.text = [NSString stringWithFormat:@"Autotune (%@)", keyString];
     }
 }
 
-- (IBAction)effectConfigButtonTouchUpInside:(id)sender {
-    [self.delegate effectTableViewCellEffectConfigButtonTouchUpInside:self];
-}
 
 
 

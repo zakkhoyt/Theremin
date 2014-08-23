@@ -14,7 +14,7 @@
 
 static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKeys";
 
-@interface VWWEffectParametersTableViewController () <VWWEffectTableViewCellDelegate>
+@interface VWWEffectParametersTableViewController ()
 
 @end
 
@@ -36,6 +36,11 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
         self.tableView.backgroundColor = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -65,8 +70,8 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:VWWSegueEffectParametersToKeys]){
-//        VWWAutotuneKeysTableViewControllers *vc = segue.destinationViewController;
-        
+        VWWAutotuneKeysTableViewControllers *vc = segue.destinationViewController;
+        vc.synthesizer = sender;
     }
 }
 
@@ -83,28 +88,30 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VWWEffectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWEffectTableViewCell"];
-    cell.effectType = (VWWEffectType)indexPath.row;
-    cell.delegate = self;
     if(indexPath.section == VWWAxisTypeX){
         if(indexPath.row == (NSInteger)self.synthesizerGroup.xSynthesizer.effectType){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
+        cell.keyType = self.synthesizerGroup.xSynthesizer.keyType;
     } else if(indexPath.section == VWWAxisTypeY){
         if(indexPath.row == (NSInteger)self.synthesizerGroup.ySynthesizer.effectType){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
+        cell.keyType = self.synthesizerGroup.ySynthesizer.keyType;
     } else if(indexPath.section == VWWAxisTypeZ){
         if(indexPath.row == (NSInteger)self.synthesizerGroup.zSynthesizer.effectType){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
+        cell.keyType = self.synthesizerGroup.zSynthesizer.keyType;
     }
     
+    cell.effectType = (VWWEffectType)indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
 
     return cell;
@@ -143,7 +150,7 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
         }
     }
     
-    // Set wavetype
+    // Set effect type
     if(indexPath.section == VWWAxisTypeX) {
         self.synthesizerGroup.xSynthesizer.effectType = (VWWEffectType)indexPath.row;
     } else if(indexPath.section == VWWAxisTypeY) {
@@ -152,11 +159,21 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
         self.synthesizerGroup.zSynthesizer.effectType = (VWWEffectType)indexPath.row;
     }
     
+    if(indexPath.row == VWWEffectTypeAutoTune){
+        
+        VWWNormalizedSynthesizer *synthesizer = nil;
+        if(indexPath.section == VWWAxisTypeX) {
+            synthesizer = self.synthesizerGroup.xSynthesizer;
+        } else if(indexPath.section == VWWAxisTypeY) {
+            synthesizer = self.synthesizerGroup.ySynthesizer;
+        } else if(indexPath.section == VWWAxisTypeZ) {
+            synthesizer = self.synthesizerGroup.zSynthesizer;
+        }
+        [self performSegueWithIdentifier:VWWSegueEffectParametersToKeys sender:synthesizer];
+    }
+    
+    
 }
 
-#pragma mark VWWEffectTableViewCellDelegate
--(void)effectTableViewCellEffectConfigButtonTouchUpInside:(VWWEffectTableViewCell*)sender{
-    [self performSegueWithIdentifier:VWWSegueEffectParametersToKeys sender:self];
-}
 
 @end

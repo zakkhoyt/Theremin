@@ -11,6 +11,5 @@
 
 @interface VWWSynthesizerNotes : NSObject
 +(VWWSynthesizerNotes *)sharedInstance;
-+(float)getClosestNoteForFrequency:(float)frequency;
 +(float)getClosestNoteForFrequency:(float)frequency inKey:(VWWAutoTuneType)key;
 @end

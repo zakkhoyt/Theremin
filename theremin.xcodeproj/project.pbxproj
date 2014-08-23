@@ -79,6 +79,7 @@
 		C6DFF3E618B7FA2600B9F94B /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF3E518B7FA2600B9F94B /* VWWSynthesizersController.m */; };
 		C6DFF3E818B7FC8B00B9F94B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DFF3E718B7FC8B00B9F94B /* CoreAudio.framework */; };
 		C6EAA5BD19A7B124004B6B50 /* JAMAccurateSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EAA5BC19A7B124004B6B50 /* JAMAccurateSlider.m */; };
+		CF7339E819A920CC002AF3E1 /* VWWSynthesizerTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7339E719A920CC002AF3E1 /* VWWSynthesizerTypes.m */; };
 		CF841D0F18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */; };
 		CF841D1118B836DB00003777 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF841D1018B836DB00003777 /* AudioToolbox.framework */; };
 		CF841D1418B83A0300003777 /* VWWBonjourModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF841D1318B83A0300003777 /* VWWBonjourModel.m */; };
@@ -230,6 +231,7 @@
 		C6DFF3E718B7FC8B00B9F94B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		C6EAA5BB19A7B124004B6B50 /* JAMAccurateSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAMAccurateSlider.h; sourceTree = "<group>"; };
 		C6EAA5BC19A7B124004B6B50 /* JAMAccurateSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMAccurateSlider.m; sourceTree = "<group>"; };
+		CF7339E719A920CC002AF3E1 /* VWWSynthesizerTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerTypes.m; sourceTree = "<group>"; };
 		CF841D0D18B833B700003777 /* VWWAutotuneKeysTableViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAutotuneKeysTableViewControllers.h; sourceTree = "<group>"; };
 		CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAutotuneKeysTableViewControllers.m; sourceTree = "<group>"; };
 		CF841D1018B836DB00003777 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -648,6 +650,7 @@
 				C6DFF38918B7E03300B9F94B /* VWWSynthesizerGroup.h */,
 				C6DFF38A18B7E03300B9F94B /* VWWSynthesizerGroup.m */,
 				C6DFF38B18B7E03300B9F94B /* VWWSynthesizerTypes.h */,
+				CF7339E719A920CC002AF3E1 /* VWWSynthesizerTypes.m */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -954,6 +957,7 @@
 				C6DFF3A118B7E03300B9F94B /* VWWEffectTableViewCell.m in Sources */,
 				C6DFF3D918B7E03300B9F94B /* AsyncUdpSocket.m in Sources */,
 				C60DAA3E18B7DB9F000F0AD1 /* VWWAppDelegate.m in Sources */,
+				CF7339E819A920CC002AF3E1 /* VWWSynthesizerTypes.m in Sources */,
 				C6DFF3A518B7E03300B9F94B /* VWWSettingsTableViewController.m in Sources */,
 				C6DFF39B18B7E03300B9F94B /* VWWAmplitudeParametersTableViewController.m in Sources */,
 				C6DFF3B018B7E03300B9F94B /* VWWMotionMonitor.m in Sources */,

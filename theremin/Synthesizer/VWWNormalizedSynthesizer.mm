@@ -10,7 +10,6 @@
 #import "VWWSynthesizerC.h"
 #import "VWWSynthesizerKeys.h"
 
-
 @interface VWWNormalizedSynthesizer (){
     float _frequencyNormalized;
     float _frequency;

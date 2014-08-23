@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VWWNormalizedSynthesizer;
 
 @interface VWWAutotuneKeysTableViewControllers : UITableViewController
-
+@property (nonatomic, strong) VWWNormalizedSynthesizer *synthesizer;
 @end

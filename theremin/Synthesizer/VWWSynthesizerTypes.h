@@ -62,6 +62,12 @@ typedef enum{
 
 
 
+@interface VWWSynthesizerTypes : NSObject
++(NSString*)stringFromKey:(VWWAutoTuneType)key;
++(VWWAutoTuneType)keyFromString:(NSString*)keyString;
+@end
+
+
 
 
 #endif

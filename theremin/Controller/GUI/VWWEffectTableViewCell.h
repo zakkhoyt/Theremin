@@ -10,13 +10,8 @@
 
 #import "VWWSynthesizerTypes.h"
 
-@class VWWEffectTableViewCell;
-
-@protocol VWWEffectTableViewCellDelegate <NSObject>
--(void)effectTableViewCellEffectConfigButtonTouchUpInside:(VWWEffectTableViewCell*)sender;
-@end
 
 @interface VWWEffectTableViewCell : UITableViewCell
 @property (nonatomic) VWWEffectType effectType;
-@property (nonatomic, weak) id <VWWEffectTableViewCellDelegate> delegate;
+@property (nonatomic) VWWAutoTuneType keyType;
 @end

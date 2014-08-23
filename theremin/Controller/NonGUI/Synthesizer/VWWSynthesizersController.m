@@ -68,7 +68,7 @@
     // 3 for the gyroscopes (x, y, z)
     // 3 for the magnetometers (x, y, z)
     // Each group will be initialized with the default settings (stored in NSUserDefaults), all axis muted, then started.
-    // All that is required for each to make noise is to unmute an axis
+    // What is required for each synth to make noise is to unmute an axis
     
     // Default settings
     VWWGeneralSettings *generalSettings = [VWWGeneralSettings sharedInstance];
@@ -81,7 +81,12 @@
         self.touchscreenGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitudeDefault xFrequencyMin:generalSettings.frequencyDefaultMin xFrequencyMax:generalSettings.frequencyDefaultMax xFrequencyNormalized:generalSettings.frequencyNormalized
                                                                     amplitudeY:generalSettings.amplitudeDefault yFrequencyMin:generalSettings.frequencyDefaultMin yFrequencyMax:generalSettings.frequencyDefaultMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                                     amplitudeZ:generalSettings.amplitudeDefault zFrequencyMin:generalSettings.frequencyDefaultMin zFrequencyMax:generalSettings.frequencyDefaultMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+        self.touchscreenGroup.xSynthesizer.effectType = VWWEffectTypeAutoTune;
+        self.touchscreenGroup.xSynthesizer.keyType = VWWAutoTuneTypeCMajor;
+        
+        self.touchscreenGroup.ySynthesizer.waveType = VWWWaveTypeTriangle;
     }
+    
     self.touchscreenGroup.muted = YES;
     [self.touchscreenGroup start];
     

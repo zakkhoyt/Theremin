@@ -142,13 +142,29 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
                                         (long)(self.synthesizerGroup.zSynthesizer.amplitude * 100.0)];
     self.amplitudeSummaryLabel.text = amplitudeSummaryString;
     
+
+    NSMutableString *xEffectString = [[self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType] mutableCopy];
+    if(self.synthesizerGroup.xSynthesizer.effectType == VWWEffectTypeAutoTune){
+        [xEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.xSynthesizer.keyType]];
+    }
+    
+    NSMutableString *yEffectString = [[self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType] mutableCopy];
+    if(self.synthesizerGroup.ySynthesizer.effectType == VWWEffectTypeAutoTune){
+        [yEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.ySynthesizer.keyType]];
+    }
+    
+    NSMutableString *zEffectString = [[self stringFromEffectType:self.synthesizerGroup.zSynthesizer.effectType] mutableCopy];
+    if(self.synthesizerGroup.zSynthesizer.effectType == VWWEffectTypeAutoTune){
+        [zEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.zSynthesizer.keyType]];
+    }
+
     
     NSString *effectSummaryString = [NSString stringWithFormat:@"x: %@\n"
                                        @"y: %@\n"
                                        @"z: %@",
-                                       [self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType],
-                                       [self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType],
-                                       [self stringFromEffectType:self.synthesizerGroup.zSynthesizer.effectType]];
+                                       xEffectString,
+                                       yEffectString,
+                                     zEffectString];
     self.effectSummaryLabel.text = effectSummaryString;
 
     

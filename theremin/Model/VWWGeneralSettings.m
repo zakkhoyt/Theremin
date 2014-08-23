@@ -11,8 +11,8 @@
 
 const float VWWGeneralSettingsFrequencyMin = 20.0;
 const float VWWGeneralSettingsFrequencyMax = 18000.0;
-const float VWWGeneralSettingsFrequencyDefaultMin = 30.0;
-const float VWWGeneralSettingsFrequencyDefaultMax = 2000.0;
+const float VWWGeneralSettingsFrequencyDefaultMin = 55;
+const float VWWGeneralSettingsFrequencyDefaultMax = 880;
 const float VWWGeneralSettingsFrequencyNormalized = 1.0;
 const float VWWGeneralSettingsAmplitudeDefault = 0.8;
 
