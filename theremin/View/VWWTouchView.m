@@ -10,8 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-
-@interface VWWTouchView ()
+@interface VWWTouchView (){
+    CAEmitterCell* fire;
+}
 @property (nonatomic, strong) CAEmitterLayer* fireEmitter;
 @end
 
@@ -37,7 +38,7 @@
         self.fireEmitter.emitterPosition = CGPointMake(-50, -50);
         self.fireEmitter.emitterSize = CGSizeMake(10, 10);
         
-        CAEmitterCell* fire = [CAEmitterCell emitterCell];
+        fire = [CAEmitterCell emitterCell];
         fire.birthRate = 5.0;
         fire.lifetime = 1.0;
         fire.lifetimeRange = 0;
@@ -116,6 +117,7 @@
 #pragma mark Private methods
 -(NSArray*)touches:(NSSet *)touches withEvent:(UIEvent *)event{
     NSMutableArray *xyArray = [@[]mutableCopy];
+    
     for(UITouch *touch in touches.allObjects){
         CGPoint point = [touch locationInView:self];
         float x = point.x / self.bounds.size.width;
@@ -124,6 +126,9 @@
         NSDictionary *dictionary = @{VWWTouchViewXKey : @(x),
                                      VWWTouchViewYKey : @(y)};
         [xyArray addObject:dictionary];
+        
+        UIColor *color = [UIColor colorWithRed:x green:y blue:x*y alpha:1.0];
+        fire.color = color.CGColor;
     }
     return xyArray;
 }

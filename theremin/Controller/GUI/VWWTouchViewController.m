@@ -42,7 +42,7 @@
     
     self.touchView.delegate = self;
     
-    //[self setupSynthesizers];
+    [self setupSynthesizers];
     
     
 //    self.infoLabel.alpha = 0.0;
