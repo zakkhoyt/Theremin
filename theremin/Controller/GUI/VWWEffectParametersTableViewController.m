@@ -75,6 +75,11 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
     }
 }
 
+#pragma mark IBActions
+- (IBAction)doneButtonAction:(id)sender {
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 #pragma mark UITableViewDataSource
 

@@ -146,6 +146,10 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 
 
 #pragma mark IBActions
+- (IBAction)doneButtonAction:(id)sender {
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (IBAction)xFrequencyMinSliderValueChanged:(UISlider*)sender {
     self.synthesizerGroup.xSynthesizer.frequencyMin = sender.value;

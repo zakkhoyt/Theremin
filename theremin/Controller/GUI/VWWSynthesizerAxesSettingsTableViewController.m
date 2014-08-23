@@ -125,6 +125,11 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 }
 
 #pragma mark IBActions
+- (IBAction)doneButtonAction:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
 - (IBAction)touchscreenXAxisSwitchValueChanged:(UISwitch*)sender {
     self.synthesizersController.touchscreenGroup.xSynthesizer.muted = !sender.on;
 }

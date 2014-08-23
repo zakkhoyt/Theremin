@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
@@ -1010,7 +1011,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="d9e-9r-ljF" id="Ekq-iL-9AY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Theremin" id="3c0-5l-MhB"/>
+                    <navigationItem key="navigationItem" title="Theremin" id="3c0-5l-MhB">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="c2O-Lf-TZk">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="d9e-9r-ljF" id="TG9-6b-Yrf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
@@ -1171,7 +1178,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="Jcu-7A-RZ0" id="2ik-HE-vyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Configure" id="T2Y-J9-ooX"/>
+                    <navigationItem key="navigationItem" title="Configure" id="T2Y-J9-ooX">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="hgT-7U-hMP">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="Jcu-7A-RZ0" id="ati-lb-Qqn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
                         <size key="portraitSize" width="320" height="568"/>
                         <size key="landscapeSize" width="568" height="320"/>
@@ -1238,7 +1251,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="hC6-i6-MZu" id="W78-rf-OOF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Effect" id="Xty-Vt-Gq2"/>
+                    <navigationItem key="navigationItem" title="Effect" id="Xty-Vt-Gq2">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="r5f-nO-na0">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="hC6-i6-MZu" id="cWg-lG-0fT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="6Pj-ea-77O" kind="push" identifier="VWWSegueEffectParametersToKeys" id="3Dt-Vk-IUi"/>
                     </connections>
@@ -1413,7 +1432,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="WbT-eb-5ma" id="3Kq-vz-ae1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sensitivity" id="Ca2-Hq-ilH"/>
+                    <navigationItem key="navigationItem" title="Sensitivity" id="Ca2-Hq-ilH">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="flu-aV-dvK">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="WbT-eb-5ma" id="aGO-ax-D4z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="xSensitivitySlider" destination="Xsv-lW-8Ke" id="iPV-7j-gpx"/>
                         <outlet property="ySensitivitySlider" destination="Gy8-nS-Lov" id="TLn-tQ-FKr"/>
@@ -1550,7 +1575,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="fna-KS-Mty" id="3i3-uW-2BO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Amplitude" id="6vz-fK-uWb"/>
+                    <navigationItem key="navigationItem" title="Amplitude" id="6vz-fK-uWb">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Y6v-hQ-8Dg">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="fna-KS-Mty" id="tnR-pp-Mf3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="xAmplitudeSlider" destination="P9W-7F-nSR" id="PpA-YF-o1m"/>
                         <outlet property="xAmplitudeTextField" destination="EMv-Ga-7Wg" id="mNp-ck-e59"/>
@@ -1790,7 +1821,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="cHt-NB-Ct4" id="LQI-bj-ksq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Frequencies" id="fNE-0d-Nfm"/>
+                    <navigationItem key="navigationItem" title="Frequencies" id="fNE-0d-Nfm">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="IWc-sS-niF">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="cHt-NB-Ct4" id="ODE-NF-Jfe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="700"/>
                     <connections>
@@ -1852,7 +1889,13 @@ Homepage: http://minterart.tumblr.com</string>
                             <outlet property="delegate" destination="kED-zO-S3x" id="CcQ-Ta-lfI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Waveform" id="Yxn-WS-1CR"/>
+                    <navigationItem key="navigationItem" title="Waveform" id="Yxn-WS-1CR">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Xr6-qn-8ku">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="kED-zO-S3x" id="iAF-bJ-U5D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8V-kr-9VR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

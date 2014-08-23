@@ -13,6 +13,7 @@
 #import "VWWAmplitudeParametersTableViewController.h"
 #import "VWWEffectParametersTableViewController.h"
 #import "VWWSensitivityParameterTableViewController.h"
+#import "VWWSynthesizersController.h"
 
 const NSInteger VWWSynthesizerAxisFrequencyRow = 0;
 const NSInteger VWWSynthesizerAxisWaveformRow = 1;
@@ -60,6 +61,12 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
     
     [self updateControls];
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -179,6 +186,12 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
     
     
     
+}
+
+#pragma mark IBActions
+- (IBAction)doneButtonAction:(id)sender {
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
