@@ -73,7 +73,7 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self updateControls];
-    
+    self.navigationController.navigationBarHidden = NO;
     
     
     NSInteger sectionCount = [self.tableView numberOfSections];
