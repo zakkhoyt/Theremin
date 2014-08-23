@@ -20,8 +20,9 @@
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Xa-lKP" customClass="VWWTouchView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch the screen to generate audio. Ensure that your device is not muted and the volume is turned up." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
-                                        <rect key="frame" x="20" y="229" width="280" height="109"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
+                                        <rect key="frame" x="8" y="0.0" width="304" height="568"/>
+                                        <string key="text">Touch the screen to generate audio waves. Ensure that your volume is turned up and your device is not muted. To use the Accelerometers or other motion sensors, tap Settings -&gt; Synthesizers then toggle the switches for each axis that you want to use."</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +43,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Iww-Kz-C0y" firstAttribute="leading" secondItem="7P7-Xa-lKP" secondAttribute="leading" constant="8" id="JJ6-c0-tHd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iww-Kz-C0y" secondAttribute="trailing" constant="8" id="MH5-ds-JG7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iww-Kz-C0y" secondAttribute="bottom" id="MmI-h9-c4d"/>
                                     <constraint firstAttribute="centerX" secondItem="qvJ-PJ-VYf" secondAttribute="centerX" constant="-0.5" id="dLe-N9-s7h"/>
+                                    <constraint firstItem="Iww-Kz-C0y" firstAttribute="top" secondItem="7P7-Xa-lKP" secondAttribute="top" id="ds2-J7-BO7"/>
                                     <constraint firstItem="qvJ-PJ-VYf" firstAttribute="top" secondItem="7P7-Xa-lKP" secondAttribute="top" constant="17" id="xaG-u7-VfK"/>
                                 </constraints>
                             </view>
@@ -65,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="230"/>
+            <point key="canvasLocation" x="316" y="223"/>
         </scene>
         <!--Host-->
         <scene sceneID="LaL-h1-vQD">

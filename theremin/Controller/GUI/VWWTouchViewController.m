@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
+
+
+
 #import "VWWTouchViewController.h"
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
@@ -44,7 +47,7 @@
     
     [self setupSynthesizers];
     
-    
+    self.infoLabel.text = @"Touch the screen to generate audio waves.\n\nEnsure that your volume is turned up and your device is not muted.\n\nTo use the Accelerometers or other motion sensors, tap Settings -> Synthesizers then toggle the switches for each axis that you want to use.";
 //    self.infoLabel.alpha = 0.0;
 
     
@@ -61,7 +64,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.navigationController.navigationBarHidden = YES;
-    
+
 
 }
 
@@ -70,9 +73,9 @@
     [super viewDidAppear:animated];
     if(self.hasLoaded == NO){
         self.hasLoaded = YES;
-        [self showInfoLabel];
+        
     }
-
+    [self showInfoLabel];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -101,19 +104,18 @@
 
 -(void)showInfoLabel{
     
-    CGRect centeredRect = self.infoLabel.frame;
     CGFloat x = self.infoLabel.frame.origin.x;
-    CGFloat y = self.view.bounds.size.height;
+    CGFloat y = 0;
     CGFloat w = self.infoLabel.frame.size.width;
     CGFloat h = self.infoLabel.frame.size.height;
-    CGRect belowScreenRect = CGRectMake(x, y, w, h);
-    self.infoLabel.frame = belowScreenRect;
+    CGRect onScreenRect = CGRectMake(x, y, w, h);
     
+    self.infoLabel.hidden = NO;
     [UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.infoLabel.alpha = 1.0;
-        self.infoLabel.frame = centeredRect;
+        self.infoLabel.frame = onScreenRect;
     } completion:^(BOOL finished) {
-        self.infoLabel.hidden = NO;
+        
     }];
 }
 

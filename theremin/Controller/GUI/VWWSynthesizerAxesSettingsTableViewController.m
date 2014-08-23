@@ -87,6 +87,11 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     }
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[VWWSynthesizersController sharedInstance] writeSettings];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -126,6 +131,7 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 #pragma mark IBActions
 - (IBAction)doneButtonAction:(id)sender {
+    [[VWWSynthesizersController sharedInstance] writeSettings];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
