@@ -22,6 +22,8 @@
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
 		C610D4AB18B8055800999A3D /* theremin.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C610D4AA18B8055800999A3D /* theremin.entitlements */; };
+		C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */; };
+		C6C8CBB919AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB719AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m */; };
 		C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF26B18B7DED000B9F94B /* readme.markdown */; };
 		C6DFF39818B7E03300B9F94B /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */; };
 		C6DFF39918B7E03300B9F94B /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF30618B7E03300B9F94B /* about.html */; };
@@ -118,6 +120,10 @@
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
 		C610D4AA18B8055800999A3D /* theremin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theremin.entitlements; sourceTree = "<group>"; };
+		C6C8CBB419AD17DF0084BA98 /* VWWInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchase.h; sourceTree = "<group>"; };
+		C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWInAppPurchase.m; sourceTree = "<group>"; };
+		C6C8CBB619AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchaseIdentifier.h; sourceTree = "<group>"; };
+		C6C8CBB719AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWInAppPurchaseIdentifier.m; sourceTree = "<group>"; };
 		C6DFF26B18B7DED000B9F94B /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.markdown; sourceTree = "<group>"; };
 		C6DFF30218B7E03300B9F94B /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		C6DFF30318B7E03300B9F94B /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
@@ -529,6 +535,17 @@
 			name = General;
 			sourceTree = "<group>";
 		};
+		C6C8CBB319AD17DF0084BA98 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C6C8CBB419AD17DF0084BA98 /* VWWInAppPurchase.h */,
+				C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */,
+				C6C8CBB619AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.h */,
+				C6C8CBB719AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		C6DFF20518B7DEB900B9F94B /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +588,7 @@
 		C6DFF32F18B7E03300B9F94B /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
+				C6C8CBB319AD17DF0084BA98 /* Store */,
 				C6DFF3E218B7FA2600B9F94B /* InterappAudio */,
 				C6DFF3E318B7FA2600B9F94B /* Synthesizer */,
 				C6DFF33018B7E03300B9F94B /* Bonjour */,
@@ -960,9 +978,11 @@
 				C6EAA5BD19A7B124004B6B50 /* JAMAccurateSlider.m in Sources */,
 				C6DFF3AB18B7E03300B9F94B /* VWWWaveformParametersTableViewController.m in Sources */,
 				C6DFF3A818B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
+				C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */,
 				C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */,
 				CF841D1418B83A0300003777 /* VWWBonjourModel.m in Sources */,
 				C6DFF3D718B7E03300B9F94B /* VWWSynthesizerGroup.m in Sources */,
+				C6C8CBB919AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m in Sources */,
 				C6DFF3A618B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m in Sources */,
 				C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				C6DFF3BB18B7E03300B9F94B /* VWWGeneralSettings.m in Sources */,

@@ -8,9 +8,11 @@
 
 #import "VWWStoreViewController.h"
 #import "VWWStoreTableViewCell.h"
+#import "VWWInAppPurchaseIdentifier.h"
+
 @interface VWWStoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *storeItems;
+@property (nonatomic, strong) NSArray *products;
 @end
 
 @implementation VWWStoreViewController
@@ -18,13 +20,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.storeItems = @[@"Autotune Keys"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+ 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:VWWInAppPurchaseProductPurchasedNotification object:nil];
+    
+    // Get Apple product IDs
+    [[VWWInAppPurchaseIdentifier sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        self.products = products;
+        [self.tableView reloadData];
+    }];
+
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -41,6 +58,17 @@
 }
 */
 
+#pragma mark Private methods
+- (void)productPurchased:(NSNotification *)notification {
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            *stop = YES;
+        }
+    }];
+}
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -48,13 +76,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.storeItems.count;
+    return self.products.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
  
     VWWStoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWStoreTableViewCell"];
-    cell.title = self.storeItems[indexPath.row];
+    SKProduct *product = self.products[indexPath.row];
+    cell.product = product;
     return cell;
 }
 
@@ -66,6 +95,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    SKProduct *product = self.products[indexPath.row];
+    [[VWWInAppPurchaseIdentifier sharedInstance] buyProduct:product];
     
     
 }

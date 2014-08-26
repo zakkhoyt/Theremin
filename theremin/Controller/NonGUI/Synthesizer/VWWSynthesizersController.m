@@ -82,8 +82,7 @@
                                                                     amplitudeY:generalSettings.amplitudeDefault yFrequencyMin:generalSettings.frequencyDefaultMin yFrequencyMax:generalSettings.frequencyDefaultMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                                     amplitudeZ:generalSettings.amplitudeDefault zFrequencyMin:generalSettings.frequencyDefaultMin zFrequencyMax:generalSettings.frequencyDefaultMax zFrequencyNormalized:generalSettings.frequencyNormalized];
         self.touchscreenGroup.xSynthesizer.effectType = VWWEffectTypeAutoTune;
-        self.touchscreenGroup.xSynthesizer.keyType = VWWAutoTuneTypeCMajor;
-        
+        self.touchscreenGroup.xSynthesizer.keyType = VWWAutoTuneTypeChromatic;
         self.touchscreenGroup.ySynthesizer.waveType = VWWWaveTypeTriangle;
     }
     

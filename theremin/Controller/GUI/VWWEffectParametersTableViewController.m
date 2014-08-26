@@ -11,6 +11,7 @@
 #import "VWWEffectTableViewCell.h"
 #import "VWWSynthesizersController.h"
 #import "VWWAutotuneKeysTableViewControllers.h"
+#import "VWWInAppPurchaseIdentifier.h"
 
 static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKeys";
 
@@ -164,19 +165,20 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
         self.synthesizerGroup.zSynthesizer.effectType = (VWWEffectType)indexPath.row;
     }
     
-    if(indexPath.row == VWWEffectTypeAutoTune){
-        
-        VWWNormalizedSynthesizer *synthesizer = nil;
-        if(indexPath.section == VWWAxisTypeX) {
-            synthesizer = self.synthesizerGroup.xSynthesizer;
-        } else if(indexPath.section == VWWAxisTypeY) {
-            synthesizer = self.synthesizerGroup.ySynthesizer;
-        } else if(indexPath.section == VWWAxisTypeZ) {
-            synthesizer = self.synthesizerGroup.zSynthesizer;
+    if([[VWWInAppPurchaseIdentifier sharedInstance] productPurchased:VWWInAppPurchaseAutotuneKeysKey]){
+        if(indexPath.row == VWWEffectTypeAutoTune){
+            
+            VWWNormalizedSynthesizer *synthesizer = nil;
+            if(indexPath.section == VWWAxisTypeX) {
+                synthesizer = self.synthesizerGroup.xSynthesizer;
+            } else if(indexPath.section == VWWAxisTypeY) {
+                synthesizer = self.synthesizerGroup.ySynthesizer;
+            } else if(indexPath.section == VWWAxisTypeZ) {
+                synthesizer = self.synthesizerGroup.zSynthesizer;
+            }
+            [self performSegueWithIdentifier:VWWSegueEffectParametersToKeys sender:synthesizer];
         }
-        [self performSegueWithIdentifier:VWWSegueEffectParametersToKeys sender:synthesizer];
     }
-    
     
 }
 

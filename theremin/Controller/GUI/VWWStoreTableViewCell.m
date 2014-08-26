@@ -7,21 +7,34 @@
 //
 
 #import "VWWStoreTableViewCell.h"
+#import "VWWInAppPurchaseIdentifier.h"
 
 @interface VWWStoreTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
 @end
 
 @implementation VWWStoreTableViewCell
 
 
--(void)setTitle:(NSString *)title{
-    _title = title;
-    self.titleLabel.text = _title;
+-(void)setProduct:(SKProduct *)product{
+    _product = product;
+    self.titleLabel.text = product.localizedTitle;
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:product.productIdentifier] == NO){
+        [self.buyButton setTitle:[NSString stringWithFormat:@"$%.2f", _product.price.floatValue] forState:UIControlStateNormal];
+        self.buyButton.userInteractionEnabled = YES;
+    } else {
+        [self.buyButton setTitle:@"Purchased" forState:UIControlStateNormal];
+        self.buyButton.userInteractionEnabled = NO;
+    }
+    
 }
+
+
 - (IBAction)buyButtonTouchUpInside:(id)sender {
-    [[[UIAlertView alloc]initWithTitle:@"Purchase?" message:@"Would you like to purchase?" delegate:self cancelButtonTitle:@"Not not" otherButtonTitles:@"Yes", nil]show];
+    [[VWWInAppPurchaseIdentifier sharedInstance] buyProduct:_product];
 }
 
 @end

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Touch View Controller-->
@@ -21,7 +20,7 @@
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Xa-lKP" customClass="VWWTouchView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
                                         <rect key="frame" x="8" y="0.0" width="304" height="568"/>
                                         <string key="text">Touch the screen to generate audio waves. Ensure that your volume is turned up and your device is not muted. To use the Accelerometers or other motion sensors, tap Settings -&gt; Synthesizers then toggle the switches for each axis that you want to use."</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -73,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="316" y="223"/>
         </scene>
-        <!--Host-->
+        <!--Devices Server View Controller - Host-->
         <scene sceneID="LaL-h1-vQD">
             <objects>
                 <viewController id="Z0y-kB-rFR" customClass="VWWDevicesServerViewController" sceneMemberID="viewController">
@@ -105,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="3505" y="1162"/>
         </scene>
-        <!--Join-->
+        <!--Devices Client View Controller - Join-->
         <scene sceneID="bCQ-gN-ZEr">
             <objects>
                 <viewController id="BcY-J9-NuJ" customClass="VWWDevicesClientViewController" sceneMemberID="viewController">
@@ -162,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="3505" y="1903"/>
         </scene>
-        <!--Settings-->
+        <!--Settings Table View Controller - Settings-->
         <scene sceneID="3oo-1M-Zlc">
             <objects>
                 <tableViewController id="3I7-O0-Cbk" customClass="VWWSettingsTableViewController" sceneMemberID="viewController">
@@ -251,7 +250,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fEk-jz-zUv">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEk-jz-zUv" id="UaY-vU-7fO">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -271,10 +270,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="epX-sM-faV">
-                                        <rect key="frame" x="0.0" y="196" width="320" height="88"/>
+                                        <rect key="frame" x="0.0" y="328" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="epX-sM-faV" id="FwC-bs-XCS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fvp-ek-zfD">
@@ -286,7 +285,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="98j-Cs-nbK">
-                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="378" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="98j-Cs-nbK" id="cLl-7H-yop">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -306,7 +305,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Us3-un-QbB">
-                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="422" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Us3-un-QbB" id="ypj-LT-fGb">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -326,7 +325,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Izz-CF-3MS">
-                                        <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="466" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Izz-CF-3MS" id="tWR-Y9-iMD">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -363,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="1009" y="235"/>
         </scene>
-        <!--Store-->
+        <!--Store View Controller - Store-->
         <scene sceneID="Ob9-n7-eVx">
             <objects>
                 <viewController id="YBp-th-F9S" customClass="VWWStoreViewController" sceneMemberID="viewController">
@@ -380,22 +379,20 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VWWStoreTableViewCell" id="6C9-sE-5AZ" customClass="VWWStoreTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6C9-sE-5AZ" id="Rma-ik-4b5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-rS-5vi">
-                                                    <rect key="frame" x="8" y="13" width="266" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-rS-5vi">
+                                                    <rect key="frame" x="20" y="11" width="203" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n52-OH-jHg">
-                                                    <rect key="frame" x="282" y="7" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="eRz-X6-cPq"/>
-                                                    </constraints>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n52-OH-jHg">
+                                                    <rect key="frame" x="231" y="7" width="69" height="30"/>
                                                     <state key="normal" title="Buy">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -405,16 +402,10 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="n52-OH-jHg" firstAttribute="top" secondItem="Rma-ik-4b5" secondAttribute="topMargin" constant="-1" id="4xq-2N-dlj"/>
-                                                <constraint firstItem="Kb9-rS-5vi" firstAttribute="top" secondItem="Rma-ik-4b5" secondAttribute="topMargin" constant="5" id="MwQ-75-eDw"/>
-                                                <constraint firstItem="n52-OH-jHg" firstAttribute="trailing" secondItem="Rma-ik-4b5" secondAttribute="trailingMargin" id="cj3-Qv-zlO"/>
-                                                <constraint firstItem="Kb9-rS-5vi" firstAttribute="leading" secondItem="Rma-ik-4b5" secondAttribute="leadingMargin" id="hiX-dT-q6I"/>
-                                                <constraint firstItem="n52-OH-jHg" firstAttribute="leading" secondItem="Kb9-rS-5vi" secondAttribute="trailing" constant="8" symbolic="YES" id="w9a-iO-jcd"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="buyButton" destination="n52-OH-jHg" id="SC0-sN-cZw"/>
                                             <outlet property="titleLabel" destination="Kb9-rS-5vi" id="Mjg-bD-h4K"/>
                                         </connections>
                                     </tableViewCell>
@@ -443,7 +434,7 @@
             </objects>
             <point key="canvasLocation" x="1506" y="586"/>
         </scene>
-        <!--Inter-App Audio-->
+        <!--Table View Controller - Inter-App Audio-->
         <scene sceneID="7tv-0U-biv">
             <objects>
                 <tableViewController id="yny-l2-Umy" sceneMemberID="viewController">
@@ -472,7 +463,7 @@
             </objects>
             <point key="canvasLocation" x="2193" y="3131"/>
         </scene>
-        <!--Motion Sensor Stats-->
+        <!--Statistics Motion Sensors Table View Controller - Motion Sensor Stats-->
         <scene sceneID="b8q-or-fyU">
             <objects>
                 <tableViewController id="ZHR-yz-yKV" customClass="VWWStatisticsMotionSensorsTableViewController" sceneMemberID="viewController">
@@ -673,10 +664,7 @@ Homepage: http://minterart.tumblr.com</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ku4-8I-F4I"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="textView" destination="tfb-wP-H86" id="GjY-GL-9La"/>
                     </connections>
@@ -685,7 +673,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2193" y="2336"/>
         </scene>
-        <!--General-->
+        <!--General Settings Table View Controller - General-->
         <scene sceneID="pum-Sd-Wax">
             <objects>
                 <tableViewController id="QgP-1X-hIG" customClass="VWWGeneralSettingsTableViewController" sceneMemberID="viewController">
@@ -770,7 +758,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2703" y="-48"/>
         </scene>
-        <!--Theremin-->
+        <!--Synthesizer Axes Settings Table View Controller - Theremin-->
         <scene sceneID="2xe-Lf-nAY">
             <objects>
                 <tableViewController id="d9e-9r-ljF" customClass="VWWSynthesizerAxesSettingsTableViewController" sceneMemberID="viewController">
@@ -1160,7 +1148,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2177" y="-1186"/>
         </scene>
-        <!--Configure-->
+        <!--Synthesizer Axis Settings Table View Controller - Configure-->
         <scene sceneID="Dz6-QO-nXM">
             <objects>
                 <tableViewController id="Jcu-7A-RZ0" customClass="VWWSynthesizerAxisSettingsTableViewController" sceneMemberID="viewController">
@@ -1306,10 +1294,7 @@ Homepage: http://minterart.tumblr.com</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="amplitudeSummaryLabel" destination="xRA-y8-TQl" id="XBU-LW-NFx"/>
                         <outlet property="effectSummaryLabel" destination="SgA-AS-l6Z" id="dJm-rT-maH"/>
@@ -1327,7 +1312,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3315" y="-1599"/>
         </scene>
-        <!--Effect-->
+        <!--Effect Parameters Table View Controller - Effect-->
         <scene sceneID="Y9m-vb-HFj">
             <objects>
                 <tableViewController id="hC6-i6-MZu" customClass="VWWEffectParametersTableViewController" sceneMemberID="viewController">
@@ -1343,23 +1328,14 @@ Homepage: http://minterart.tumblr.com</string>
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effect Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-yh-ibc">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Effect Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgb-yh-ibc">
                                             <rect key="frame" x="20" y="0.0" width="261" height="43"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="YsN-by-U3P"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Jgb-yh-ibc" secondAttribute="trailing" id="T9Q-3W-d3P"/>
-                                        <constraint firstAttribute="bottom" secondItem="Jgb-yh-ibc" secondAttribute="bottom" constant="1" id="Wnw-xc-9EA"/>
-                                        <constraint firstItem="Jgb-yh-ibc" firstAttribute="leading" secondItem="Zr5-Mz-JCr" secondAttribute="leading" constant="20" id="b6g-cJ-H5x"/>
-                                        <constraint firstItem="Jgb-yh-ibc" firstAttribute="top" secondItem="Zr5-Mz-JCr" secondAttribute="top" id="bgN-r7-dIG"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.028941761359999998" green="0.028941761359999998" blue="0.028941761359999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -1387,7 +1363,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3997" y="-951"/>
         </scene>
-        <!--Keys-->
+        <!--Autotune Keys Table View Controllers - Keys-->
         <scene sceneID="4Iw-T6-YG7">
             <objects>
                 <tableViewController id="6Pj-ea-77O" customClass="VWWAutotuneKeysTableViewControllers" sceneMemberID="viewController">
@@ -1397,14 +1373,14 @@ Homepage: http://minterart.tumblr.com</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeyCell" textLabel="52m-Nq-yep" style="IBUITableViewCellStyleDefault" id="We7-mD-d2v">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="We7-mD-d2v" id="EcD-1p-jKJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Chromatic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="52m-Nq-yep">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1427,7 +1403,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="4485" y="-951"/>
         </scene>
-        <!--Sensitivity-->
+        <!--Sensitivity Parameter Table View Controller - Sensitivity-->
         <scene sceneID="OcS-Ib-qF5">
             <objects>
                 <tableViewController id="WbT-eb-5ma" customClass="VWWSensitivityParameterTableViewController" sceneMemberID="viewController">
@@ -1570,7 +1546,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3997" y="-242"/>
         </scene>
-        <!--Amplitude-->
+        <!--Amplitude Parameters Table View Controller - Amplitude-->
         <scene sceneID="a56-Gz-RMp">
             <objects>
                 <tableViewController id="fna-KS-Mty" customClass="VWWAmplitudeParametersTableViewController" sceneMemberID="viewController">
@@ -1716,7 +1692,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="4003" y="-1627"/>
         </scene>
-        <!--Frequencies-->
+        <!--Frequency Parameters Table View Controller - Frequencies-->
         <scene sceneID="3by-ot-iUH">
             <objects>
                 <tableViewController id="cHt-NB-Ct4" customClass="VWWFrequencyParametersTableViewController" sceneMemberID="viewController">
@@ -1970,7 +1946,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3997" y="-3294"/>
         </scene>
-        <!--Waveform-->
+        <!--Waveform Parameters Table View Controller - Waveform-->
         <scene sceneID="7oP-lF-lhG">
             <objects>
                 <tableViewController id="kED-zO-S3x" customClass="VWWWaveformParametersTableViewController" sceneMemberID="viewController">
@@ -2044,13 +2020,10 @@ Homepage: http://minterart.tumblr.com</string>
     <resources>
         <image name="sine_256x256.png" width="256" height="256"/>
     </resources>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

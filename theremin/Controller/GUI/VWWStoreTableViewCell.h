@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
+
+
+@class VWWStoreTableViewCell;
+
 
 @interface VWWStoreTableViewCell : UITableViewCell
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) SKProduct *product;
 @end
