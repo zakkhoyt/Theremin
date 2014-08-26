@@ -20,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.tableView.backgroundView = nil;
+        self.tableView.backgroundColor = [UIColor darkGrayColor];
+    }
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -88,7 +93,9 @@
 }
 
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44 * 3;
+}
 
 
 #pragma mark UITableViewDelegate

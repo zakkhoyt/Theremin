@@ -12,6 +12,7 @@
 @interface VWWStoreTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -21,7 +22,11 @@
 -(void)setProduct:(SKProduct *)product{
     _product = product;
     self.titleLabel.text = product.localizedTitle;
-    
+    if(product.localizedDescription){
+        self.descriptionLabel.text = [NSString stringWithFormat:@"Description: %@", product.localizedDescription];
+    } else {
+        self.descriptionLabel.text = @"Description: ";
+    }
     if([[NSUserDefaults standardUserDefaults] boolForKey:product.productIdentifier] == NO){
         [self.buyButton setTitle:[NSString stringWithFormat:@"$%.2f", _product.price.floatValue] forState:UIControlStateNormal];
         self.buyButton.userInteractionEnabled = YES;
