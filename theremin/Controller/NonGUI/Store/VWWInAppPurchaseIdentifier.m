@@ -18,7 +18,7 @@
     dispatch_once(&once, ^{
         NSSet *productIdentifiers = [NSMutableSet setWithObjects:
                                      VWWInAppPurchaseAutotuneKeysKey,
-                                     VWWInAppPurchaseTestPurchaseKey,
+//                                     VWWInAppPurchaseTestPurchaseKey,
                                      nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

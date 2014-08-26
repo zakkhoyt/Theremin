@@ -11,9 +11,9 @@
 
 static NSString *VWWInAppPurchaseAutotuneKeysKey = @"com.vaporwarewolf.theremin.autotune_keys";
 static NSString *VWWInAppPurchaseTestPurchaseKey = @"com.vaporwarewolf.theremin.test_purchase";
+static NSString *VWWInAppPurchaseGraphSensorsKey = @"com.vaporwarewolf.theremin.graph_sensors";
 
 @interface VWWInAppPurchaseIdentifier : VWWInAppPurchase
-
 + (VWWInAppPurchaseIdentifier *)sharedInstance;
 + (BOOL)productPurchased:(NSString*)productIdentifier;
 @end
