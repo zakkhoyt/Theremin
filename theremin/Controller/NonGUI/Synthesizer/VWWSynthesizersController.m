@@ -9,23 +9,18 @@
 #import "VWWSynthesizersController.h"
 #import "VWWGeneralSettings.h"
 #import "VWWMotionMonitor.h"
+#import "VWWCameraMonitor.h"
 #import "VWWMotionAxes.h"
-#import "GPUImage.h"
 
-@interface VWWSynthesizersController () <VWWMotionMonitorDelegate, GPUImageVideoCameraDelegate>
+
+@interface VWWSynthesizersController () <VWWMotionMonitorDelegate, VWWCameraMonitorDelegate>
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
+@property (nonatomic, strong) VWWCameraMonitor *cameraMonitor;
 @property (nonatomic, strong, readwrite) NSString *accelerometersStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *gyroscopesStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *magnetometersStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *cameraStatisticsString;
 
-@property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
-@property (nonatomic, strong) GPUImageOutput<GPUImageInput> *filter;
-@property (nonatomic, strong) GPUImagePicture *sourcePicture;
-@property (nonatomic, strong) GPUImageUIElement *uiElementInput;
-@property (nonatomic, strong) GPUImageFilterPipeline *pipeline;
-@property (nonatomic, strong) GPUImageView *filterView;
-@property (nonatomic, strong) VWWMotionAxes *cameraDevice;
 @end
 
 
@@ -46,10 +41,10 @@
     return self;
 }
 
--(void)setup{
+-(void)setupParentViewForCameraRendering:(UIView*)view{
     [self setupSynthesizers];
     [self setupMotionMonitor];
-    [self setupCameraMonitor];
+    [self setupCameraMonitor:view];
     
 }
 
@@ -179,125 +174,12 @@
 }
 
 
-
-
-- (void)setupCameraMonitor{
-    
-    self.cameraDevice = [[VWWMotionAxes alloc]init];
-    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
-    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    //    self.videoCamera.horizontallyMirrorFrontFacingCamera = NO;
-    //    self.videoCamera.horizontallyMirrorRearFacingCamera = NO;
-    
-    self.filter = [[GPUImageAverageColor alloc]init];
-    
-    [self.videoCamera addTarget:self.filter];
-    //    self.videoCamera.delegate = self;
-    UIView *gpuView = [self.renderDelegate synthesizersControllerViewForCameraRendering:self];
-    self.filterView = [[GPUImageView alloc]initWithFrame:gpuView.bounds];
-    self.filterView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    
-    [gpuView addSubview:self.filterView];
-    
-    [self.filter addTarget:self.filterView];
-    
-    [self.videoCamera startCameraCapture];
-    
-    [self.renderDelegate synthesizersController:self didAddViewForRendering:self.filterView];
+- (void)setupCameraMonitor:(UIView*)renderView{
+    self.cameraMonitor = [[VWWCameraMonitor alloc]initWithRenderView:renderView];
+    self.cameraMonitor.delegate = self;
+    [self.cameraMonitor startCamera];
 }
 
--(void)updateCameraBasedOnCenterPixel{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [self.filter useNextFrameForImageCapture];
-        UIImage *image = [self.filter imageFromCurrentFramebuffer];
-        if(image == nil) return;
-        NSArray *colors = [self getRGBAsFromImage:image atX:self.filterView.center.x andY:self.filterView.center.y count:1];
-        if(colors.count){
-            UIColor *color = colors[0];
-            
-            CGFloat red = 0;
-            CGFloat blue = 0;
-            CGFloat green = 0;
-            CGFloat alpha = 0;
-            [color getRed:&red green:&green blue:&blue alpha:&alpha];
-            NSLog(@"pixel: %f %f %f %f", red, green, blue, alpha);
-            
-            self.cameraGroup.xSynthesizer.frequencyNormalized = red;
-            self.cameraGroup.ySynthesizer.frequencyNormalized = green;
-            self.cameraGroup.zSynthesizer.frequencyNormalized = blue;
-            
-            
-            if(red < self.cameraDevice.x.min){
-                self.cameraDevice.x.min = red;
-            }
-            if(red > self.cameraDevice.x.max){
-                self.cameraDevice.x.max = red;
-            }
-            if(green < self.cameraDevice.y.min){
-                self.cameraDevice.y.min = green;
-            }
-            if(green > self.cameraDevice.y.max){
-                self.cameraDevice.y.max = green;
-            }
-            if(blue < self.cameraDevice.z.min){
-                self.cameraDevice.z.min = blue;
-            }
-            if(blue > self.cameraDevice.z.max){
-                self.cameraDevice.z.max = blue;
-            }
-            
-            self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
-                                           @"\nG: %.4f < %.4f < %.4f"
-                                           @"\nB: %.4f < %.4f < %.4f",
-                                           self.cameraDevice.x.min, self.cameraDevice.x.currentNormalized, self.cameraDevice.x.max,
-                                           self.cameraDevice.y.min, self.cameraDevice.y.currentNormalized, self.cameraDevice.y.max,
-                                           self.cameraDevice.z.min, self.cameraDevice.z.currentNormalized, self.cameraDevice.z.max];
-        }
-    });
-}
-
--(NSArray*)getRGBAsFromImage:(UIImage*)image atX:(int)xx andY:(int)yy count:(int)count
-{
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
-    
-    // First get the image into your data buffer
-    CGImageRef imageRef = [image CGImage];
-    NSUInteger width = CGImageGetWidth(imageRef);
-    NSUInteger height = CGImageGetHeight(imageRef);
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
-    NSUInteger bytesPerPixel = 4;
-    NSUInteger bytesPerRow = bytesPerPixel * width;
-    NSUInteger bitsPerComponent = 8;
-    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
-                                                 bitsPerComponent, bytesPerRow, colorSpace,
-                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-    CGColorSpaceRelease(colorSpace);
-    
-    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
-    CGContextRelease(context);
-    
-    // Now your rawData contains the image data in the RGBA8888 pixel format.
-    int byteIndex = (bytesPerRow * yy) + xx * bytesPerPixel;
-    for (int ii = 0 ; ii < count ; ++ii)
-    {
-        CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
-        CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
-        CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
-        CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
-        byteIndex += 4;
-        
-        UIColor *acolor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-        [result addObject:acolor];
-    }
-    
-    free(rawData);
-    
-    return result;
-}
-
-#pragma mark VWWMotionMonitorDelegate
 -(NSString*)stringForMotionStatsWithDevice:(VWWMotionAxes*)device{
     return [NSString stringWithFormat:@"x: %.4f < %.4f < %.4f"
             @"\ny: %.4f < %.4f < %.4f"
@@ -307,32 +189,22 @@
             device.z.min, device.z.currentNormalized, device.z.max];
 }
 
+
+
+#pragma mark VWWMotionMonitorDelegate
+
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(VWWMotionAxes*)device{
     self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
-    
-    
     self.accelerometersStatisticsString = [self stringForMotionStatsWithDevice:device];
-    //    static NSInteger counter = 0;
-    //    if(counter % 50 == 0){
-    //        VWW_LOG_INFO(@"\nAccelerometers:\n%@", self.accelerometersStatisticsString);
-    //    }
-    //    counter++;
-    
 }
 
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(VWWMotionAxes*)device{
     self.gyroscopesGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.gyroscopesGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
-    
     self.gyroscopesStatisticsString = [self stringForMotionStatsWithDevice:device];
-    //    static NSInteger counter = 0;
-    //    if(counter % 50 == 0){
-    //        VWW_LOG_INFO(@"\nGyroscopes:\n%@", self.gyroscopesStatisticsString);
-    //    }
-    //    counter++;
 }
 
 
@@ -341,13 +213,24 @@
     self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     self.magnetometersStatisticsString = [self stringForMotionStatsWithDevice:device];
-    
-    //    static NSInteger counter = 0;
-    //    if(counter % 50 == 0){
-    //        VWW_LOG_INFO(@"\nMagnetometers:\n%@", self.magnetometersStatisticsString);
-    //    }
-    //    counter++;
 }
+
+
+#pragma mark VWWCameraMonitorDelegate
+-(void)cameraMonitor:(VWWCameraMonitor*)sender colorsUpdated:(VWWMotionAxes*)axes{
+    self.cameraGroup.xSynthesizer.frequencyNormalized = axes.x.currentNormalized;
+    self.cameraGroup.ySynthesizer.frequencyNormalized = axes.y.currentNormalized;
+    self.cameraGroup.zSynthesizer.frequencyNormalized = axes.z.currentNormalized;
+    self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
+                                   @"\nG: %.4f < %.4f < %.4f"
+                                   @"\nB: %.4f < %.4f < %.4f",
+                                   axes.x.min, axes.x.currentNormalized, axes.x.max,
+                                   axes.y.min, axes.y.currentNormalized, axes.y.max,
+                                   axes.z.min, axes.z.currentNormalized, axes.z.max];
+
+}
+
+
 
 @end
 

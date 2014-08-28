@@ -53,8 +53,6 @@ static NSString *zMin = @"zMin";
 static NSString *zMax = @"zMax";
 
 
-
-
 @interface VWWMotionMonitor ()
 @property (nonatomic, strong) CMMotionManager* motion;
 @property (nonatomic, strong) VWWMotionAxes *accelerometers;

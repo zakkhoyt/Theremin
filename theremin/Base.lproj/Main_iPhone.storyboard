@@ -1195,7 +1195,6 @@ Homepage: http://minterart.tumblr.com</string>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mi-hW-ZDH">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="cameraBlueSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="4zd-7k-qOK"/>
                                                         <action selector="cameraGreenSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="V7c-8n-DOm"/>
                                                     </connections>
                                                 </switch>
@@ -1259,6 +1258,9 @@ Homepage: http://minterart.tumblr.com</string>
                         <outlet property="gyroscopesXAxisSwitch" destination="BFy-4w-0YO" id="Xag-cq-4gC"/>
                         <outlet property="gyroscopesYAxisSwitch" destination="zxT-cv-Doj" id="K97-f8-NCA"/>
                         <outlet property="gyroscopesZAxisSwitch" destination="jUK-oO-fvE" id="rcW-iH-f5d"/>
+                        <outlet property="magnetometersXAxisSwitch" destination="Kkd-kp-164" id="j8f-AZ-f1P"/>
+                        <outlet property="magnetometersYAxisSwitch" destination="fHp-AC-9dT" id="fdY-fw-fZc"/>
+                        <outlet property="magnetometersZAxisSwitch" destination="dU1-mB-wug" id="DUI-QC-zVL"/>
                         <outlet property="touchscreenXAxisSwitch" destination="RMs-jK-VeD" id="xpU-mw-txt"/>
                         <outlet property="touchscreenYAxisSwitch" destination="srQ-xQ-LCh" id="hWn-U6-Sia"/>
                         <segue destination="Jcu-7A-RZ0" kind="push" identifier="VWWSegueAxesToGroupConfig" id="LR9-mR-FCt"/>

@@ -26,7 +26,7 @@ static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStati
 @interface VWWSynthesizersController : NSObject
 
 +(VWWSynthesizersController*)sharedInstance;
--(void)setup;
+-(void)setupParentViewForCameraRendering:(UIView*)view;
 -(void)writeSettings;
 @property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;

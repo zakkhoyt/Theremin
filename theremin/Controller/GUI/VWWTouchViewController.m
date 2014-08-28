@@ -13,7 +13,7 @@
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
 #import "NSTimer+Blocks.h"
-
+#import "VWWCameraMonitor.h"
 
 #import "VWWBonjourModel.h"
 @import AudioToolbox;
@@ -44,20 +44,21 @@
     [super viewDidLoad];
     
     self.touchView.delegate = self;
-    
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:VWWCameraMonitorRenderViewAdded object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self.view bringSubviewToFront:self.touchView];
+    }];
+
     [self setupSynthesizers];
     
     self.infoLabel.text = @"Touch the screen to generate audio waves.\n\nEnsure that your volume is turned up and your device is not muted.\n\nTo use the Accelerometers or other motion sensors, tap Settings -> Synthesizers then toggle the switches for each axis that you want to use.";
 //    self.infoLabel.alpha = 0.0;
-
-    
-    
-
     
 //    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
 //    [self.settingsButton.titleLabel setFont:font];
     
 //    [self addGestureRecognizers];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -136,10 +137,9 @@
 }
 
 -(void)setupSynthesizers{
-    
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
     self.synthesizersController.renderDelegate = self;
-    [self.synthesizersController setup];
+    [self.synthesizersController setupParentViewForCameraRendering:self.view];
 }
 
 
