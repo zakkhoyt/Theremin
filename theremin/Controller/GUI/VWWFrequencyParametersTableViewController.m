@@ -11,11 +11,6 @@
 #import "VWWSynthesizerGroup.h" 
 #import "VWWSynthesizersController.h"
 #import "JAMAccurateSlider.h"
-const NSInteger VWWFrequencyParametersTableViewControllerXAxisSection = 0;
-const NSInteger VWWFrequencyParametersTableViewControllerYAxisSection = 1;
-const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
-
-
 
 @interface VWWFrequencyParametersTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *xFrequencyMinTextField;
@@ -242,16 +237,32 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 
 #pragma mark UITableViewDataSource
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case VWWFrequencyParametersTableViewControllerXAxisSection:
-            return @"X-Axis";
-        case VWWFrequencyParametersTableViewControllerYAxisSection:
-            return @"Y-Axis";
-        case VWWFrequencyParametersTableViewControllerZAxisSection:
-            return @"Z-Axis";
-        default:
-            break;
+    if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupTouchScreen] ||
+       [self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupMotion]){
+        switch (section) {
+            case VWWAxisTypeX:
+                return @"X-Axis";
+            case VWWAxisTypeY:
+                return @"Y-Axis";
+            case VWWAxisTypeZ:
+                return @"Z-Axis";
+            default:
+                break;
+        }
+    } else if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupCamera]){
+        switch (section) {
+            case VWWAxisTypeX:
+                return @"Red";
+            case VWWAxisTypeY:
+                return @"Green";
+            case VWWAxisTypeZ:
+                return @"Blue";
+            default:
+                break;
+        }
+        
     }
     return @"";
 }

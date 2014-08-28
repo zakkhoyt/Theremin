@@ -13,6 +13,7 @@ static NSString *VWWUserDefaultsTouchScreenKey = @"touch_screen";
 static NSString *VWWUserDefaultsAccelerometersKey = @"accelerometers";
 static NSString *VWWUserDefaultsGyroscopesKey = @"gyroscopes";
 static NSString *VWWUserDefaultsMagnetometersKey = @"magnetometers";
+static NSString *VWWUserDefaultsCameraKey = @"camera";
 
 //static NSString *VWWUserDefaultsKey = @"";
 static NSString *VWWUserDefaultsAccelerometersMinMaxValuesKey = @"accelerometer_min_max_values";
@@ -62,6 +63,16 @@ static NSString *VWWUserDefaultsMagnetometersMinMaxValuesKey = @"magnetometers_m
 +(NSDictionary*)magnetometersSettings{
     return [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsMagnetometersKey];
 }
+
+
++(void)setCameraSettings:(NSDictionary*)dictionary{
+    [[NSUserDefaults standardUserDefaults] setObject:dictionary forKey:VWWUserDefaultsCameraKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
++(NSDictionary*)cameraSettings{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsCameraKey];
+}
+
 
 
 

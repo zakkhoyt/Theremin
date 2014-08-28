@@ -25,6 +25,8 @@
 +(void)setMagnetometersSettings:(NSDictionary*)dictionary;
 +(NSDictionary*)magnetometersSettings;
 
++(void)setCameraSettings:(NSDictionary*)dictionary;
++(NSDictionary*)cameraSettings;
 
 +(void)setAccelerometersMinMaxValues:(NSDictionary*)minMaxValues;
 +(NSDictionary*)accelerometersMinMaxValues;

@@ -19,7 +19,7 @@
 @import AudioToolbox;
 @import AVFoundation;
 
-@interface VWWTouchViewController () <VWWTouchViewDelegate>
+@interface VWWTouchViewController () <VWWTouchViewDelegate, VWWSynthesizersControllerRenderDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (nonatomic, strong) VWWSynthesizersController *synthesizersController;
@@ -136,7 +136,10 @@
 }
 
 -(void)setupSynthesizers{
+    
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
+    self.synthesizersController.renderDelegate = self;
+    [self.synthesizersController setup];
 }
 
 
@@ -193,14 +196,7 @@
     self.synthesizersController.touchscreenGroup.ySynthesizer.muted = NO;
     
     [self updateFrequenciesWithArray:array];
-    
-    
-    
     [self hideInfoLabel];
-    
-    
-    
-
 }
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesMovedWithArray:(NSArray*)array{
@@ -221,9 +217,14 @@
 
 
 
+#pragma mark VWWSynthesizersControllerRenderDelegate
+-(UIView*)synthesizersControllerViewForCameraRendering:(VWWSynthesizersController*)sender{
+    return self.view;
+}
 
-
-
+-(void)synthesizersController:(VWWSynthesizersController*)sender didAddViewForRendering:(UIView*)view{
+    [self.view bringSubviewToFront:self.touchView];
+}
 
 
 

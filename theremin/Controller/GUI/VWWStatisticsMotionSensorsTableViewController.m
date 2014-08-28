@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *accelerometersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gyroscopesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *magnetometersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cameraLabel;
+
 @end
 
 @implementation VWWStatisticsMotionSensorsTableViewController
@@ -76,12 +78,15 @@
     [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerAccelerometersStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
     [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerGyroscopesStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
     [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerMagnetoometersStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
+    [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerCameraStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 -(void)removeKeyValueObservers{
     [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerAccelerometersStatisticsString];
     [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerGyroscopesStatisticsString];
     [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerMagnetoometersStatisticsString];
+    [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerCameraStatisticsString];
+
 }
 
 
@@ -97,6 +102,8 @@
         self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
     } else if([keyPath isEqualToString:VWWSynthesizersControllerMagnetoometersStatisticsString]) {
         self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
+    } else if([keyPath isEqualToString:VWWSynthesizersControllerCameraStatisticsString]){
+        self.cameraLabel.text = self.synthesizersController.cameraStatisticsString;
     }
 }
 
@@ -107,6 +114,7 @@
     self.accelerometersLabel.text = self.synthesizersController.accelerometersStatisticsString;
     self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
     self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
+    self.cameraLabel.text = self.synthesizersController.cameraStatisticsString;
 }
 
 
@@ -121,6 +129,8 @@
             return @"Gyroscopes";
         case 2:
             return @"Magnetometers";
+        case 3:
+            return @"Camera";
         default:
             break;
     }

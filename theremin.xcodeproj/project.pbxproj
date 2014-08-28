@@ -22,6 +22,7 @@
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
 		C610D4AB18B8055800999A3D /* theremin.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C610D4AA18B8055800999A3D /* theremin.entitlements */; };
+		C682142B19AE8E6800F8AE7B /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C682142619AE8E5200F8AE7B /* libGPUImage.a */; };
 		C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */; };
 		C6C8CBB919AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB719AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m */; };
 		C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF26B18B7DED000B9F94B /* readme.markdown */; };
@@ -98,6 +99,27 @@
 			remoteGlobalIDString = C60DAA2918B7DB9F000F0AD1;
 			remoteInfo = theremin;
 		};
+		C682142519AE8E5200F8AE7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		C682142719AE8E5200F8AE7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		C682142919AE8E5D00F8AE7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +142,7 @@
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
 		C610D4AA18B8055800999A3D /* theremin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theremin.entitlements; sourceTree = "<group>"; };
+		C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = theremin/ThirdParty/GPUImage/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		C6C8CBB419AD17DF0084BA98 /* VWWInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchase.h; sourceTree = "<group>"; };
 		C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWInAppPurchase.m; sourceTree = "<group>"; };
 		C6C8CBB619AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchaseIdentifier.h; sourceTree = "<group>"; };
@@ -258,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C682142B19AE8E6800F8AE7B /* libGPUImage.a in Frameworks */,
 				CF7339EA19A93EAC002AF3E1 /* iAd.framework in Frameworks */,
 				C6DFF3E818B7FC8B00B9F94B /* CoreAudio.framework in Frameworks */,
 				C60DAA3018B7DB9F000F0AD1 /* CoreGraphics.framework in Frameworks */,
@@ -283,6 +307,7 @@
 		C60DAA2118B7DB9F000F0AD1 = {
 			isa = PBXGroup;
 			children = (
+				C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */,
 				C60DAA3318B7DB9F000F0AD1 /* theremin */,
 				C60DAA5518B7DB9F000F0AD1 /* thereminTests */,
 				C60DAA2C18B7DB9F000F0AD1 /* Frameworks */,
@@ -533,6 +558,15 @@
 				C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		C682142019AE8E5100F8AE7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C682142619AE8E5200F8AE7B /* libGPUImage.a */,
+				C682142819AE8E5200F8AE7B /* GPUImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C6C8CBB319AD17DF0084BA98 /* Store */ = {
@@ -858,6 +892,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C682142A19AE8E5D00F8AE7B /* PBXTargetDependency */,
 			);
 			name = theremin;
 			productName = theremin;
@@ -919,6 +954,12 @@
 			mainGroup = C60DAA2118B7DB9F000F0AD1;
 			productRefGroup = C60DAA2B18B7DB9F000F0AD1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C682142019AE8E5100F8AE7B /* Products */;
+					ProjectRef = C682141F19AE8E5100F8AE7B /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C60DAA2918B7DB9F000F0AD1 /* theremin */,
@@ -926,6 +967,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C682142619AE8E5200F8AE7B /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = C682142519AE8E5200F8AE7B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C682142819AE8E5200F8AE7B /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = C682142719AE8E5200F8AE7B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C60DAA2818B7DB9F000F0AD1 /* Resources */ = {
@@ -1038,6 +1096,11 @@
 			isa = PBXTargetDependency;
 			target = C60DAA2918B7DB9F000F0AD1 /* theremin */;
 			targetProxy = C60DAA5318B7DB9F000F0AD1 /* PBXContainerItemProxy */;
+		};
+		C682142A19AE8E5D00F8AE7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = C682142919AE8E5D00F8AE7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1161,14 +1224,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"theremin/ThirdParty/GPUImage/Source/**",
+				);
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1EC3A012-3348-4842-A535-AE1B3F6ACF06";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1180,14 +1248,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"theremin/ThirdParty/GPUImage/Source/**",
+				);
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1EC3A012-3348-4842-A535-AE1B3F6ACF06";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

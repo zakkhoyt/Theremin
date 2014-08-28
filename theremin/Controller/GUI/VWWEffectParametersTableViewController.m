@@ -123,16 +123,32 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
     return cell;
 }
 
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case VWWAxisTypeX:
-            return @"X-Axis";
-        case VWWAxisTypeY:
-            return @"Y-Axis";
-        case VWWAxisTypeZ:
-            return @"Z-Axis";
-        default:
-            break;
+    if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupTouchScreen] ||
+       [self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupMotion]){
+        switch (section) {
+            case VWWAxisTypeX:
+                return @"X-Axis";
+            case VWWAxisTypeY:
+                return @"Y-Axis";
+            case VWWAxisTypeZ:
+                return @"Z-Axis";
+            default:
+                break;
+        }
+    } else if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupCamera]){
+        switch (section) {
+            case VWWAxisTypeX:
+                return @"Red";
+            case VWWAxisTypeY:
+                return @"Green";
+            case VWWAxisTypeZ:
+                return @"Blue";
+            default:
+                break;
+        }
+        
     }
     return @"";
 }

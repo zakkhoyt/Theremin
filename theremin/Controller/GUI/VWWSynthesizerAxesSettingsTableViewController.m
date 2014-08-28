@@ -17,6 +17,8 @@ const NSInteger VWWSynthesizerTouchScreenSection = 0;
 const NSInteger VWWSynthesizerAccelerometerSection = 1;
 const NSInteger VWWSynthesizerGyroscopeSection = 2;
 const NSInteger VWWSynthesizerMagnetometerSection = 3;
+const NSInteger VWWSynthesizerCameraSection = 4;
+
 const NSInteger VWWSynthesizerConfigureRow = 0;
 const NSInteger VWWSynthesizerXAxisRow = 1;
 const NSInteger VWWSynthesizerYAxisRow = 2;
@@ -36,6 +38,9 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 @property (weak, nonatomic) IBOutlet UISwitch *magnetometersYAxisSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *magnetometersZAxisSwitch;
 
+@property (weak, nonatomic) IBOutlet UISwitch *camerRedSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *cameraGreenSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *cameraBlueSwitch;
 
 
 
@@ -127,6 +132,11 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     self.magnetometersXAxisSwitch.on = !self.synthesizersController.magnetometersGroup.xSynthesizer.muted;
     self.magnetometersYAxisSwitch.on = !self.synthesizersController.magnetometersGroup.ySynthesizer.muted;
     self.magnetometersZAxisSwitch.on = !self.synthesizersController.magnetometersGroup.zSynthesizer.muted;
+    
+    // Cameras
+    self.camerRedSwitch.on = !self.synthesizersController.cameraGroup.xSynthesizer.muted;
+    self.cameraGreenSwitch.on = !self.synthesizersController.cameraGroup.ySynthesizer.muted;
+    self.cameraBlueSwitch.on = !self.synthesizersController.cameraGroup.zSynthesizer.muted;
 }
 
 #pragma mark IBActions
@@ -174,6 +184,15 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     self.synthesizersController.magnetometersGroup.zSynthesizer.muted = !sender.on;
 }
 
+- (IBAction)cameraRedSwitchValueChanged:(UISwitch *)sender {
+    self.synthesizersController.cameraGroup.xSynthesizer.muted = !sender.on;
+}
+- (IBAction)cameraGreenSwitchValueChanged:(UISwitch *)sender {
+    self.synthesizersController.cameraGroup.ySynthesizer.muted = !sender.on;
+}
+- (IBAction)cameraBlueSwitchValueChanged:(UISwitch *)sender {
+    self.synthesizersController.cameraGroup.zSynthesizer.muted = !sender.on;
+}
 
 
 
@@ -203,6 +222,8 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
             return @"Gyroscopes";
         case 3:
             return @"Magnetometers";
+        case 4:
+            return @"Camera";
         default:
             break;
     }
@@ -215,28 +236,14 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     VWWSynthesizerGroup *synthesizerGroup;
     if(indexPath.section == VWWSynthesizerTouchScreenSection){
         synthesizerGroup = self.synthesizersController.touchscreenGroup;
-//        if(indexPath.row == VWWSynthesizerXAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-//        }
     } else if(indexPath.section == VWWSynthesizerAccelerometerSection){
         synthesizerGroup = self.synthesizersController.accelerometersGroup;
-//        if(indexPath.row == VWWSynthesizerXAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-//        }
     } else if(indexPath.section == VWWSynthesizerGyroscopeSection){
         synthesizerGroup = self.synthesizersController.gyroscopesGroup;
-//        if(indexPath.row == VWWSynthesizerXAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-//        }
     } else if(indexPath.section == VWWSynthesizerMagnetometerSection){
         synthesizerGroup = self.synthesizersController.magnetometersGroup;
-//        if(indexPath.row == VWWSynthesizerXAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-//        }
+    } else if(indexPath.section == VWWSynthesizerCameraSection){
+        synthesizerGroup = self.synthesizersController.cameraGroup;
     }
     
     if(indexPath.row == VWWSynthesizerConfigureRow){

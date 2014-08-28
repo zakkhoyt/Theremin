@@ -99,6 +99,7 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
 
 
 -(NSString*)stringFromWavetype:(VWWWaveType)waveType{
+
     if(waveType == VWWWaveTypeSine){
         return @"Sine wave";
     } else if(waveType == VWWWaveTypeSquare){
@@ -123,69 +124,154 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
 }
 
 -(void)updateControls{
-    NSString *frequencySummaryString = [NSString stringWithFormat:@"x: %.0fHz - %.0fHz\n"
-                                        @"y: %.0fHz - %.0fHz\n"
-                                        @"z: %.0fHz - %.0fHz",
-                                        self.synthesizerGroup.xSynthesizer.frequencyMin, self.synthesizerGroup.xSynthesizer.frequencyMax,
-                                        self.synthesizerGroup.ySynthesizer.frequencyMin, self.synthesizerGroup.ySynthesizer.frequencyMax,
-                                        self.synthesizerGroup.zSynthesizer.frequencyMin, self.synthesizerGroup.zSynthesizer.frequencyMax];
-    self.frequencySummaryLabel.text = frequencySummaryString;
     
-    
-    NSString *waveformSummaryString = [NSString stringWithFormat:@"x: %@\n"
-                                        @"y: %@\n"
-                                        @"z: %@",
-                                       [self stringFromWavetype:self.synthesizerGroup.xSynthesizer.waveType],
-                                       [self stringFromWavetype:self.synthesizerGroup.ySynthesizer.waveType],
-                                       [self stringFromWavetype:self.synthesizerGroup.zSynthesizer.waveType]];
-    self.waveformSummaryLabel.text = waveformSummaryString;
+    if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupTouchScreen]){
+        NSString *frequencySummaryString = [NSString stringWithFormat:@"X: %.0fHz - %.0fHz\n"
+                                            @"Y: %.0fHz - %.0fHz\n",
+                                            self.synthesizerGroup.xSynthesizer.frequencyMin, self.synthesizerGroup.xSynthesizer.frequencyMax,
+                                            self.synthesizerGroup.ySynthesizer.frequencyMin, self.synthesizerGroup.ySynthesizer.frequencyMax];
+        self.frequencySummaryLabel.text = frequencySummaryString;
+        
+        
+        NSString *waveformSummaryString = [NSString stringWithFormat:@"X: %@\n"
+                                           @"Y: %@\n",
+                                           [self stringFromWavetype:self.synthesizerGroup.xSynthesizer.waveType],
+                                           [self stringFromWavetype:self.synthesizerGroup.ySynthesizer.waveType]];
+        self.waveformSummaryLabel.text = waveformSummaryString;
+        
+        
+        NSString *amplitudeSummaryString = [NSString stringWithFormat:@"X: %ld%%\n"
+                                            @"Y: %ld%%\n",
+                                            (long)(self.synthesizerGroup.xSynthesizer.amplitude * 100.0),
+                                            (long)(self.synthesizerGroup.ySynthesizer.amplitude * 100.0)];
+        self.amplitudeSummaryLabel.text = amplitudeSummaryString;
+        
+        
+        NSMutableString *xEffectString = [[self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.xSynthesizer.effectType == VWWEffectTypeAutoTune){
+            [xEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.xSynthesizer.keyType]];
+        }
+        
+        NSMutableString *yEffectString = [[self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.ySynthesizer.effectType == VWWEffectTypeAutoTune){
+            [yEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.ySynthesizer.keyType]];
+        }
+        
+        
+        
+        NSString *effectSummaryString = [NSString stringWithFormat:@"X: %@\n"
+                                         @"Y: %@\n",
+                                         xEffectString,
+                                         yEffectString];
+        self.effectSummaryLabel.text = effectSummaryString;
 
+    } else if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupMotion]){
+        NSString *frequencySummaryString = [NSString stringWithFormat:@"X: %.0fHz - %.0fHz\n"
+                                            @"Y: %.0fHz - %.0fHz\n"
+                                            @"Z: %.0fHz - %.0fHz",
+                                            self.synthesizerGroup.xSynthesizer.frequencyMin, self.synthesizerGroup.xSynthesizer.frequencyMax,
+                                            self.synthesizerGroup.ySynthesizer.frequencyMin, self.synthesizerGroup.ySynthesizer.frequencyMax,
+                                            self.synthesizerGroup.zSynthesizer.frequencyMin, self.synthesizerGroup.zSynthesizer.frequencyMax];
+        self.frequencySummaryLabel.text = frequencySummaryString;
+        
+        
+        NSString *waveformSummaryString = [NSString stringWithFormat:@"X: %@\n"
+                                           @"Y: %@\n"
+                                           @"Z: %@",
+                                           [self stringFromWavetype:self.synthesizerGroup.xSynthesizer.waveType],
+                                           [self stringFromWavetype:self.synthesizerGroup.ySynthesizer.waveType],
+                                           [self stringFromWavetype:self.synthesizerGroup.zSynthesizer.waveType]];
+        self.waveformSummaryLabel.text = waveformSummaryString;
+        
+        
+        NSString *amplitudeSummaryString = [NSString stringWithFormat:@"X: %ld%%\n"
+                                            @"Y: %ld%%\n"
+                                            @"Z: %ld%%",
+                                            (long)(self.synthesizerGroup.xSynthesizer.amplitude * 100.0),
+                                            (long)(self.synthesizerGroup.ySynthesizer.amplitude * 100.0),
+                                            (long)(self.synthesizerGroup.zSynthesizer.amplitude * 100.0)];
+        self.amplitudeSummaryLabel.text = amplitudeSummaryString;
+        
+        
+        NSMutableString *xEffectString = [[self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.xSynthesizer.effectType == VWWEffectTypeAutoTune){
+            [xEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.xSynthesizer.keyType]];
+        }
+        
+        NSMutableString *yEffectString = [[self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.ySynthesizer.effectType == VWWEffectTypeAutoTune){
+            [yEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.ySynthesizer.keyType]];
+        }
+        
+        NSMutableString *zEffectString = [[self stringFromEffectType:self.synthesizerGroup.zSynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.zSynthesizer.effectType == VWWEffectTypeAutoTune){
+            [zEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.zSynthesizer.keyType]];
+        }
+        
+        
+        NSString *effectSummaryString = [NSString stringWithFormat:@"X: %@\n"
+                                         @"Y: %@\n"
+                                         @"Z: %@",
+                                         xEffectString,
+                                         yEffectString,
+                                         zEffectString];
+        self.effectSummaryLabel.text = effectSummaryString;
 
-    NSString *amplitudeSummaryString = [NSString stringWithFormat:@"x: %ld%%\n"
-                                        @"y: %ld%%\n"
-                                        @"z: %ld%%",
-                                        (long)(self.synthesizerGroup.xSynthesizer.amplitude * 100.0),
-                                        (long)(self.synthesizerGroup.ySynthesizer.amplitude * 100.0),
-                                        (long)(self.synthesizerGroup.zSynthesizer.amplitude * 100.0)];
-    self.amplitudeSummaryLabel.text = amplitudeSummaryString;
-    
+    } else if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupCamera]){
+        NSString *frequencySummaryString = [NSString stringWithFormat:@"R: %.0fHz - %.0fHz\n"
+                                            @"G: %.0fHz - %.0fHz\n"
+                                            @"B: %.0fHz - %.0fHz",
+                                            self.synthesizerGroup.xSynthesizer.frequencyMin, self.synthesizerGroup.xSynthesizer.frequencyMax,
+                                            self.synthesizerGroup.ySynthesizer.frequencyMin, self.synthesizerGroup.ySynthesizer.frequencyMax,
+                                            self.synthesizerGroup.zSynthesizer.frequencyMin, self.synthesizerGroup.zSynthesizer.frequencyMax];
+        self.frequencySummaryLabel.text = frequencySummaryString;
+        
+        
+        NSString *waveformSummaryString = [NSString stringWithFormat:@"R: %@\n"
+                                           @"G: %@\n"
+                                           @"B: %@",
+                                           [self stringFromWavetype:self.synthesizerGroup.xSynthesizer.waveType],
+                                           [self stringFromWavetype:self.synthesizerGroup.ySynthesizer.waveType],
+                                           [self stringFromWavetype:self.synthesizerGroup.zSynthesizer.waveType]];
+        self.waveformSummaryLabel.text = waveformSummaryString;
+        
+        
+        NSString *amplitudeSummaryString = [NSString stringWithFormat:@"R: %ld%%\n"
+                                            @"G: %ld%%\n"
+                                            @"B: %ld%%",
+                                            (long)(self.synthesizerGroup.xSynthesizer.amplitude * 100.0),
+                                            (long)(self.synthesizerGroup.ySynthesizer.amplitude * 100.0),
+                                            (long)(self.synthesizerGroup.zSynthesizer.amplitude * 100.0)];
+        self.amplitudeSummaryLabel.text = amplitudeSummaryString;
+        
+        
+        NSMutableString *xEffectString = [[self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.xSynthesizer.effectType == VWWEffectTypeAutoTune){
+            [xEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.xSynthesizer.keyType]];
+        }
+        
+        NSMutableString *yEffectString = [[self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.ySynthesizer.effectType == VWWEffectTypeAutoTune){
+            [yEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.ySynthesizer.keyType]];
+        }
+        
+        NSMutableString *zEffectString = [[self stringFromEffectType:self.synthesizerGroup.zSynthesizer.effectType] mutableCopy];
+        if(self.synthesizerGroup.zSynthesizer.effectType == VWWEffectTypeAutoTune){
+            [zEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.zSynthesizer.keyType]];
+        }
+        
+        
+        NSString *effectSummaryString = [NSString stringWithFormat:@"R: %@\n"
+                                         @"G: %@\n"
+                                         @"B: %@",
+                                         xEffectString,
+                                         yEffectString,
+                                         zEffectString];
+        self.effectSummaryLabel.text = effectSummaryString;
 
-    NSMutableString *xEffectString = [[self stringFromEffectType:self.synthesizerGroup.xSynthesizer.effectType] mutableCopy];
-    if(self.synthesizerGroup.xSynthesizer.effectType == VWWEffectTypeAutoTune){
-        [xEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.xSynthesizer.keyType]];
     }
     
-    NSMutableString *yEffectString = [[self stringFromEffectType:self.synthesizerGroup.ySynthesizer.effectType] mutableCopy];
-    if(self.synthesizerGroup.ySynthesizer.effectType == VWWEffectTypeAutoTune){
-        [yEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.ySynthesizer.keyType]];
-    }
-    
-    NSMutableString *zEffectString = [[self stringFromEffectType:self.synthesizerGroup.zSynthesizer.effectType] mutableCopy];
-    if(self.synthesizerGroup.zSynthesizer.effectType == VWWEffectTypeAutoTune){
-        [zEffectString appendFormat:@" (%@)", [VWWSynthesizerTypes stringFromKey:self.synthesizerGroup.zSynthesizer.keyType]];
-    }
 
-    
-    NSString *effectSummaryString = [NSString stringWithFormat:@"x: %@\n"
-                                       @"y: %@\n"
-                                       @"z: %@",
-                                       xEffectString,
-                                       yEffectString,
-                                     zEffectString];
-    self.effectSummaryLabel.text = effectSummaryString;
-
-    
-    
-//    NSString *amplitudeSummaryString = [NSString stringWithFormat:@"x: %.2f\n"
-//                                        @"y: %.2f\n"
-//                                        @"z: %.2f",
-//                                        self.synthesizerGroup.xSynthesizer.amplitude,
-//                                        self.synthesizerGroup.ySynthesizer.amplitude,
-//                                        self.synthesizerGroup.zSynthesizer.amplitude];
-//    self.amplitudeSummaryLabel.text = amplitudeSummaryString;
-    
-    
-    
 }
 
 #pragma mark IBActions

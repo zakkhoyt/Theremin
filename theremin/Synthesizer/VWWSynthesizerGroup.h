@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "VWWNormalizedSynthesizer.h"
 
-
+static NSString *VWWSynthesizerGroupTouchScreen = @"touchscreen";
+static NSString *VWWSynthesizerGroupMotion = @"motion";
+static NSString *VWWSynthesizerGroupCamera = @"camera";
 
 @interface VWWSynthesizerGroup : NSObject
+@property (nonatomic, strong) NSString *groupType;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *xSynthesizer;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *ySynthesizer;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *zSynthesizer;
