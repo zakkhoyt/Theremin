@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class VWWSynthesizerGroup;
+
 @interface VWWSynthesizerAxesSettingsTableViewController : UITableViewController
 @property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;

@@ -34,21 +34,24 @@
         _cameraRunning = NO;
         _cameraAxes = [[VWWMotionAxes alloc]init];
         
-        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateCameraBasedOnCenterPixel)];
-        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateCameraBasedOnCenterPixel)];
+//        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
  
     }
     return self;
 }
 -(void)updateCameraBasedOnCenterPixel{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
+//    dispatch_async(dispatch_get_main_queue(), ^{
+    
 //        [self.filter useNextFrameForImageCapture];
 //        UIImage *image = [self.filter imageFromCurrentFramebuffer];
         
 //        UIView *snapshotView = [self.filterView snapshotViewAfterScreenUpdates:YES];
 //        UIImage *image = [self imageFromView:snapshotView];
-        UIImage *image = nil;
+    
+    
+        [self.filter useNextFrameForImageCapture];
+        UIImage *image = [self.filter imageFromCurrentFramebufferWithOrientation:UIImageOrientationUp];
         if(image == nil) return;
         NSArray *colors = [self getRGBAsFromImage:image atX:self.filterView.center.x andY:self.filterView.center.y count:1];
         if(colors.count){
@@ -87,7 +90,7 @@
             
             [self.delegate cameraMonitor:self colorsUpdated:self.cameraAxes];
         }
-    });
+//    });
 }
 
 - (UIImage *)imageFromView:(UIView *)view

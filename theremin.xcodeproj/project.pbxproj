@@ -625,12 +625,12 @@
 		C6DFF32F18B7E03300B9F94B /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
-				C6C8CBB319AD17DF0084BA98 /* Store */,
-				C6DFF3E218B7FA2600B9F94B /* InterappAudio */,
-				C6DFF3E318B7FA2600B9F94B /* Synthesizer */,
 				C6DFF33018B7E03300B9F94B /* Bonjour */,
-				C6DFF33618B7E03300B9F94B /* Motion */,
 				CFACB59D19AEBDA300814680 /* Camera */,
+				C6DFF3E218B7FA2600B9F94B /* InterappAudio */,
+				C6DFF33618B7E03300B9F94B /* Motion */,
+				C6C8CBB319AD17DF0084BA98 /* Store */,
+				C6DFF3E318B7FA2600B9F94B /* Synthesizer */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";

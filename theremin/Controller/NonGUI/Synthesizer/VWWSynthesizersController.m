@@ -44,7 +44,7 @@
 -(void)setupParentViewForCameraRendering:(UIView*)view{
     [self setupSynthesizers];
     [self setupMotionMonitor];
-    [self setupCameraMonitor:view];
+//    [self setupCameraMonitor:view];
     
 }
 
@@ -63,6 +63,21 @@
     
     NSDictionary *cameraDictionary = [self.cameraGroup dictionaryRepresentation];
     [VWWUserDefaults setCameraSettings:cameraDictionary];
+    
+}
+
+
+#pragma mark Public methods
+-(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)axes{
+    self.cameraGroup.xSynthesizer.frequencyNormalized = axes.x.currentNormalized;
+    self.cameraGroup.ySynthesizer.frequencyNormalized = axes.y.currentNormalized;
+    self.cameraGroup.zSynthesizer.frequencyNormalized = axes.z.currentNormalized;
+    self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
+                                   @"\nG: %.4f < %.4f < %.4f"
+                                   @"\nB: %.4f < %.4f < %.4f",
+                                   axes.x.min, axes.x.currentNormalized, axes.x.max,
+                                   axes.y.min, axes.y.currentNormalized, axes.y.max,
+                                   axes.z.min, axes.z.currentNormalized, axes.z.max];
     
 }
 
@@ -216,19 +231,7 @@
 }
 
 
-#pragma mark VWWCameraMonitorDelegate
--(void)cameraMonitor:(VWWCameraMonitor*)sender colorsUpdated:(VWWMotionAxes*)axes{
-    self.cameraGroup.xSynthesizer.frequencyNormalized = axes.x.currentNormalized;
-    self.cameraGroup.ySynthesizer.frequencyNormalized = axes.y.currentNormalized;
-    self.cameraGroup.zSynthesizer.frequencyNormalized = axes.z.currentNormalized;
-    self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
-                                   @"\nG: %.4f < %.4f < %.4f"
-                                   @"\nB: %.4f < %.4f < %.4f",
-                                   axes.x.min, axes.x.currentNormalized, axes.x.max,
-                                   axes.y.min, axes.y.currentNormalized, axes.y.max,
-                                   axes.z.min, axes.z.currentNormalized, axes.z.max];
 
-}
 
 
 

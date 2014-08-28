@@ -186,15 +186,28 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 - (IBAction)cameraRedSwitchValueChanged:(UISwitch *)sender {
     self.synthesizersController.cameraGroup.xSynthesizer.muted = !sender.on;
+    [self broadcastCameraState];
 }
 - (IBAction)cameraGreenSwitchValueChanged:(UISwitch *)sender {
     self.synthesizersController.cameraGroup.ySynthesizer.muted = !sender.on;
+    [self broadcastCameraState];
 }
 - (IBAction)cameraBlueSwitchValueChanged:(UISwitch *)sender {
     self.synthesizersController.cameraGroup.zSynthesizer.muted = !sender.on;
+    [self broadcastCameraState];
 }
 
 
+-(void)broadcastCameraState{
+    if(self.synthesizersController.cameraGroup.xSynthesizer.muted == YES &&
+       self.synthesizersController.cameraGroup.ySynthesizer.muted == YES &&
+       self.synthesizersController.cameraGroup.zSynthesizer.muted == YES){
+        [[NSNotificationCenter defaultCenter] postNotificationName:VWWStopCamera object:nil];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:VWWStartCamera object:nil];
+    }
+
+}
 
 #pragma mark UITableViewDataSource
 

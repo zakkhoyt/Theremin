@@ -60,6 +60,8 @@ typedef enum{
     VWWEffectTypeThrottle = 0x04,
 } VWWEffectType;
 
+static NSString *VWWStopCamera = @"stopCamera";
+static NSString *VWWStartCamera = @"startCamera";
 
 
 @interface VWWSynthesizerTypes : NSObject

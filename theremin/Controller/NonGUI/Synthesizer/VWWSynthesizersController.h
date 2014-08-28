@@ -16,6 +16,7 @@ static NSString *VWWSynthesizersControllerMagnetoometersStatisticsString = @"mag
 static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStatisticsString";
 
 @class VWWSynthesizersController;
+@class VWWMotionAxes;
 
 @protocol VWWSynthesizersControllerRenderDelegate <NSObject>
 -(UIView*)synthesizersControllerViewForCameraRendering:(VWWSynthesizersController*)sender;
@@ -38,4 +39,6 @@ static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStati
 @property (nonatomic, strong, readonly) NSString *magnetometersStatisticsString;
 @property (nonatomic, strong, readonly) NSString *cameraStatisticsString;
 @property (nonatomic, weak) id <VWWSynthesizersControllerRenderDelegate> renderDelegate;
+
+-(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)axes;
 @end

@@ -94,17 +94,19 @@
                      ofObject:(id)object
                        change:(NSDictionary *)change
                       context:(void *)context{
-    // Rather than passing the parameters though KVO, they are already available as public properties.
-    // Easier to use that, just using KVO as a trigger.
-    if([keyPath isEqualToString:VWWSynthesizersControllerAccelerometersStatisticsString]){
-        self.accelerometersLabel.text = self.synthesizersController.accelerometersStatisticsString;
-    } else if([keyPath isEqualToString:VWWSynthesizersControllerGyroscopesStatisticsString]) {
-        self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
-    } else if([keyPath isEqualToString:VWWSynthesizersControllerMagnetoometersStatisticsString]) {
-        self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
-    } else if([keyPath isEqualToString:VWWSynthesizersControllerCameraStatisticsString]){
-        self.cameraLabel.text = self.synthesizersController.cameraStatisticsString;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Rather than passing the parameters though KVO, they are already available as public properties.
+        // Easier to use that, just using KVO as a trigger.
+        if([keyPath isEqualToString:VWWSynthesizersControllerAccelerometersStatisticsString]){
+            self.accelerometersLabel.text = self.synthesizersController.accelerometersStatisticsString;
+        } else if([keyPath isEqualToString:VWWSynthesizersControllerGyroscopesStatisticsString]) {
+            self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
+        } else if([keyPath isEqualToString:VWWSynthesizersControllerMagnetoometersStatisticsString]) {
+            self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
+        } else if([keyPath isEqualToString:VWWSynthesizersControllerCameraStatisticsString]){
+            self.cameraLabel.text = self.synthesizersController.cameraStatisticsString;
+        }
+    });
 }
 
 
