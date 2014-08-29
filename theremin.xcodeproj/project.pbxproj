@@ -589,7 +589,6 @@
 			isa = PBXGroup;
 			children = (
 				C6DFF33018B7E03300B9F94B /* Bonjour */,
-				CFACB59D19AEBDA300814680 /* Camera */,
 				C6DFF3E218B7FA2600B9F94B /* InterappAudio */,
 				C6DFF33618B7E03300B9F94B /* Motion */,
 				C6C8CBB319AD17DF0084BA98 /* Store */,
@@ -843,13 +842,6 @@
 				CF841D0E18B833B700003777 /* VWWAutotuneKeysTableViewControllers.m */,
 			);
 			name = Keys;
-			sourceTree = "<group>";
-		};
-		CFACB59D19AEBDA300814680 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
