@@ -45,6 +45,9 @@
                                         <state key="normal" title="Toggle">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="toggleButtonTouchUpInside:" destination="bCu-eu-zgm" eventType="touchUpInside" id="lr9-0b-8uA"/>
+                                        </connections>
                                     </button>
                                     <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-Ms-41D">
                                         <rect key="frame" x="362" y="490" width="44" height="44"/>
@@ -82,8 +85,10 @@
                     <navigationItem key="navigationItem" id="CGU-LP-McG"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="crosshairImageView" destination="sBd-Ms-41D" id="60E-Mr-Unv"/>
                         <outlet property="infoLabel" destination="4vb-Q3-zWZ" id="qCr-cI-dhV"/>
                         <outlet property="settingsButton" destination="aFF-XY-yo9" id="oVx-va-eMH"/>
+                        <outlet property="toggleButton" destination="tqA-qb-ahy" id="7Jf-JO-6a3"/>
                         <outlet property="touchView" destination="jIr-i7-d8Q" id="aIw-pX-qBQ"/>
                     </connections>
                 </viewController>
@@ -2026,13 +2031,13 @@ Homepage: http://minterart.tumblr.com</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zi-tj-dDg">
-                                                    <rect key="frame" x="20" y="53" width="207" height="21"/>
+                                                    <rect key="frame" x="20" y="12" width="207" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF8-LI-CRZ">
-                                                    <rect key="frame" x="235" y="51" width="77" height="30"/>
+                                                    <rect key="frame" x="243" y="8" width="77" height="30"/>
                                                     <state key="normal" title="Purchased">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -2041,7 +2046,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="TkJ-jy-vm0">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="84"/>
+                                                    <rect key="frame" x="20" y="41" width="280" height="71"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
