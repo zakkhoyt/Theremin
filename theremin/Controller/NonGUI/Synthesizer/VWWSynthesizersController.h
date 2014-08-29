@@ -15,20 +15,12 @@ static NSString *VWWSynthesizersControllerGyroscopesStatisticsString = @"gyrosco
 static NSString *VWWSynthesizersControllerMagnetoometersStatisticsString = @"magnetometersStatisticsString";
 static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStatisticsString";
 
-@class VWWSynthesizersController;
 @class VWWMotionAxes;
 
-@protocol VWWSynthesizersControllerRenderDelegate <NSObject>
--(UIView*)synthesizersControllerViewForCameraRendering:(VWWSynthesizersController*)sender;
--(void)synthesizersController:(VWWSynthesizersController*)sender didAddViewForRendering:(UIView*)view;
-@end
-
-
 @interface VWWSynthesizersController : NSObject
-
 +(VWWSynthesizersController*)sharedInstance;
--(void)setupParentViewForCameraRendering:(UIView*)view;
 -(void)writeSettings;
+-(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)axes;
 @property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *gyroscopesGroup;
@@ -38,7 +30,5 @@ static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStati
 @property (nonatomic, strong, readonly) NSString *gyroscopesStatisticsString;
 @property (nonatomic, strong, readonly) NSString *magnetometersStatisticsString;
 @property (nonatomic, strong, readonly) NSString *cameraStatisticsString;
-@property (nonatomic, weak) id <VWWSynthesizersControllerRenderDelegate> renderDelegate;
 
--(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)axes;
 @end

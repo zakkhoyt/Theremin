@@ -13,15 +13,14 @@
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
 #import "NSTimer+Blocks.h"
-#import "VWWCameraMonitor.h"
-
 #import "VWWBonjourModel.h"
 #import "VWWMotionAxes.h"
-
+#include <sys/types.h>
+#include <sys/sysctl.h>
 @import AudioToolbox;
 @import AVFoundation;
 
-@interface VWWTouchViewController () <VWWTouchViewDelegate, VWWSynthesizersControllerRenderDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>{
+@interface VWWTouchViewController () <VWWTouchViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>{
     AVCaptureSession *_session;
     BOOL _cameraRunning;
     AVCaptureVideoPreviewLayer *_videoPreviewLayer;
@@ -34,6 +33,8 @@
 @property (nonatomic) BOOL hasLoaded;
 @property dispatch_queue_t avqueue;
 @property (nonatomic, strong) VWWMotionAxes *cameraAxes;
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
+@property (weak, nonatomic) IBOutlet UIImageView *crosshairImageView;
 
 
 @end
@@ -46,11 +47,12 @@
     [super viewDidLoad];
     
     self.touchView.delegate = self;
-
+    
     [self setupSynthesizers];
     
-    self.infoLabel.text = @"Touch the screen to generate audio waves.\n\nEnsure that your volume is turned up and your device is not muted.\n\nTo use the Accelerometers or other motion sensors, tap Settings -> Synthesizers then toggle the switches for each axis that you want to use.";
-    
+    self.infoLabel.text = @"Touch the screen to generate audio waves.\n\nEnsure that your volume is turned up and your device is not muted.\n\nTo use the Accelerometers, Gyroscopes, Magnetometers or Camera, go to Settings -> Synthesizers then toggle the switches for each axis that you want to use.";
+    self.toggleButton.hidden = YES;
+    self.crosshairImageView.hidden = YES;
     self.cameraAxes = [[VWWMotionAxes alloc]init];
     self.avqueue = dispatch_queue_create("com.vaporwarewolf.theremin.camera", NULL);
     
@@ -61,22 +63,13 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:VWWStartCamera object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self startCamera];
     }];
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.navigationController.navigationBarHidden = YES;
-
-    
-//    if([VWWSynthesizersController sharedInstance].cameraGroup.xSynthesizer.muted == NO ||
-//       [VWWSynthesizersController sharedInstance].cameraGroup.xSynthesizer.muted == NO ||
-//       [VWWSynthesizersController sharedInstance].cameraGroup.xSynthesizer.muted == NO){
-//        [self startCamera];
-//    } else {
-//        [self stopCamera];
-//    }
 }
 
 
@@ -101,9 +94,16 @@
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 //    if([segue.identifier isEqualToString:VWWSegueTouchToSettings]){
-//        
+//
 //    }
 //}
+
+#pragma mark IBActions
+- (IBAction)toggleButtonTouchUpInside:(id)sender {
+    [self toggleCamera];
+}
+
+
 
 #pragma mark Private methods
 
@@ -143,51 +143,13 @@
         
         self.infoLabel.hidden = YES;
     }];
-
+    
 }
 
 -(void)setupSynthesizers{
+    // Get a reference which will cause init
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
-    self.synthesizersController.renderDelegate = self;
-    [self.synthesizersController setupParentViewForCameraRendering:self.view];
 }
-
-
-
-
-//-(void)addGestureRecognizers{
-//    // Gesture recognizer
-//    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureHandler:)];
-//    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
-//    [self.view addGestureRecognizer:singleTapGestureRecognizer];
-//    
-//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureHandler:)];
-//    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
-//    [self.view addGestureRecognizer:doubleTapGestureRecognizer];
-//    
-//    UITapGestureRecognizer *twoFingerTripleTapGestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTripleTapGestureHandler:)];
-//    twoFingerTripleTapGestureHandler.numberOfTapsRequired = 3;
-//    twoFingerTripleTapGestureHandler.numberOfTouchesRequired = 2;
-//    [self.view addGestureRecognizer:twoFingerTripleTapGestureHandler];
-//    
-//    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
-//}
-//
-//
-//
-//-(void)singleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
-//    VWW_LOG_INFO(@"Single Tap");
-//
-//}
-//
-//-(void)doubleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
-//    VWW_LOG_INFO(@"Double Tap");
-//}
-//
-//- (void)twoFingerTripleTapGestureHandler:(UITapGestureRecognizer*)recognizer {
-//    VWW_LOG_INFO(@"Settings tap");
-//    [self performSegueWithIdentifier:VWWSegueTouchToSettings sender:self];
-//}
 
 
 -(void)updateFrequenciesWithArray:(NSArray*)array{
@@ -212,10 +174,10 @@
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesMovedWithArray:(NSArray*)array{
     [self updateFrequenciesWithArray:array];
     
-//    VWWBonjourModel *bm = [[VWWBonjourModel alloc]init];
-//    NSDictionary *d = [bm dictionaryRepresentation];
-//    VWW_LOG_INFO(@"inspect bounour model dictionary here");
-
+    //    VWWBonjourModel *bm = [[VWWBonjourModel alloc]init];
+    //    NSDictionary *d = [bm dictionaryRepresentation];
+    //    VWW_LOG_INFO(@"inspect bounour model dictionary here");
+    
 }
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesEndedWithArray:(NSArray*)array{
@@ -244,18 +206,48 @@
 
 -(void)startCamera{
     if(_cameraRunning == YES) return;
-
-    _session = [[AVCaptureSession alloc] init];
-    _session.sessionPreset = AVCaptureSessionPresetLow;
     
-    AVCaptureDevice *device = [self frontFacingCameraIfAvailable];
-
+    _session = [[AVCaptureSession alloc] init];
+    _session.sessionPreset = AVCaptureSessionPresetMedium;
+    
+    AVCaptureDevice *device = [self cameraWithPosition:AVCaptureDevicePositionBack];
     NSError *error = nil;
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+    
     
     if (!input) {
         VWW_LOG_WARNING(@"Couldnt' create AV video capture device");
     }
+    
+    NSString *deviceHardwareName = [self deviceHardwareName];
+    VWW_LOG_DEBUG(@"deviceHardwareName: %@", deviceHardwareName);
+    
+    // If we are running on hardware capable of doing a good job at higher frame rates
+    if([deviceHardwareName rangeOfString:@"iPad3"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPad4"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPad5"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPod6"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPhone5"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPhone6"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPhone7"].location != NSNotFound ||
+       [deviceHardwareName rangeOfString:@"iPhone8"].location != NSNotFound){
+        
+        // Go up to the highest framerate
+        for(AVCaptureDeviceFormat *vFormat in [device formats]) {
+            CMFormatDescriptionRef description= vFormat.formatDescription;
+            float maxrate = ((AVFrameRateRange*)[vFormat.videoSupportedFrameRateRanges objectAtIndex:0]).maxFrameRate;
+            if(maxrate>59 && CMFormatDescriptionGetMediaSubType(description)==kCVPixelFormatType_420YpCbCr8BiPlanarFullRange) {
+                if([device lockForConfiguration:NULL] == YES) {
+                    device.activeFormat = vFormat;
+                    [device setActiveVideoMinFrameDuration:CMTimeMake(10,600)];
+                    [device setActiveVideoMaxFrameDuration:CMTimeMake(10,600)];
+                    [device unlockForConfiguration];
+                    NSLog(@"Selected Video Format:  %@ %@ %@", vFormat.mediaType, vFormat.formatDescription, vFormat.videoSupportedFrameRateRanges);
+                }
+            }
+        }
+    }
+
     [_session addInput:input];
     
     _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
@@ -264,6 +256,7 @@
     CALayer *viewLayer = [view layer];
     
     _videoPreviewLayer.frame = view.bounds;
+    
     [viewLayer addSublayer:_videoPreviewLayer];
     [self.view bringSubviewToFront:self.touchView];
     
@@ -282,54 +275,95 @@
         
         [_session addOutput:videoOutput];
         _cameraRunning = YES;
+        self.toggleButton.hidden = NO;
+        self.crosshairImageView.hidden = NO;
         [_session startRunning];
     }
     else {
         NSLog(@"Could not add videoOutput");
+        self.toggleButton.hidden = YES;
+        self.crosshairImageView.hidden = YES;
         _cameraRunning = NO;
     }
 }
 
 -(void)stopCamera{
-    VWW_LOG_TODO_TASK(@"Stop the camera capturing");
     if(_cameraRunning == NO) return;
+    
+    VWW_LOG_TODO_TASK(@"Stop the camera capturing");
     [_session stopRunning];
     [_videoPreviewLayer removeFromSuperlayer];
     _videoPreviewLayer = nil;
     _session = nil;
     _cameraRunning = NO;
+    
+    self.crosshairImageView.hidden = YES;
+    self.toggleButton.hidden = YES;
 }
 
+-(NSString*)deviceHardwareName{
+    size_t size;
+    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+    char *model = malloc(size);
+    sysctlbyname("hw.machine", model, &size, NULL, 0);
+    NSString *sDeviceModel = [NSString stringWithCString:model encoding:NSUTF8StringEncoding];
+    free(model);
+    return sDeviceModel;
+}
 
-
--(AVCaptureDevice *)frontFacingCameraIfAvailable
-{
+-(AVCaptureDevice *)frontFacingCameraIfAvailable {
     NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     AVCaptureDevice *captureDevice = nil;
-    for (AVCaptureDevice *device in videoDevices)
-    {
-        if (device.position == AVCaptureDevicePositionFront)
-        {
+    for (AVCaptureDevice *device in videoDevices) {
+        if (device.position == AVCaptureDevicePositionFront) {
             captureDevice = device;
             break;
         }
     }
     
-    //  couldn't find one on the front, so just get the default video device.
-    if ( ! captureDevice)
-    {
+    if (captureDevice == nil) {
         captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     }
-    
     return captureDevice;
 }
 
 
+-(AVCaptureDevice*)cameraWithPosition:(AVCaptureDevicePosition) position {
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDevice *device in devices) {
+        if([device position] == position) return device;
+    }
+    return nil;
+}
+
+//Change camera source
+-(void)toggleCamera{
+    if(_session) {
+        //Indicate that some changes will be made to the session
+        [_session beginConfiguration];
+        
+        //Remove existing input
+        AVCaptureInput* currentCameraInput = [_session.inputs objectAtIndex:0];
+        [_session removeInput:currentCameraInput];
+        
+        //Get new input
+        AVCaptureDevice *newCamera = nil;
+        if(((AVCaptureDeviceInput*)currentCameraInput).device.position == AVCaptureDevicePositionBack) {
+            newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
+        } else {
+            newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
+        }
+        
+        AVCaptureDeviceInput *newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:newCamera error:nil];
+        [_session addInput:newVideoInput];
+        
+        [_session commitConfiguration];
+    }
+}
+
 
 - (NSArray*)getRGBAsFromImage:(UIImage*)image atX:(NSInteger)xx andY:(NSInteger)yy count:(int)count{
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:count];
-    
-    // First get the image into your data buffer
     CGImageRef imageRef = [image CGImage];
     NSUInteger width = CGImageGetWidth(imageRef);
     NSUInteger height = CGImageGetHeight(imageRef);
@@ -346,10 +380,8 @@
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
     CGContextRelease(context);
     
-    // Now your rawData contains the image data in the RGBA8888 pixel format.
     NSInteger byteIndex = (bytesPerRow * yy) + xx * bytesPerPixel;
-    for (int ii = 0 ; ii < count ; ++ii)
-    {
+    for (int ii = 0 ; ii < count ; ++ii) {
         CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
         CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
         CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
@@ -365,55 +397,31 @@
     return result;
 }
 
-#pragma mark implements AVFoundation
-
-// For image resizing, see the following links:
-// http://stackoverflow.com/questions/4712329/how-to-resize-the-image-programatically-in-objective-c-in-iphone
-// http://stackoverflow.com/questions/6052188/high-quality-scaling-of-uiimage
+#pragma mark AVCaptureVideoDataOutputDelegate
 
 -(void)captureOutput :(AVCaptureOutput *)captureOutput
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection{
     
-    
-    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    // Get a copy of the buffer that we can work with:
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    // Lock the base address of the pixel buffer
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
-    
-    // Get the number of bytes per row for the pixel buffer
     void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-    
-    // Get the number of bytes per row for the pixel buffer
     size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-    // Get the pixel buffer width and height
     size_t width = CVPixelBufferGetWidth(imageBuffer);
     size_t height = CVPixelBufferGetHeight(imageBuffer);
-    
-    
-    
-    // Create a device-dependent RGB color space
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    // Create a bitmap graphics context with the sample buffer data
     CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
                                                  bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
-    // Create a Quartz image from the pixel data in the bitmap graphics context
     CGImageRef quartzImage = CGBitmapContextCreateImage(context);
-    // Unlock the pixel buffer
     CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-    
-    // Free up the context and color space
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
-    
-    // Create an image object from the Quartz image
     UIImage *image = [UIImage imageWithCGImage:quartzImage];
-    
-    // Release the Quartz image
     CGImageRelease(quartzImage);
     
-    // Let's grab the center pixel
+    
+    // Get RGBA of the center pixel and use that as a value set
     NSUInteger halfWidth = floor(width/2.0);
     NSUInteger halfHeight = floor(height/2.0);
     
@@ -422,12 +430,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     UIColor* uicolor = pixels[0];
     CGFloat red, green, blue, alpha = 0;
     [uicolor getRed:&red green:&green blue:&blue alpha:&alpha];
-
-
+    
+    
     self.cameraAxes.x.currentNormalized = red;
     self.cameraAxes.y.currentNormalized = green;
     self.cameraAxes.z.currentNormalized = blue;
-    
     
     if(red < self.cameraAxes.x.min){
         self.cameraAxes.x.min = red;

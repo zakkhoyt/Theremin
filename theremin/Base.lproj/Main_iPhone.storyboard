@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
@@ -19,9 +20,8 @@
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Xa-lKP" customClass="VWWTouchView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info Goes Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="Iww-Kz-C0y">
                                         <rect key="frame" x="8" y="0.0" width="304" height="568"/>
-                                        <string key="text">Touch the screen to generate audio waves. Ensure that your volume is turned up and your device is not muted. To use the Accelerometers or other motion sensors, tap Settings -&gt; Synthesizers then toggle the switches for each axis that you want to use."</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -39,15 +39,40 @@
                                             <segue destination="3I7-O0-Cbk" kind="push" identifier="VWWSegueButtonToSettings" id="IBa-KF-ikW"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3Y-w9-Kl2">
+                                        <rect key="frame" x="122" y="55" width="77" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="By8-qn-cur"/>
+                                            <constraint firstAttribute="height" constant="30" id="hhr-ch-nz9"/>
+                                        </constraints>
+                                        <state key="normal" title="Toggle">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jMO-jg-cBq"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crosshair" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-MG-T31">
+                                        <rect key="frame" x="138" y="262" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="5PY-gE-7Fk"/>
+                                            <constraint firstAttribute="height" constant="44" id="Qs8-hv-m2S"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="c3Y-w9-Kl2" firstAttribute="leading" secondItem="7P7-Xa-lKP" secondAttribute="leading" constant="122" id="HUt-sD-bLp"/>
                                     <constraint firstItem="Iww-Kz-C0y" firstAttribute="leading" secondItem="7P7-Xa-lKP" secondAttribute="leading" constant="8" id="JJ6-c0-tHd"/>
+                                    <constraint firstAttribute="trailing" secondItem="c3Y-w9-Kl2" secondAttribute="trailing" constant="121" id="LRt-HN-5MU"/>
                                     <constraint firstAttribute="trailing" secondItem="Iww-Kz-C0y" secondAttribute="trailing" constant="8" id="MH5-ds-JG7"/>
                                     <constraint firstAttribute="bottom" secondItem="Iww-Kz-C0y" secondAttribute="bottom" id="MmI-h9-c4d"/>
+                                    <constraint firstAttribute="centerY" secondItem="I4i-MG-T31" secondAttribute="centerY" id="b8n-ED-H6k"/>
                                     <constraint firstAttribute="centerX" secondItem="qvJ-PJ-VYf" secondAttribute="centerX" constant="-0.5" id="dLe-N9-s7h"/>
                                     <constraint firstItem="Iww-Kz-C0y" firstAttribute="top" secondItem="7P7-Xa-lKP" secondAttribute="top" id="ds2-J7-BO7"/>
+                                    <constraint firstItem="c3Y-w9-Kl2" firstAttribute="top" secondItem="qvJ-PJ-VYf" secondAttribute="bottom" constant="8" id="ol4-NW-o5M"/>
                                     <constraint firstItem="qvJ-PJ-VYf" firstAttribute="top" secondItem="7P7-Xa-lKP" secondAttribute="top" constant="17" id="xaG-u7-VfK"/>
+                                    <constraint firstItem="I4i-MG-T31" firstAttribute="centerX" secondItem="c3Y-w9-Kl2" secondAttribute="centerX" id="xbF-fM-oOZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -62,8 +87,10 @@
                     <navigationItem key="navigationItem" id="8yX-k2-Dmp"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="crosshairImageView" destination="I4i-MG-T31" id="tJx-LB-rqm"/>
                         <outlet property="infoLabel" destination="Iww-Kz-C0y" id="p3N-rU-gDk"/>
                         <outlet property="settingsButton" destination="qvJ-PJ-VYf" id="Y96-8r-w8f"/>
+                        <outlet property="toggleButton" destination="c3Y-w9-Kl2" id="cVd-zU-Mfm"/>
                         <outlet property="touchView" destination="7P7-Xa-lKP" id="Kfr-ra-kOF"/>
                     </connections>
                 </viewController>
@@ -198,7 +225,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Motion Sensors Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ma-TE-SvD">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sensor Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ma-TE-SvD">
                                                     <rect key="frame" x="20" y="11" width="234" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -385,13 +412,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-rS-5vi">
-                                                    <rect key="frame" x="20" y="53" width="203" height="21"/>
+                                                    <rect key="frame" x="20" y="12" width="203" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n52-OH-jHg">
-                                                    <rect key="frame" x="231" y="51" width="81" height="30"/>
+                                                    <rect key="frame" x="231" y="8" width="81" height="30"/>
                                                     <state key="normal" title="Purchased">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -400,7 +427,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2IB-Tu-Kl9">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="84"/>
+                                                    <rect key="frame" x="20" y="41" width="280" height="83"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2145,6 +2172,7 @@ Homepage: http://minterart.tumblr.com</string>
         </scene>
     </scenes>
     <resources>
+        <image name="crosshair" width="512" height="512"/>
         <image name="sine_256x256.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

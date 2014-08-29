@@ -9,13 +9,11 @@
 #import "VWWSynthesizersController.h"
 #import "VWWGeneralSettings.h"
 #import "VWWMotionMonitor.h"
-#import "VWWCameraMonitor.h"
 #import "VWWMotionAxes.h"
 
 
-@interface VWWSynthesizersController () <VWWMotionMonitorDelegate, VWWCameraMonitorDelegate>
+@interface VWWSynthesizersController () <VWWMotionMonitorDelegate>
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
-@property (nonatomic, strong) VWWCameraMonitor *cameraMonitor;
 @property (nonatomic, strong, readwrite) NSString *accelerometersStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *gyroscopesStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *magnetometersStatisticsString;
@@ -37,16 +35,13 @@
 -(id)init{
     self = [super init];
     if(self){
+        [self setupSynthesizers];
+        [self setupMotionMonitor];
+
     }
     return self;
 }
 
--(void)setupParentViewForCameraRendering:(UIView*)view{
-    [self setupSynthesizers];
-    [self setupMotionMonitor];
-//    [self setupCameraMonitor:view];
-    
-}
 
 -(void)writeSettings{
     NSDictionary *touchscreenDictionary = [self.touchscreenGroup dictionaryRepresentation];
@@ -189,11 +184,6 @@
 }
 
 
-- (void)setupCameraMonitor:(UIView*)renderView{
-    self.cameraMonitor = [[VWWCameraMonitor alloc]initWithRenderView:renderView];
-    self.cameraMonitor.delegate = self;
-    [self.cameraMonitor startCamera];
-}
 
 -(NSString*)stringForMotionStatsWithDevice:(VWWMotionAxes*)device{
     return [NSString stringWithFormat:@"x: %.4f < %.4f < %.4f"
