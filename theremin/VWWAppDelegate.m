@@ -52,35 +52,9 @@
 }
 
 -(void)setupAppearance{
-//        [self printFonts];
-//    
-//    // PricedownBl-Regular
-////    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:20.0];
-////    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20.0];
-//    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
-////    UIFont *font = [UIFont fontWithName:@"Dina'sHandwritingRegular" size:17.0];
-////    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0];
-//
-//    [UIButton.appearance setFont:font];
-////    [UIButton.appearance.titleLabel setFont:font];
-//    [UILabel.appearance setFont:font];
-//    [UIBarButtonItem.appearance setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
-//    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName : font}];
-//    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
-//
-//    
-//    
-//
-//    VWW_LOG_INFO(@"");
-    
-//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    //    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
-    
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
-//    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
-    
+    [[UIToolbar appearance] setBarTintColor:[UIColor darkGrayColor]];
 }
 
 

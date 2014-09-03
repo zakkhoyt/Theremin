@@ -33,6 +33,7 @@ typedef enum{
     VWWInputTypeAccelerometer,
     VWWInputTypeGyroscope,
     VWWInputTypeMagnetometer,
+    VWWInputTypeCamera
 } VWWInputType;
 
 typedef enum{

@@ -8,6 +8,9 @@
 
 #import "VWWStatisticsMotionSensorsTableViewController.h"
 #import "VWWSynthesizersController.h"
+#import "VWWSensorGraphViewController.h"
+
+static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 
 @interface VWWStatisticsMotionSensorsTableViewController ()
 @property (nonatomic, strong) VWWSynthesizersController *synthesizersController;
@@ -70,6 +73,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueSensorsToGraph]){
+        VWWSensorGraphViewController *vc = segue.destinationViewController;
+        NSIndexPath *indexPath = (NSIndexPath*)sender;
+        vc.sensorType = (VWWInputType)(indexPath.item + 1);
+    }
+}
 
 #pragma mark Private methods (KVO)
 
@@ -137,5 +147,13 @@
             break;
     }
     return @"";
+}
+
+
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:VWWSegueSensorsToGraph sender:indexPath];
 }
 @end

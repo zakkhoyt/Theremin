@@ -22,6 +22,8 @@
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
 		C610D4AB18B8055800999A3D /* theremin.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C610D4AA18B8055800999A3D /* theremin.entitlements */; };
+		C668DEAD19B7B8BB00917545 /* VWWSensorGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C668DEAC19B7B8BB00917545 /* VWWSensorGraphViewController.m */; };
+		C668DEB219B7B8F200917545 /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C668DEB019B7B8F200917545 /* VWWGraphScene.m */; };
 		C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */; };
 		C6C8CBB919AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB719AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m */; };
 		C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF26B18B7DED000B9F94B /* readme.markdown */; };
@@ -120,6 +122,11 @@
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
 		C610D4AA18B8055800999A3D /* theremin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theremin.entitlements; sourceTree = "<group>"; };
+		C668DEAB19B7B8BB00917545 /* VWWSensorGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSensorGraphViewController.h; sourceTree = "<group>"; };
+		C668DEAC19B7B8BB00917545 /* VWWSensorGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSensorGraphViewController.m; sourceTree = "<group>"; };
+		C668DEAF19B7B8F200917545 /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
+		C668DEB019B7B8F200917545 /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
+		C668DEB119B7B8F200917545 /* VWWSceneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSceneProtocol.h; sourceTree = "<group>"; };
 		C6C8CBB419AD17DF0084BA98 /* VWWInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchase.h; sourceTree = "<group>"; };
 		C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWInAppPurchase.m; sourceTree = "<group>"; };
 		C6C8CBB619AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWInAppPurchaseIdentifier.h; sourceTree = "<group>"; };
@@ -491,6 +498,8 @@
 			children = (
 				C6DFF31F18B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.h */,
 				C6DFF32018B7E03300B9F94B /* VWWStatisticsMotionSensorsTableViewController.m */,
+				C668DEAB19B7B8BB00917545 /* VWWSensorGraphViewController.h */,
+				C668DEAC19B7B8BB00917545 /* VWWSensorGraphViewController.m */,
 			);
 			name = Motion;
 			sourceTree = "<group>";
@@ -533,6 +542,16 @@
 				C6DFF31A18B7E03300B9F94B /* VWWGeneralSettingsTableViewController.m */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		C668DEAE19B7B8F200917545 /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				C668DEAF19B7B8F200917545 /* VWWGraphScene.h */,
+				C668DEB019B7B8F200917545 /* VWWGraphScene.m */,
+				C668DEB119B7B8F200917545 /* VWWSceneProtocol.h */,
+			);
+			path = OpenGL;
 			sourceTree = "<group>";
 		};
 		C6C8CBB319AD17DF0084BA98 /* Store */ = {
@@ -621,6 +640,7 @@
 		C6DFF34E18B7E03300B9F94B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C668DEAE19B7B8F200917545 /* OpenGL */,
 				C6DFF34F18B7E03300B9F94B /* VWWGeneralSettings.h */,
 				C6DFF35018B7E03300B9F94B /* VWWGeneralSettings.m */,
 				C6DFF35118B7E03300B9F94B /* VWWMotionAxes.h */,
@@ -980,6 +1000,7 @@
 				C6DFF3A818B7E03300B9F94B /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
 				C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */,
 				C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */,
+				C668DEAD19B7B8BB00917545 /* VWWSensorGraphViewController.m in Sources */,
 				CF841D1418B83A0300003777 /* VWWBonjourModel.m in Sources */,
 				C6DFF3D718B7E03300B9F94B /* VWWSynthesizerGroup.m in Sources */,
 				C6C8CBB919AD17DF0084BA98 /* VWWInAppPurchaseIdentifier.m in Sources */,
@@ -1015,6 +1036,7 @@
 				C6DFF3B018B7E03300B9F94B /* VWWMotionMonitor.m in Sources */,
 				C6DFF3AA18B7E03300B9F94B /* VWWTouchViewController.m in Sources */,
 				C6DFF3AE18B7E03300B9F94B /* VWWBonjourClientController.m in Sources */,
+				C668DEB219B7B8F200917545 /* VWWGraphScene.m in Sources */,
 				C6DFF3BD18B7E03300B9F94B /* VWWMotionAxis.m in Sources */,
 				C6DFF3A218B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m in Sources */,
 				C6DFF3A718B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m in Sources */,
