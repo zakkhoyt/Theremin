@@ -11,13 +11,17 @@
 #import "VWWMotionMonitor.h"
 #import "VWWMotionAxes.h"
 
-
+#define NUM_POINTS 320
 @interface VWWSynthesizersController () <VWWMotionMonitorDelegate>
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
 @property (nonatomic, strong, readwrite) NSString *accelerometersStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *gyroscopesStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *magnetometersStatisticsString;
 @property (nonatomic, strong, readwrite) NSString *cameraStatisticsString;
+@property (strong, readwrite) NSMutableArray *accelerometersData;
+@property (strong, readwrite) NSMutableArray *gyroscopesData;
+@property (strong, readwrite) NSMutableArray *magnetometersData;
+@property (strong, readwrite) NSMutableArray *cameraData;
 
 @end
 
@@ -35,9 +39,11 @@
 -(id)init{
     self = [super init];
     if(self){
+        
+        [self setupData];
         [self setupSynthesizers];
         [self setupMotionMonitor];
-
+        
     }
     return self;
 }
@@ -62,23 +68,26 @@
 }
 
 
-#pragma mark Public methods
--(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)axes{
-    self.cameraGroup.xSynthesizer.frequencyNormalized = axes.x.currentNormalized;
-    self.cameraGroup.ySynthesizer.frequencyNormalized = axes.y.currentNormalized;
-    self.cameraGroup.zSynthesizer.frequencyNormalized = axes.z.currentNormalized;
-    self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
-                                   @"\nG: %.4f < %.4f < %.4f"
-                                   @"\nB: %.4f < %.4f < %.4f",
-                                   axes.x.min, axes.x.currentNormalized, axes.x.max,
-                                   axes.y.min, axes.y.currentNormalized, axes.y.max,
-                                   axes.z.min, axes.z.currentNormalized, axes.z.max];
-    
-}
 
 
 #pragma mark Private methods
 
+-(void)setupData{
+    self.accelerometersData = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
+    self.gyroscopesData = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
+    self.magnetometersData = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
+    self.cameraData = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
+    for(int x = 0; x < 320; x++){
+        NSDictionary *d = @{@"x" : @(0),
+                            @"y" : @(0),
+                            @"z" : @(0)};
+        [self.accelerometersData addObject:d];
+        [self.gyroscopesData addObject:d];
+        [self.magnetometersData addObject:d];
+        [self.cameraData addObject:d];
+    }
+    
+}
 -(void)setupSynthesizers{
     // We will create 14 synthesizers here:
     // 2 for the touchscreen (x, y)
@@ -199,29 +208,82 @@
 #pragma mark VWWMotionMonitorDelegate
 
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(VWWMotionAxes*)device{
-    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
-    self.accelerometersStatisticsString = [self stringForMotionStatsWithDevice:device];
+    @synchronized(self.accelerometersData){
+        // Data for rendering graphs
+        [self.accelerometersData removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(device.x.current),
+                            @"y" : @(device.y.current),
+                            @"z" : @(device.z.current)};
+        [self.accelerometersData addObject:d];
+        
+        // Data for synthesizers
+        self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+        self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+        self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
+        self.accelerometersStatisticsString = [self stringForMotionStatsWithDevice:device];
+    }
 }
 
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(VWWMotionAxes*)device{
-    self.gyroscopesGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.gyroscopesGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
-    self.gyroscopesStatisticsString = [self stringForMotionStatsWithDevice:device];
+    @synchronized(self.gyroscopesData){
+        // Data for rendering graphs
+        [self.gyroscopesData removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(device.x.current),
+                            @"y" : @(device.y.current),
+                            @"z" : @(device.z.current)};
+        [self.gyroscopesData addObject:d];
+        
+        // Data for synthesizers
+        self.gyroscopesGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+        self.gyroscopesGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+        self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
+        self.gyroscopesStatisticsString = [self stringForMotionStatsWithDevice:device];
+    }
 }
 
 
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(VWWMotionAxes*)device{
-    self.magnetometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
-    self.magnetometersStatisticsString = [self stringForMotionStatsWithDevice:device];
+    
+    @synchronized(self.magnetometersData){
+        // Data for rendering graphs
+        [self.magnetometersData removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(device.x.current),
+                            @"y" : @(device.y.current),
+                            @"z" : @(device.z.current)};
+        [self.magnetometersData addObject:d];
+        
+        // Data for synthesizers
+        self.magnetometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+        self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+        self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
+        self.magnetometersStatisticsString = [self stringForMotionStatsWithDevice:device];
+    }
 }
 
 
 
+#pragma mark Public methods
+-(void)cameraMonitorColorsUpdated:(VWWMotionAxes*)device{
+    @synchronized(self.cameraData){
+        // Data for rendering graphs
+        [self.cameraData removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(device.x.current),
+                            @"y" : @(device.y.current),
+                            @"z" : @(device.z.current)};
+        [self.cameraData addObject:d];
+        
+        self.cameraGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+        self.cameraGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+        self.cameraGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
+        self.cameraStatisticsString = [NSString stringWithFormat:@"R: %.4f < %.4f < %.4f"
+                                       @"\nG: %.4f < %.4f < %.4f"
+                                       @"\nB: %.4f < %.4f < %.4f",
+                                       device.x.min, device.x.currentNormalized, device.x.max,
+                                       device.y.min, device.y.currentNormalized, device.y.max,
+                                       device.z.min, device.z.currentNormalized, device.z.max];
+    }
+    
+}
 
 
 

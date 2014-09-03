@@ -10,11 +10,12 @@
 @import GLKit;
 #import "VWWGraphScene.h"
 #import "VWWMotionMonitor.h"
+#import "VWWSynthesizersController.h"
 //#import "VWWTuningOptionsViewController.h"
 
 #define NUM_POINTS 320
 
-@interface VWWSensorGraphViewController () <VWWMotionMonitorDelegate>
+@interface VWWSensorGraphViewController ()
 @property (strong, nonatomic) EAGLContext *context;
 @property (nonatomic, strong) VWWGraphScene *graphScene;
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
@@ -41,18 +42,6 @@
     [super viewDidLoad];
     
     
-    self.dataForPlot = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
-    for(int x = 0; x < 320; x++){
-        NSDictionary *d = @{@"x" : @(0),
-                            @"y" : @(0),
-                            @"z" : @(0)};
-        [self.dataForPlot addObject:d];
-    }
-    
-    
-    //    GLKView *glkView = (GLKView*)self.view;
-    //    glkView.drawableMultisample = GLKViewDrawableMultisample4X;
-    
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
     if (!self.context) {
@@ -61,25 +50,29 @@
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
-    //    view.drawableMultisample = GLKViewDrawableMultisample4X;
     [EAGLContext setCurrentContext:self.context];
     
     self.preferredFramesPerSecond = 60;
     
-    
+    [view setNeedsDisplay];
     
     self.graphScene = [[VWWGraphScene alloc]init];
     self.graphScene.clearColor = GLKVector4Make(0.0, 0.0, 0.0, 0.0);
-    self.graphScene.dataForPlot = self.dataForPlot;
     
     
+    if(self.sensorType == VWWInputTypeAccelerometer){
+        self.title = @"Accelerometers";
+    } else if(self.sensorType == VWWInputTypeGyroscope){
+        self.title = @"Gyroscopes";
+    } else if(self.sensorType == VWWInputTypeMagnetometer){
+        self.title = @"Magnetometers";
+    } else if(self.sensorType == VWWInputTypeCamera){
+        self.title = @"Camera";
+    } else {
+        VWW_LOG_WARNING(@"No sensor has been defined");
+    }
+
     
-//    self.motionMonitor = [VWWMotionMonitor sharedInstance];
-    self.motionMonitor.delegate = self;
-    
-    // Update labels at a low framerate
-    VWW_LOG_TODO_TASK(@"This should be changed via callback, not a timer loop. Implement callbacks for it");
-    [NSTimer scheduledTimerWithTimeInterval:1/1.0 target:self selector:@selector(renderLabels:) userInfo:nil repeats:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -89,18 +82,6 @@
     self.graphScene.right  =  1.0;
     self.graphScene.bottom = -1.0;
     self.graphScene.top    =  1.0;
-    
-//    
-//    if([VWWUserDefaults tuningSensor] == 0){
-//        [self.motionMonitor startAccelerometer];
-//    } else if([VWWUserDefaults tuningSensor] == 1){
-//        [self.motionMonitor startGyroscope];
-//    } else if([VWWUserDefaults tuningSensor] == 2){
-//        [self.motionMonitor startMagnetometer];
-//    }
-//    
-//    
-//    self.motionMonitor.updateInterval = 1/(float)[VWWUserDefaults tuningUpdateFrequency];
 }
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
@@ -132,86 +113,18 @@
     return YES;
 }
 
-//-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-//    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-//}
-//
-//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-//    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-//}
-//-(void)updateSceneBounds:(UIInterfaceOrientation)toInterfaceOrientation{
-//}
-
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.paused = !self.paused;
+//    self.paused = !self.paused;
+    BOOL hidden = !self.navigationController.navigationBarHidden;
+    [self.navigationController setNavigationBarHidden:hidden animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:UIStatusBarAnimationFade];
 }
 #pragma mark Private
 
--(void)renderLabels:(id)sender{
-//    self.xMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.max];
-//    self.xMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.min];
-//    
-//    self.yMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.max];
-//    self.yMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.min];
-//    
-//    self.zMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.max];
-//    self.zMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.min];
-//    
-}
 
 
 #pragma mark IBAction
-- (IBAction)settingsButtonTouchUpInside:(id)sender {
-//    [self.motionMonitor stopAll];
-//    [self performSegueWithIdentifier:VWWSegueTuningToOptions sender:self];
-}
-
-- (IBAction)startButtonTouchUpInside:(id)sender {
-    
-}
-
-- (IBAction)resetButtonTouchUpInside:(id)sender {
-//    [self.motionMonitor resetAllLimits];
-}
-
-
-#pragma mark VWWMotionControllerDelegate;
-
-//-(void)motionMonitor:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits*)limits{
-//    @synchronized(self.graphScene.dataForPlot){
-//        [self.dataForPlot removeObjectAtIndex:0];
-//        NSDictionary *d = @{@"x" : @(accelerometers.acceleration.x),
-//                            @"y" : @(accelerometers.acceleration.y),
-//                            @"z" : @(accelerometers.acceleration.z)};
-//        [self.dataForPlot addObject:d];
-//        self.limits = limits;
-//    }
-//    
-//    
-//}
-//
-//-(void)motionMonitor:(VWWMotionController*)sender didUpdateGyroscopes:(CMGyroData*)gyroscopes limits:(VWWDeviceLimits*)limits{
-//    @synchronized(self.graphScene.dataForPlot){
-//        [self.dataForPlot removeObjectAtIndex:0];
-//        NSDictionary *d = @{@"x" : @(gyroscopes.rotationRate.x),
-//                            @"y" : @(gyroscopes.rotationRate.y),
-//                            @"z" : @(gyroscopes.rotationRate.z)};
-//        [self.dataForPlot addObject:d];
-//        self.limits = limits;
-//    }
-//}
-//-(void)motionMonitor:(VWWMotionController*)sender didUpdateMagnetometers:(CMMagnetometerData*)magnetometers limits:(VWWDeviceLimits*)limits{
-//    @synchronized(self.graphScene.dataForPlot){
-//        [self.dataForPlot removeObjectAtIndex:0];
-//        NSDictionary *d = @{@"x" : @(magnetometers.magneticField.x),
-//                            @"y" : @(magnetometers.magneticField.y),
-//                            @"z" : @(magnetometers.magneticField.z)};
-//        [self.dataForPlot addObject:d];
-//        self.limits = limits;
-//    }
-//}
 
 
 
@@ -222,9 +135,19 @@
 }
 
 - (void)update {
+    if(self.sensorType == VWWInputTypeAccelerometer){
+        self.graphScene.dataForPlot = [VWWSynthesizersController sharedInstance].accelerometersData;
+    } else if(self.sensorType == VWWInputTypeGyroscope){
+        self.graphScene.dataForPlot = [VWWSynthesizersController sharedInstance].gyroscopesData;
+    } else if(self.sensorType == VWWInputTypeMagnetometer){
+        self.graphScene.dataForPlot = [VWWSynthesizersController sharedInstance].magnetometersData;
+    } else if(self.sensorType == VWWInputTypeCamera){
+        self.graphScene.dataForPlot = [VWWSynthesizersController sharedInstance].cameraData;
+    } else {
+        VWW_LOG_WARNING(@"No sensor has been defined");
+    }
     [self.graphScene update];
 }
-#pragma mark VWWTuningOptionsViewControllerDelegate
 
 
 

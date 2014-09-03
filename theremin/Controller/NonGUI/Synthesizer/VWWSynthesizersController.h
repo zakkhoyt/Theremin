@@ -31,4 +31,8 @@ static NSString *VWWSynthesizersControllerCameraStatisticsString = @"cameraStati
 @property (nonatomic, strong, readonly) NSString *magnetometersStatisticsString;
 @property (nonatomic, strong, readonly) NSString *cameraStatisticsString;
 
+@property (strong, readonly) NSMutableArray *accelerometersData;
+@property (strong, readonly) NSMutableArray *gyroscopesData;
+@property (strong, readonly) NSMutableArray *magnetometersData;
+@property (strong, readonly) NSMutableArray *cameraData;
 @end

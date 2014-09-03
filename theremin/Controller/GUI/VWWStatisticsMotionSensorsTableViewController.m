@@ -40,13 +40,15 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
         self.tableView.backgroundColor = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
     }
+    
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateControls)];
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
-    [self updateControls];
-    [self addKeyValueObservers];
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         NSInteger sectionCount = [self.tableView numberOfSections];
@@ -61,12 +63,6 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self removeKeyValueObservers];
-}
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -77,52 +73,15 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
     if([segue.identifier isEqualToString:VWWSegueSensorsToGraph]){
         VWWSensorGraphViewController *vc = segue.destinationViewController;
         NSIndexPath *indexPath = (NSIndexPath*)sender;
-        vc.sensorType = (VWWInputType)(indexPath.item + 1);
+        VWWInputType sensorType =  (VWWInputType)(indexPath.section + 2);
+        vc.sensorType = sensorType;
     }
 }
 
-#pragma mark Private methods (KVO)
-
-
--(void)addKeyValueObservers{
-    [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerAccelerometersStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
-    [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerGyroscopesStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
-    [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerMagnetoometersStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
-    [self.synthesizersController addObserver:self forKeyPath:VWWSynthesizersControllerCameraStatisticsString options:NSKeyValueObservingOptionNew context:NULL];
-}
-
--(void)removeKeyValueObservers{
-    [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerAccelerometersStatisticsString];
-    [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerGyroscopesStatisticsString];
-    [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerMagnetoometersStatisticsString];
-    [self.synthesizersController removeObserver:self forKeyPath:VWWSynthesizersControllerCameraStatisticsString];
-
-}
-
-
--(void)observeValueForKeyPath:(NSString *)keyPath
-                     ofObject:(id)object
-                       change:(NSDictionary *)change
-                      context:(void *)context{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // Rather than passing the parameters though KVO, they are already available as public properties.
-        // Easier to use that, just using KVO as a trigger.
-        if([keyPath isEqualToString:VWWSynthesizersControllerAccelerometersStatisticsString]){
-            self.accelerometersLabel.text = self.synthesizersController.accelerometersStatisticsString;
-        } else if([keyPath isEqualToString:VWWSynthesizersControllerGyroscopesStatisticsString]) {
-            self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
-        } else if([keyPath isEqualToString:VWWSynthesizersControllerMagnetoometersStatisticsString]) {
-            self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
-        } else if([keyPath isEqualToString:VWWSynthesizersControllerCameraStatisticsString]){
-            self.cameraLabel.text = self.synthesizersController.cameraStatisticsString;
-        }
-    });
-}
 
 
 #pragma mark Private methods
 -(void)updateControls{
-    VWW_LOG_TODO_TASK(@"Use KVO to update these labels");
     self.accelerometersLabel.text = self.synthesizersController.accelerometersStatisticsString;
     self.gyroscopesLabel.text = self.synthesizersController.gyroscopesStatisticsString;
     self.magnetometersLabel.text = self.synthesizersController.magnetometersStatisticsString;
