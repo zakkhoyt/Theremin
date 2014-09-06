@@ -16,5 +16,4 @@ static NSString *VWWInAppPurchaseCameraDeviceKey = @"com.vaporwarewolf.theremin.
 
 @interface VWWInAppPurchaseIdentifier : VWWInAppPurchase
 + (VWWInAppPurchaseIdentifier *)sharedInstance;
-+ (BOOL)productPurchased:(NSString*)productIdentifier;
 @end

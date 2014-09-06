@@ -19,13 +19,11 @@
         NSSet *productIdentifiers = [NSMutableSet setWithObjects:
                                      VWWInAppPurchaseAutotuneKeysKey,
                                      VWWInAppPurchaseCameraDeviceKey,
+                                     VWWInAppPurchaseGraphSensorsKey,
 //                                     VWWInAppPurchaseTestPurchaseKey,
                                      nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
     return sharedInstance;
-}
-+ (BOOL)productPurchased:(NSString*)productIdentifier{
-    return [[NSUserDefaults standardUserDefaults] boolForKey:productIdentifier];
 }
 @end

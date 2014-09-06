@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
@@ -458,7 +457,13 @@
                             <constraint firstItem="oXX-7m-Z3R" firstAttribute="leading" secondItem="ha2-dL-kb5" secondAttribute="leading" id="g2O-6Q-g7C"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Store" id="1bo-pR-DC9"/>
+                    <navigationItem key="navigationItem" title="Store" id="1bo-pR-DC9">
+                        <barButtonItem key="rightBarButtonItem" title="Restore" id="JD3-ZC-MSO">
+                            <connections>
+                                <action selector="restoreButtonAction:" destination="YBp-th-F9S" id="oRi-iJ-CcE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="oXX-7m-Z3R" id="0rd-k2-MQH"/>
                     </connections>
@@ -507,7 +512,7 @@
                         <sections>
                             <tableViewSection id="qvK-a7-NJc">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="MOJ-63-w3f">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="MOJ-63-w3f">
                                         <rect key="frame" x="0.0" y="99" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MOJ-63-w3f" id="U2O-Xd-nS1">
@@ -528,7 +533,7 @@
                             </tableViewSection>
                             <tableViewSection id="fc9-nI-XjK">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="iji-ys-zJi">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="iji-ys-zJi">
                                         <rect key="frame" x="0.0" y="189" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iji-ys-zJi" id="dx2-ii-Wrs">
@@ -549,7 +554,7 @@
                             </tableViewSection>
                             <tableViewSection id="BA1-c7-RKT">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="BlA-Ja-TqY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="BlA-Ja-TqY">
                                         <rect key="frame" x="0.0" y="279" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlA-Ja-TqY" id="81M-bo-Giu">
@@ -570,7 +575,7 @@
                             </tableViewSection>
                             <tableViewSection id="dtJ-XB-pvY">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="2n9-Qb-n1E">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="2n9-Qb-n1E">
                                         <rect key="frame" x="0.0" y="369" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2n9-Qb-n1E" id="TCc-LB-3A5">
@@ -597,9 +602,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Sensor Stats" id="6g3-X9-ad5"/>
                     <connections>
+                        <outlet property="accelerometersCell" destination="MOJ-63-w3f" id="n1N-a2-2Sp"/>
                         <outlet property="accelerometersLabel" destination="l7y-oa-HJf" id="Uph-ta-eK5"/>
+                        <outlet property="cameraCell" destination="2n9-Qb-n1E" id="9G7-A7-3pE"/>
                         <outlet property="cameraLabel" destination="UAe-MD-p4V" id="0Kj-1e-WQ4"/>
+                        <outlet property="gyroscopesCell" destination="iji-ys-zJi" id="Iyc-VN-yb7"/>
                         <outlet property="gyroscopesLabel" destination="1Rv-Pt-dvC" id="Roh-SM-Esf"/>
+                        <outlet property="magnetometersCell" destination="BlA-Ja-TqY" id="Lng-r7-b3i"/>
                         <outlet property="magnetometersLabel" destination="OU8-yf-v4u" id="shp-a8-PL5"/>
                         <segue destination="j2B-LW-bDq" kind="push" identifier="VWWSegueSensorsToGraph" id="7xE-eJ-5IY"/>
                     </connections>

@@ -9,6 +9,7 @@
 #import "VWWStatisticsMotionSensorsTableViewController.h"
 #import "VWWSynthesizersController.h"
 #import "VWWSensorGraphViewController.h"
+#import "VWWInAppPurchaseIdentifier.h"
 
 static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 
@@ -19,18 +20,14 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 @property (weak, nonatomic) IBOutlet UILabel *magnetometersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cameraLabel;
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *accelerometersCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *gyroscopesCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *magnetometersCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cameraCell;
+
 @end
 
 @implementation VWWStatisticsMotionSensorsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -61,6 +58,21 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
             }
         }
     }
+    
+    
+    // Update disclosuer indicators
+    if([[VWWInAppPurchaseIdentifier sharedInstance] productPurchased:VWWInAppPurchaseGraphSensorsKey]){
+        [self.accelerometersCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [self.gyroscopesCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [self.magnetometersCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [self.cameraCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    } else {
+        [self.accelerometersCell setAccessoryType:UITableViewCellAccessoryNone];
+        [self.gyroscopesCell setAccessoryType:UITableViewCellAccessoryNone];
+        [self.magnetometersCell setAccessoryType:UITableViewCellAccessoryNone];
+        [self.cameraCell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +103,24 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 
 
 #pragma mark UITableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section == 4){
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForHeaderInSection:section] : 0;
+    } else {
+        return [super tableView:tableView heightForHeaderInSection:section];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.section == 4){
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0;
+        
+    } else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark UITableViewDataSource
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
@@ -101,7 +131,7 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
         case 2:
             return @"Magnetometers";
         case 3:
-            return @"Camera";
+            return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? @"Camera" : @"";
         default:
             break;
     }
@@ -113,6 +143,8 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:VWWSegueSensorsToGraph sender:indexPath];
+    if([[VWWInAppPurchaseIdentifier sharedInstance] productPurchased:VWWInAppPurchaseGraphSensorsKey]){
+        [self performSegueWithIdentifier:VWWSegueSensorsToGraph sender:indexPath];
+    }
 }
 @end

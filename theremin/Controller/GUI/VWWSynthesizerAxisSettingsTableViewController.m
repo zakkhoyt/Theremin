@@ -38,14 +38,6 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
 
 @implementation VWWSynthesizerAxisSettingsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -279,6 +271,8 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
     [[VWWSynthesizersController sharedInstance] writeSettings];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
+
 
 
 #pragma mark UITableViewDelegate

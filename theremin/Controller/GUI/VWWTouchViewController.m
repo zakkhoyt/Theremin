@@ -63,7 +63,6 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:VWWStartCamera object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self startCamera];
     }];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -9,10 +9,12 @@
 #import "VWWStoreViewController.h"
 #import "VWWStoreTableViewCell.h"
 #import "VWWInAppPurchaseIdentifier.h"
+#import "MBProgressHUD.h"
 
-@interface VWWStoreViewController ()
+@interface VWWStoreViewController () <VWWStoreTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *products;
+@property (nonatomic, strong) MBProgressHUD *hud;
 @end
 
 @implementation VWWStoreViewController
@@ -20,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         self.tableView.backgroundView = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
@@ -30,13 +33,14 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
- 
+    if(self.hud == nil)[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:VWWInAppPurchaseProductPurchasedNotification object:nil];
     
     // Get Apple product IDs
     [[VWWInAppPurchaseIdentifier sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         self.products = products;
         [self.tableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 
 }
@@ -63,6 +67,14 @@
 }
 */
 
+#pragma mark IBActions
+- (IBAction)restoreButtonAction:(id)sender {
+    [[[UIAlertView alloc]initWithTitle:@"Restore Purchases?"
+                               message:@"This will restore any features that you have previously purchased with your iTunes Store account"
+                              delegate:self cancelButtonTitle:@"Not Now"
+                     otherButtonTitles:@"Restore", nil]show];
+}
+
 #pragma mark Private methods
 - (void)productPurchased:(NSNotification *)notification {
     NSString * productIdentifier = notification.object;
@@ -72,6 +84,10 @@
             *stop = YES;
         }
     }];
+    @synchronized(self){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        self.hud = nil;
+    }
 }
 
 #pragma mark UITableViewDataSource
@@ -87,6 +103,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
  
     VWWStoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWStoreTableViewCell"];
+    cell.delegate = self;
     SKProduct *product = self.products[indexPath.row];
     cell.product = product;
     return cell;
@@ -103,10 +120,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+}
+
+#pragma mark UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        if(self.hud == nil)[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[VWWInAppPurchase sharedInstance] restoreCompletedTransactions];
+    }
+}
+
+
+#pragma mark VWWStoreTableViewCellDelegate
+-(void)storeTableViewCellBuyButtonAction:(VWWStoreTableViewCell*)sender{
+    if(self.hud == nil)[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     SKProduct *product = self.products[indexPath.row];
     [[VWWInAppPurchaseIdentifier sharedInstance] buyProduct:product];
     
+}
+-(void)storeTableViewCellVideoButtonAction:(VWWStoreTableViewCell*)sender{
     
 }
+
 
 @end

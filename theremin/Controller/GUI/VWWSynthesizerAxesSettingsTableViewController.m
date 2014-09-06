@@ -10,6 +10,7 @@
 //#import "VWWSynthesizerSettingsTableViewController.h"
 #import "VWWSynthesizerAxisSettingsTableViewController.h"
 #import "VWWSynthesizersController.h"
+#import "VWWInAppPurchaseIdentifier.h"
 
 
 static NSString *VWWSegueAxesToGroupConfig = @"VWWSegueAxesToGroupConfig";
@@ -51,15 +52,6 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 @end
 
 @implementation VWWSynthesizerAxesSettingsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -236,12 +228,34 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
         case 3:
             return @"Magnetometers";
         case 4:
-            return @"Camera";
+            return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? @"Camera" : @"";
         default:
             break;
     }
     return @"";
 }
+
+
+#pragma mark UITableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section == VWWSynthesizerCameraSection){
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForHeaderInSection:section] : 0;
+    } else {
+        return [super tableView:tableView heightForHeaderInSection:section];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if(indexPath.section == VWWSynthesizerCameraSection){
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0;
+    } else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+}
+
+
 
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
