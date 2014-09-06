@@ -39,7 +39,8 @@
 
 
 - (IBAction)buyButtonTouchUpInside:(id)sender {
-    [[VWWInAppPurchaseIdentifier sharedInstance] buyProduct:_product];
+//    [[VWWInAppPurchaseIdentifier sharedInstance] buyProduct:_product];
+    [self.delegate storeTableViewCellBuyButtonTouchUpInside:self];
 }
 
 @end
