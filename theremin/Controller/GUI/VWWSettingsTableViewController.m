@@ -35,6 +35,16 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
+    NSInteger sectionCount = [self.tableView numberOfSections];
+    for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
+        NSInteger cellCount = [self.tableView numberOfRowsInSection:sectionIndex];
+        for(NSUInteger cellIndex = 0; cellIndex < cellCount; cellIndex++){
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.backgroundColor = [UIColor clearColor];
+        }
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -66,6 +76,12 @@
 
 #pragma mark IBActions`
 
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [super.tableView cellForRowAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor clearColor];
+//    return cell;
+//}
 
 #pragma mark AdBannerDelegate
 

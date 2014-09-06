@@ -477,11 +477,12 @@
                         <outlet property="gyroscopesLabel" destination="Klq-ez-Et5" id="IZC-yW-zfh"/>
                         <outlet property="magnetometersCell" destination="mae-uz-oqv" id="rsb-Zu-dsI"/>
                         <outlet property="magnetometersLabel" destination="ADj-z4-hzD" id="rFK-mW-ZUk"/>
+                        <segue destination="sBi-a7-hab" kind="modal" identifier="VWWSegueSensorsToGraph" id="kjZ-yi-Vxz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hf-2e-Uwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="-1925"/>
+            <point key="canvasLocation" x="1561" y="-1868"/>
         </scene>
         <!--Devices View Controller-->
         <scene sceneID="j9n-oH-ls9">
@@ -2095,6 +2096,102 @@ Homepage: http://minterart.tumblr.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUu-co-UbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1578" y="786"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="5Mm-ch-9VC">
+            <objects>
+                <glkViewController storyboardIdentifier="VWWSensorGraphViewController" autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="sBi-a7-hab" customClass="VWWSensorGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rve-2O-r79"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kU-lH-Etp"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x9P-lS-7wn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4a-g3-FAK">
+                                <rect key="frame" x="0.0" y="956" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Reset" id="4VD-VN-TI7">
+                                        <connections>
+                                            <action selector="resetButtonTouchUpInside:" destination="sBi-a7-hab" id="R3k-GJ-rGK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4CT-IM-Djd"/>
+                                    <barButtonItem title="Start" id="1Xq-1U-2it">
+                                        <connections>
+                                            <action selector="startButtonTouchUpInside:" destination="sBi-a7-hab" id="u4W-xJ-m9n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kvk-xB-lRf"/>
+                                    <barButtonItem title="Settings" id="XMd-Lm-evg">
+                                        <connections>
+                                            <action selector="settingsButtonTouchUpInside:" destination="sBi-a7-hab" id="ApZ-tw-9Mw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-mi-DKb">
+                                <rect key="frame" x="20" y="196" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o1I-os-4hc">
+                                <rect key="frame" x="20" y="248" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-UX-sMe">
+                                <rect key="frame" x="20" y="388" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-fm-qpK">
+                                <rect key="frame" x="20" y="440" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lnh-QL-SzD">
+                                <rect key="frame" x="20" y="602" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h4U-7N-rv5">
+                                <rect key="frame" x="20" y="655" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8kU-lH-Etp" firstAttribute="top" secondItem="A4a-g3-FAK" secondAttribute="bottom" id="Hll-CR-0r6"/>
+                            <constraint firstItem="A4a-g3-FAK" firstAttribute="leading" secondItem="x9P-lS-7wn" secondAttribute="leading" id="aZS-22-aTT"/>
+                            <constraint firstAttribute="trailing" secondItem="A4a-g3-FAK" secondAttribute="trailing" id="pxW-0D-d5s"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="sBi-a7-hab" id="Q4u-Bb-rIT"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="aQv-Gl-hdH"/>
+                    <connections>
+                        <outlet property="startButton" destination="A4a-g3-FAK" id="Gq6-9C-KVQ"/>
+                        <outlet property="toolbar" destination="A4a-g3-FAK" id="0v5-l4-Zze"/>
+                        <outlet property="xMaxLabel" destination="JM0-mi-DKb" id="S3b-7o-26G"/>
+                        <outlet property="xMinLabel" destination="o1I-os-4hc" id="CaD-Ld-cOx"/>
+                        <outlet property="yMaxLabel" destination="QaL-UX-sMe" id="9oI-za-UtS"/>
+                        <outlet property="yMinLabel" destination="cQI-fm-qpK" id="Qmy-2c-3Hk"/>
+                        <outlet property="zMaxLabel" destination="lnh-QL-SzD" id="E3D-WU-dwE"/>
+                        <outlet property="zMinLabel" destination="h4U-7N-rv5" id="uIp-74-Jlv"/>
+                    </connections>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAC-Ou-q0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="-1880"/>
         </scene>
     </scenes>
     <resources>
