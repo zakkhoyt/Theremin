@@ -8,10 +8,11 @@
 
 #import "VWWSettingsTableViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <iAd/iAd.h>
 
-@interface VWWSettingsTableViewController ()
+@interface VWWSettingsTableViewController () <ADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableViewCell *airPlayTableViewCell;
-
+@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @end
 
 @implementation VWWSettingsTableViewController
@@ -26,7 +27,8 @@
         self.tableView.backgroundColor = nil;
         self.tableView.backgroundColor = [UIColor darkGrayColor];
     }
-    
+    self.adBannerView.delegate = self;
+    self.adBannerView.alpha = 0.0;
     [self addAirPlayVolumeControl];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -64,6 +66,14 @@
 
 #pragma mark IBActions`
 
+
+#pragma mark AdBannerDelegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.adBannerView.alpha = 1.0;
+    }];
+}
 
 
 @end

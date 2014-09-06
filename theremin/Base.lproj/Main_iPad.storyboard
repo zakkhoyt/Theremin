@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="anK-tO-EfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="anK-tO-EfJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Touch View Controller-->
@@ -95,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="-1527" y="162"/>
         </scene>
-        <!--Host-->
+        <!--Devices Server View Controller - Host-->
         <scene sceneID="EZU-Jl-rfm">
             <objects>
                 <viewController id="zqE-g1-C7Z" customClass="VWWDevicesServerViewController" sceneMemberID="viewController">
@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="3737" y="2226"/>
         </scene>
-        <!--Join-->
+        <!--Devices Client View Controller - Join-->
         <scene sceneID="VTH-Io-95R">
             <objects>
                 <viewController id="vhb-D1-eUI" customClass="VWWDevicesClientViewController" sceneMemberID="viewController">
@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="3793" y="3447"/>
         </scene>
-        <!--Settings-->
+        <!--Settings Table View Controller - Settings-->
         <scene sceneID="ttV-O9-sHu">
             <objects>
                 <tableViewController id="cUJ-gJ-Vdr" customClass="VWWSettingsTableViewController" sceneMemberID="viewController">
@@ -368,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="663" y="103"/>
         </scene>
-        <!--Motion Sensor Stats-->
+        <!--Statistics Motion Sensors Table View Controller - Motion Sensor Stats-->
         <scene sceneID="ZzJ-91-77f">
             <objects>
                 <tableViewController id="Xsq-By-tOn" customClass="VWWStatisticsMotionSensorsTableViewController" sceneMemberID="viewController">
@@ -469,9 +469,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Motion Sensor Stats" id="SDk-iy-6tD"/>
                     <connections>
+                        <outlet property="accelerometersCell" destination="ScU-xf-PdF" id="A2c-xE-JcF"/>
                         <outlet property="accelerometersLabel" destination="sB4-eY-jvQ" id="hhW-mL-mqZ"/>
+                        <outlet property="cameraCell" destination="QGb-H6-Paw" id="KnH-3g-Rhn"/>
                         <outlet property="cameraLabel" destination="dMT-TA-9Sc" id="rBw-Bp-sHU"/>
+                        <outlet property="gyroscopesCell" destination="kL4-5C-N8o" id="FLH-LJ-IdN"/>
                         <outlet property="gyroscopesLabel" destination="Klq-ez-Et5" id="IZC-yW-zfh"/>
+                        <outlet property="magnetometersCell" destination="mae-uz-oqv" id="rsb-Zu-dsI"/>
                         <outlet property="magnetometersLabel" destination="ADj-z4-hzD" id="rFK-mW-ZUk"/>
                     </connections>
                 </tableViewController>
@@ -544,7 +548,7 @@
             </objects>
             <point key="canvasLocation" x="1737" y="2485"/>
         </scene>
-        <!--About-->
+        <!--About View Controller - About-->
         <scene sceneID="bQv-en-cNW">
             <objects>
                 <viewController id="Fbu-uL-xCL" customClass="VWWAboutViewController" sceneMemberID="viewController">
@@ -596,7 +600,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="1681" y="3808"/>
         </scene>
-        <!--General-->
+        <!--General Settings Table View Controller - General-->
         <scene sceneID="0ov-hh-25W">
             <objects>
                 <tableViewController id="BcY-M9-8kc" customClass="VWWGeneralSettingsTableViewController" sceneMemberID="viewController">
@@ -681,7 +685,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="1589" y="-544"/>
         </scene>
-        <!--Theremin-->
+        <!--Synthesizer Axes Settings Table View Controller - Theremin-->
         <scene sceneID="RrR-P9-dBl">
             <objects>
                 <tableViewController id="Cz9-h6-Bvh" customClass="VWWSynthesizerAxesSettingsTableViewController" sceneMemberID="viewController">
@@ -1158,7 +1162,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="1561" y="-3066"/>
         </scene>
-        <!--Configure-->
+        <!--Synthesizer Axis Settings Table View Controller - Configure-->
         <scene sceneID="Q2Y-dQ-mX1">
             <objects>
                 <tableViewController id="5oR-9G-Fk1" customClass="VWWSynthesizerAxisSettingsTableViewController" sceneMemberID="viewController">
@@ -1315,7 +1319,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2851" y="-3127"/>
         </scene>
-        <!--Effect-->
+        <!--Effect Parameters Table View Controller - Effect-->
         <scene sceneID="Ms1-vP-xPI">
             <objects>
                 <tableViewController id="wNP-gO-rJc" customClass="VWWEffectParametersTableViewController" sceneMemberID="viewController">
@@ -1359,7 +1363,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="5090" y="-431"/>
         </scene>
-        <!--Sensitivity-->
+        <!--Sensitivity Parameter Table View Controller - Sensitivity-->
         <scene sceneID="Msg-EM-Pmf">
             <objects>
                 <tableViewController id="ClF-C5-Glx" customClass="VWWSensitivityParameterTableViewController" sceneMemberID="viewController">
@@ -1496,7 +1500,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="5090" y="774"/>
         </scene>
-        <!--Amplitude-->
+        <!--Amplitude Parameters Table View Controller - Amplitude-->
         <scene sceneID="2AQ-vC-khs">
             <objects>
                 <tableViewController id="zT1-hJ-HBf" customClass="VWWAmplitudeParametersTableViewController" sceneMemberID="viewController">
@@ -1636,7 +1640,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="5096" y="-1750"/>
         </scene>
-        <!--Frequencies-->
+        <!--Frequency Parameters Table View Controller - Frequencies-->
         <scene sceneID="0Sd-JD-bYe">
             <objects>
                 <tableViewController id="JNd-JZ-Ud7" customClass="VWWFrequencyParametersTableViewController" sceneMemberID="viewController">
@@ -1884,7 +1888,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="5107" y="-3737"/>
         </scene>
-        <!--Waveform-->
+        <!--Waveform Parameters Table View Controller - Waveform-->
         <scene sceneID="mWm-Q3-lDZ">
             <objects>
                 <tableViewController id="ETg-0c-4GK" customClass="VWWWaveformParametersTableViewController" sceneMemberID="viewController">
@@ -1966,7 +1970,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="-311" y="103"/>
         </scene>
-        <!--Keys-->
+        <!--Autotune Keys Table View Controllers - Keys-->
         <scene sceneID="DGG-tb-bp6">
             <objects>
                 <tableViewController id="dws-jK-QaN" customClass="VWWAutotuneKeysTableViewControllers" sceneMemberID="viewController">
@@ -2006,7 +2010,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="5785" y="-419"/>
         </scene>
-        <!--Store-->
+        <!--Store View Controller - Store-->
         <scene sceneID="5Le-Wt-5R4">
             <objects>
                 <viewController id="7OY-ui-bF9" customClass="VWWStoreViewController" sceneMemberID="viewController">
@@ -2076,7 +2080,14 @@ Homepage: http://minterart.tumblr.com</string>
                             <constraint firstItem="VR3-dc-yTE" firstAttribute="top" secondItem="S4p-13-jW6" secondAttribute="top" id="sID-6t-DUg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Store" id="A08-aC-n5y"/>
+                    <navigationItem key="navigationItem" title="Store" id="A08-aC-n5y">
+                        <barButtonItem key="rightBarButtonItem" title="Restore" id="utg-g4-zvS">
+                            <connections>
+                                <action selector="restoreButtonAction:" destination="7OY-ui-bF9" id="i0L-HE-NXq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="VR3-dc-yTE" id="yRg-3W-nwC"/>
                     </connections>
@@ -2090,13 +2101,10 @@ Homepage: http://minterart.tumblr.com</string>
         <image name="crosshair" width="512" height="512"/>
         <image name="sine_256x256.png" width="256" height="256"/>
     </resources>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination">
-            <size key="portraitSize" width="768" height="1024"/>
-            <size key="landscapeSize" width="1024" height="768"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
