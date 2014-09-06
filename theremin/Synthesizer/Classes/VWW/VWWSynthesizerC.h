@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-#include "CAStreamBasicDescription.h"
+//#include "CAStreamBasicDescription.h"
 #import "VWWSynthesizerTypes.h"
 
 @interface VWWSynthesizerC : NSObject

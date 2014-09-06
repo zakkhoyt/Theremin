@@ -66,7 +66,6 @@
 		C6DFF3C718B7E03300B9F94B /* theremin_1024.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF36118B7E03300B9F94B /* theremin_1024.psd */; };
 		C6DFF3C818B7E03300B9F94B /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6DFF36218B7E03300B9F94B /* triangle_256x256.png */; };
 		C6DFF3C918B7E03300B9F94B /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36618B7E03300B9F94B /* CADebugMacros.cpp */; };
-		C6DFF3CA18B7E03300B9F94B /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */; };
 		C6DFF3CB18B7E03300B9F94B /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF36C18B7E03300B9F94B /* CAXException.cpp */; };
 		C6DFF3D018B7E03300B9F94B /* VWWSynthesizerC.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF37A18B7E03300B9F94B /* VWWSynthesizerC.mm */; };
 		C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DFF37D18B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m */; };
@@ -201,8 +200,6 @@
 		C6DFF36718B7E03300B9F94B /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
 		C6DFF36818B7E03300B9F94B /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
 		C6DFF36918B7E03300B9F94B /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
-		C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
-		C6DFF36B18B7E03300B9F94B /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
 		C6DFF36C18B7E03300B9F94B /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
 		C6DFF36D18B7E03300B9F94B /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
 		C6DFF37018B7E03300B9F94B /* VWWSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsKeys.h; sourceTree = "<group>"; };
@@ -720,8 +717,6 @@
 				C6DFF36718B7E03300B9F94B /* CADebugMacros.h */,
 				C6DFF36818B7E03300B9F94B /* CADebugPrintf.h */,
 				C6DFF36918B7E03300B9F94B /* CAMath.h */,
-				C6DFF36A18B7E03300B9F94B /* CAStreamBasicDescription.cpp */,
-				C6DFF36B18B7E03300B9F94B /* CAStreamBasicDescription.h */,
 				C6DFF36C18B7E03300B9F94B /* CAXException.cpp */,
 				C6DFF36D18B7E03300B9F94B /* CAXException.h */,
 			);
@@ -1008,7 +1003,6 @@
 				C6DFF3D118B7E03300B9F94B /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				C6DFF3BB18B7E03300B9F94B /* VWWGeneralSettings.m in Sources */,
 				C6DFF39818B7E03300B9F94B /* NSTimer+Blocks.m in Sources */,
-				C6DFF3CA18B7E03300B9F94B /* CAStreamBasicDescription.cpp in Sources */,
 				C6DFF3E618B7FA2600B9F94B /* VWWSynthesizersController.m in Sources */,
 				C6DFF3D218B7E03300B9F94B /* VWWSynthesizerNotes.m in Sources */,
 				C6DFF39D18B7E03300B9F94B /* VWWDevicesClientViewController.m in Sources */,
