@@ -12,6 +12,7 @@
 #import "VWWTouchViewController.h"
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
+#import "VWWNormalizedSynthesizer.h"
 #import "NSTimer+Blocks.h"
 #import "VWWBonjourModel.h"
 #import "VWWMotionAxes.h"
@@ -69,6 +70,7 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.navigationController.navigationBarHidden = YES;
+    
 }
 
 
@@ -78,7 +80,15 @@
         self.hasLoaded = YES;
         
     }
-    [self showInfoLabel];
+    
+    VWWSynthesizerGroup *cameraGroup = self.synthesizersController.cameraGroup;
+    if(cameraGroup.xSynthesizer.muted == NO ||
+       cameraGroup.ySynthesizer.muted == NO ||
+       cameraGroup.zSynthesizer.muted == NO){
+        [self hideInfoLabel];
+    } else {
+        [self showInfoLabel];
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
