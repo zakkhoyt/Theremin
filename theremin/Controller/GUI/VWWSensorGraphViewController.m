@@ -115,10 +115,13 @@
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    self.paused = !self.paused;
-    BOOL hidden = !self.navigationController.navigationBarHidden;
-    [self.navigationController setNavigationBarHidden:hidden animated:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:UIStatusBarAnimationFade];
+////    self.paused = !self.paused;
+//    BOOL hidden = !self.navigationController.navigationBarHidden;
+//    [self.navigationController setNavigationBarHidden:hidden animated:YES];
+//    [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:UIStatusBarAnimationFade];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 #pragma mark Private
 

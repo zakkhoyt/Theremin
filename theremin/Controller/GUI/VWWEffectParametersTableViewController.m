@@ -190,5 +190,14 @@ static NSString *VWWSegueEffectParametersToKeys = @"VWWSegueEffectParametersToKe
     
 }
 
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        cell.backgroundColor = [UIColor clearColor];
+    }
+}
+
+
 
 @end

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GVj-bw-rb7">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Touch View Controller-->
@@ -98,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="316" y="223"/>
         </scene>
-        <!--Devices Server View Controller - Host-->
+        <!--Host-->
         <scene sceneID="LaL-h1-vQD">
             <objects>
                 <viewController id="Z0y-kB-rFR" customClass="VWWDevicesServerViewController" sceneMemberID="viewController">
@@ -130,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="3633" y="2090"/>
         </scene>
-        <!--Devices Client View Controller - Join-->
+        <!--Join-->
         <scene sceneID="bCQ-gN-ZEr">
             <objects>
                 <viewController id="BcY-J9-NuJ" customClass="VWWDevicesClientViewController" sceneMemberID="viewController">
@@ -187,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="3633" y="2831"/>
         </scene>
-        <!--Settings Table View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="3oo-1M-Zlc">
             <objects>
                 <tableViewController id="3I7-O0-Cbk" customClass="VWWSettingsTableViewController" sceneMemberID="viewController">
@@ -389,7 +390,7 @@
             </objects>
             <point key="canvasLocation" x="1009" y="235"/>
         </scene>
-        <!--Store View Controller - Store-->
+        <!--Store-->
         <scene sceneID="Ob9-n7-eVx">
             <objects>
                 <viewController id="YBp-th-F9S" customClass="VWWStoreViewController" sceneMemberID="viewController">
@@ -474,7 +475,7 @@
             </objects>
             <point key="canvasLocation" x="2184" y="606"/>
         </scene>
-        <!--Table View Controller - Inter-App Audio-->
+        <!--Inter-App Audio-->
         <scene sceneID="7tv-0U-biv">
             <objects>
                 <tableViewController id="yny-l2-Umy" sceneMemberID="viewController">
@@ -503,7 +504,7 @@
             </objects>
             <point key="canvasLocation" x="2193" y="3131"/>
         </scene>
-        <!--Statistics Motion Sensors Table View Controller - Sensor Stats-->
+        <!--Sensor Stats-->
         <scene sceneID="b8q-or-fyU">
             <objects>
                 <tableViewController id="ZHR-yz-yKV" customClass="VWWStatisticsMotionSensorsTableViewController" sceneMemberID="viewController">
@@ -740,7 +741,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2184" y="-176"/>
         </scene>
-        <!--General Settings Table View Controller - General-->
+        <!--General-->
         <scene sceneID="pum-Sd-Wax">
             <objects>
                 <tableViewController id="QgP-1X-hIG" customClass="VWWGeneralSettingsTableViewController" sceneMemberID="viewController">
@@ -825,7 +826,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2184" y="1380"/>
         </scene>
-        <!--Synthesizer Axes Settings Table View Controller - Theremin-->
+        <!--Theremin-->
         <scene sceneID="2xe-Lf-nAY">
             <objects>
                 <tableViewController id="d9e-9r-ljF" customClass="VWWSynthesizerAxesSettingsTableViewController" sceneMemberID="viewController">
@@ -1190,13 +1191,19 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Configure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-Lk-qWh">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-Lk-qWh">
                                                     <rect key="frame" x="20" y="0.0" width="190" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="S88-Lk-qWh" firstAttribute="leading" secondItem="n23-ac-pkM" secondAttribute="leadingMargin" constant="12" id="6Ci-3X-Bov"/>
+                                                <constraint firstAttribute="bottom" secondItem="S88-Lk-qWh" secondAttribute="bottom" id="FDJ-Le-xWN"/>
+                                                <constraint firstItem="S88-Lk-qWh" firstAttribute="top" secondItem="n23-ac-pkM" secondAttribute="top" id="U8n-wi-qIt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="S88-Lk-qWh" secondAttribute="trailing" constant="69" id="Yv9-Ll-C0s"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1291,8 +1298,12 @@ Homepage: http://minterart.tumblr.com</string>
                         <outlet property="accelerometersYAxisSwitch" destination="jrz-ZU-5bi" id="VIk-U3-CvU"/>
                         <outlet property="accelerometersZAxisSwitch" destination="NaG-QG-LPK" id="OpC-re-LdY"/>
                         <outlet property="camerRedSwitch" destination="vUv-WI-yhP" id="itP-lr-o4a"/>
+                        <outlet property="cameraBlueCell" destination="OyW-hR-TZZ" id="TLa-U9-qfM"/>
                         <outlet property="cameraBlueSwitch" destination="2qU-cq-T6Z" id="4Xh-Av-owS"/>
+                        <outlet property="cameraConfigureCell" destination="t6x-eq-csm" id="9IU-0E-SLb"/>
+                        <outlet property="cameraGreenCell" destination="DT1-cX-0xk" id="fen-pL-3rL"/>
                         <outlet property="cameraGreenSwitch" destination="3mi-hW-ZDH" id="eV1-JP-e4P"/>
+                        <outlet property="cameraRedCell" destination="s9r-sa-1Mf" id="bM6-OR-ukL"/>
                         <outlet property="gyroscopesXAxisSwitch" destination="BFy-4w-0YO" id="Xag-cq-4gC"/>
                         <outlet property="gyroscopesYAxisSwitch" destination="zxT-cv-Doj" id="K97-f8-NCA"/>
                         <outlet property="gyroscopesZAxisSwitch" destination="jUK-oO-fvE" id="rcW-iH-f5d"/>
@@ -1308,7 +1319,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="2201" y="-2679"/>
         </scene>
-        <!--Synthesizer Axis Settings Table View Controller - Configure-->
+        <!--Configure-->
         <scene sceneID="Dz6-QO-nXM">
             <objects>
                 <tableViewController id="Jcu-7A-RZ0" customClass="VWWSynthesizerAxisSettingsTableViewController" sceneMemberID="viewController">
@@ -1472,7 +1483,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3267" y="-2483"/>
         </scene>
-        <!--Effect Parameters Table View Controller - Effect-->
+        <!--Effect-->
         <scene sceneID="Y9m-vb-HFj">
             <objects>
                 <tableViewController id="hC6-i6-MZu" customClass="VWWEffectParametersTableViewController" sceneMemberID="viewController">
@@ -1523,7 +1534,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3949" y="-1835"/>
         </scene>
-        <!--Autotune Keys Table View Controllers - Keys-->
+        <!--Keys-->
         <scene sceneID="4Iw-T6-YG7">
             <objects>
                 <tableViewController id="6Pj-ea-77O" customClass="VWWAutotuneKeysTableViewControllers" sceneMemberID="viewController">
@@ -1563,7 +1574,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="4437" y="-1835"/>
         </scene>
-        <!--Sensitivity Parameter Table View Controller - Sensitivity-->
+        <!--Sensitivity-->
         <scene sceneID="OcS-Ib-qF5">
             <objects>
                 <tableViewController id="WbT-eb-5ma" customClass="VWWSensitivityParameterTableViewController" sceneMemberID="viewController">
@@ -1706,7 +1717,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3949" y="-1126"/>
         </scene>
-        <!--Amplitude Parameters Table View Controller - Amplitude-->
+        <!--Amplitude-->
         <scene sceneID="a56-Gz-RMp">
             <objects>
                 <tableViewController id="fna-KS-Mty" customClass="VWWAmplitudeParametersTableViewController" sceneMemberID="viewController">
@@ -1852,7 +1863,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3955" y="-2511"/>
         </scene>
-        <!--Frequency Parameters Table View Controller - Frequencies-->
+        <!--Frequencies-->
         <scene sceneID="3by-ot-iUH">
             <objects>
                 <tableViewController id="cHt-NB-Ct4" customClass="VWWFrequencyParametersTableViewController" sceneMemberID="viewController">
@@ -2106,7 +2117,7 @@ Homepage: http://minterart.tumblr.com</string>
             </objects>
             <point key="canvasLocation" x="3949" y="-4178"/>
         </scene>
-        <!--Waveform Parameters Table View Controller - Waveform-->
+        <!--Waveform-->
         <scene sceneID="7oP-lF-lhG">
             <objects>
                 <tableViewController id="kED-zO-S3x" customClass="VWWWaveformParametersTableViewController" sceneMemberID="viewController">
@@ -2277,10 +2288,10 @@ Homepage: http://minterart.tumblr.com</string>
         <image name="crosshair" width="512" height="512"/>
         <image name="sine_256x256.png" width="256" height="256"/>
     </resources>
-    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

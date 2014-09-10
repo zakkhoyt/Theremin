@@ -18,9 +18,8 @@
     dispatch_once(&once, ^{
         NSSet *productIdentifiers = [NSMutableSet setWithObjects:
                                      VWWInAppPurchaseAutotuneKeysKey,
-                                     VWWInAppPurchaseCameraDeviceKey,
-                                     VWWInAppPurchaseGraphSensorsKey,
-//                                     VWWInAppPurchaseTestPurchaseKey,
+//                                     VWWInAppPurchaseCameraDeviceKey,
+//                                     VWWInAppPurchaseGraphSensorsKey,
                                      nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

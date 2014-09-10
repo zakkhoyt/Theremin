@@ -40,6 +40,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        cell.backgroundColor = [UIColor clearColor];
+    }
+}
+
 
 #pragma mark IBActions
 

@@ -44,6 +44,10 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 @property (weak, nonatomic) IBOutlet UISwitch *cameraBlueSwitch;
 
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *cameraConfigureCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cameraRedCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cameraGreenCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cameraBlueCell;
 
 
 
@@ -239,7 +243,7 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 #pragma mark UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(section == VWWSynthesizerCameraSection){
-        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForHeaderInSection:section] : 0;
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForHeaderInSection:section] : 0.01;
     } else {
         return [super tableView:tableView heightForHeaderInSection:section];
     }
@@ -247,7 +251,7 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == VWWSynthesizerCameraSection){
-        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0;
+        return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0.01;
     } else {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
     }
@@ -276,6 +280,20 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     }
 }
 
-
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    VWW_LOG_INFO(@"indexPath: %ld:%ld", (long)indexPath.section, (long)indexPath.row);
+    if(indexPath.section == VWWSynthesizerCameraSection){
+        if([[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey]){
+            cell.contentView.alpha = 1.0;
+            cell.hidden = NO;
+        } else {
+            cell.contentView.alpha = 0.0;
+            cell.hidden = YES;
+        }
+    }
+}
 
 @end

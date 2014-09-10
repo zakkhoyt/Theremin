@@ -103,6 +103,7 @@ NSString *const VWWInAppPurchaseProductPurchasedNotification = @"VWWInAppPurchas
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+    [[NSNotificationCenter defaultCenter] postNotificationName:VWWInAppPurchaseProductPurchasedNotification object:nil userInfo:nil];
 }
 
 

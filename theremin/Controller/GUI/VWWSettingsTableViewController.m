@@ -30,6 +30,8 @@
     self.adBannerView.delegate = self;
     self.adBannerView.alpha = 0.0;
     [self addAirPlayVolumeControl];
+    self.preferredContentSize = CGSizeMake(320, 1000);
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -91,5 +93,13 @@
     }];
 }
 
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        cell.backgroundColor = [UIColor clearColor];
+    }
+}
 
 @end

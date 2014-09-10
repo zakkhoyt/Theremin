@@ -41,6 +41,7 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateControls)];
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 
+    self.cameraCell.hidden = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -114,7 +115,6 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 4){
         return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForRowAtIndexPath:indexPath] : 0;
-        
     } else {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
     }
@@ -147,4 +147,12 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
         [self performSegueWithIdentifier:VWWSegueSensorsToGraph sender:indexPath];
     }
 }
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        cell.backgroundColor = [UIColor clearColor];
+    }
+}
+
 @end
