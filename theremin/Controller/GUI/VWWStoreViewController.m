@@ -22,12 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.tableView.backgroundView = nil;
-        self.tableView.backgroundColor = [UIColor darkGrayColor];
-    }
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{

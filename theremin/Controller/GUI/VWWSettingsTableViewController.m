@@ -23,10 +23,6 @@
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
-        self.tableView.backgroundColor = nil;
-        self.tableView.backgroundColor = [UIColor darkGrayColor];
-    }
     self.adBannerView.delegate = self;
     self.adBannerView.alpha = 0.0;
     [self addAirPlayVolumeControl];
@@ -61,13 +57,9 @@
 }
 
 -(void)addAirPlayVolumeControl{
-//    CGRect frame = CGRectMake(self.airPlayTableViewCell.bounds.size.width - self.airPlayTableViewCell.bounds.size.height,
-//                              self.airPlayTableViewCell.bounds.size.height,
-//                              self.airPlayTableViewCell.bounds.size.height,
-//                              self.airPlayTableViewCell.bounds.size.height);
-    CGRect frame = CGRectMake(12,
-                              12 + 44,
-                              self.airPlayTableViewCell.bounds.size.width - 24,
+    CGRect frame = CGRectMake(8,
+                              8 + 44,
+                              self.view.bounds.size.width - 16,
                               44);
 
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:frame];

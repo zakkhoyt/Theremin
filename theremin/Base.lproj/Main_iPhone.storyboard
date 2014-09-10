@@ -207,7 +207,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Synthesizers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xey-Cb-FTF">
-                                                    <rect key="frame" x="20" y="11" width="234" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="246" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -227,7 +227,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sensor Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ma-TE-SvD">
-                                                    <rect key="frame" x="20" y="11" width="234" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="246" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -247,7 +247,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeU-Zd-Lci">
-                                                    <rect key="frame" x="20" y="11" width="234" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="246" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -267,7 +267,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume &amp; AirPlay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdB-Hb-atQ">
-                                                    <rect key="frame" x="20" y="12" width="234" height="21"/>
+                                                    <rect key="frame" x="8" y="12" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -284,7 +284,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-sr-DbM">
-                                                    <rect key="frame" x="20" y="11" width="234" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="246" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -413,14 +413,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-rS-5vi">
-                                                    <rect key="frame" x="20" y="12" width="203" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n52-OH-jHg">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n52-OH-jHg">
                                                     <rect key="frame" x="231" y="8" width="81" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="9x2-Qw-k1e"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Oke-ky-6Xn"/>
+                                                    </constraints>
                                                     <state key="normal" title="Purchased">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -428,14 +426,32 @@
                                                         <action selector="buyButtonTouchUpInside:" destination="6C9-sE-5AZ" eventType="touchUpInside" id="GtX-ly-G0d"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2IB-Tu-Kl9">
-                                                    <rect key="frame" x="20" y="41" width="280" height="83"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="2IB-Tu-Kl9">
+                                                    <rect key="frame" x="8" y="41" width="304" height="83"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-rS-5vi">
+                                                    <rect key="frame" x="8" y="12" width="215" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="n52-OH-jHg" firstAttribute="top" secondItem="Rma-ik-4b5" secondAttribute="top" constant="8" id="BdR-lB-SrU"/>
+                                                <constraint firstItem="2IB-Tu-Kl9" firstAttribute="top" secondItem="Kb9-rS-5vi" secondAttribute="bottom" constant="8" id="DsT-J9-mVJ"/>
+                                                <constraint firstItem="Kb9-rS-5vi" firstAttribute="leading" secondItem="Rma-ik-4b5" secondAttribute="leading" constant="8" id="Ock-9N-LAi"/>
+                                                <constraint firstItem="2IB-Tu-Kl9" firstAttribute="leading" secondItem="Rma-ik-4b5" secondAttribute="leading" constant="8" id="PwP-xZ-2Cl"/>
+                                                <constraint firstItem="n52-OH-jHg" firstAttribute="leading" secondItem="Kb9-rS-5vi" secondAttribute="trailing" constant="8" id="RpZ-rI-JWm"/>
+                                                <constraint firstItem="2IB-Tu-Kl9" firstAttribute="top" secondItem="n52-OH-jHg" secondAttribute="bottom" constant="3" id="Wvp-RD-b5d"/>
+                                                <constraint firstAttribute="trailing" secondItem="n52-OH-jHg" secondAttribute="trailing" constant="8" id="aUe-zd-sxI"/>
+                                                <constraint firstAttribute="trailing" secondItem="2IB-Tu-Kl9" secondAttribute="trailing" constant="8" id="bcM-oW-4Nk"/>
+                                                <constraint firstItem="Kb9-rS-5vi" firstAttribute="top" secondItem="Rma-ik-4b5" secondAttribute="top" constant="12" id="gwm-v1-HIT"/>
+                                                <constraint firstAttribute="bottom" secondItem="2IB-Tu-Kl9" secondAttribute="bottom" constant="8" id="r9f-rb-TyG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -861,7 +877,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-jK-VeD">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-jK-VeD">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="touchscreenXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="oh6-Az-JAc"/>
@@ -874,6 +890,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="RMs-jK-VeD" secondAttribute="trailing" constant="20" id="Y2F-62-NdX"/>
+                                                <constraint firstItem="RMs-jK-VeD" firstAttribute="top" secondItem="j2S-Vk-Jdz" secondAttribute="top" constant="6" id="dil-XZ-FLL"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -884,7 +904,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-xQ-LCh">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-xQ-LCh">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="touchscreenYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="STR-v1-rcu"/>
@@ -897,6 +917,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="srQ-xQ-LCh" firstAttribute="top" secondItem="fUf-KI-wye" secondAttribute="top" constant="6" id="8hC-MR-VUd"/>
+                                                <constraint firstAttribute="trailing" secondItem="srQ-xQ-LCh" secondAttribute="trailing" constant="20" id="LCu-rB-Sg1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -933,7 +957,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2Q-tY-mQf">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2Q-tY-mQf">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="accelerometersXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="tzv-wg-Dvs"/>
@@ -946,6 +970,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C2Q-tY-mQf" firstAttribute="top" secondItem="gbF-sG-trf" secondAttribute="top" constant="6" id="AU9-Bd-mNp"/>
+                                                <constraint firstAttribute="trailing" secondItem="C2Q-tY-mQf" secondAttribute="trailing" constant="20" id="vZ1-ii-3wL"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -956,7 +984,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-ZU-5bi">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-ZU-5bi">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="accelerometersYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="dhd-kK-hSJ"/>
@@ -969,6 +997,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jrz-ZU-5bi" firstAttribute="top" secondItem="bJ9-eE-fCG" secondAttribute="top" constant="6" id="Vth-7y-Hzt"/>
+                                                <constraint firstAttribute="trailing" secondItem="jrz-ZU-5bi" secondAttribute="trailing" constant="20" id="fbK-3j-3LP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -979,7 +1011,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-QG-LPK">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-QG-LPK">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="accelerometersZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="xPZ-gG-SAd"/>
@@ -992,6 +1024,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NaG-QG-LPK" firstAttribute="top" secondItem="m7x-aG-8xF" secondAttribute="top" constant="6" id="1hA-II-hKZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="NaG-QG-LPK" secondAttribute="trailing" constant="20" id="tJe-6K-VWa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1028,7 +1064,7 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-4w-0YO">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-4w-0YO">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="gyroscopesXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="NSq-D7-KLz"/>
@@ -1041,6 +1077,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="BFy-4w-0YO" secondAttribute="trailing" constant="20" id="E7r-kF-7lD"/>
+                                                <constraint firstItem="BFy-4w-0YO" firstAttribute="top" secondItem="nCx-nR-X6r" secondAttribute="top" constant="6" id="Jiy-xw-YuZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1051,7 +1091,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxT-cv-Doj">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxT-cv-Doj">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="gyroscopesYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="Il1-nh-Soh"/>
@@ -1064,6 +1104,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zxT-cv-Doj" secondAttribute="trailing" constant="20" id="TZg-88-yr6"/>
+                                                <constraint firstItem="zxT-cv-Doj" firstAttribute="top" secondItem="aEB-Q3-aFZ" secondAttribute="top" constant="6" id="YE9-Zi-1Fg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1074,7 +1118,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-oO-fvE">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-oO-fvE">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="gyroscopesZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="byV-uK-qRN"/>
@@ -1087,6 +1131,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jUK-oO-fvE" firstAttribute="top" secondItem="r1i-Nv-YEX" secondAttribute="top" constant="6" id="EeY-WR-Unh"/>
+                                                <constraint firstAttribute="trailing" secondItem="jUK-oO-fvE" secondAttribute="trailing" constant="20" id="Ifl-VM-0gI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1118,7 +1166,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kkd-kp-164">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kkd-kp-164">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="magnetometersXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="7iD-R2-Znm"/>
@@ -1131,6 +1179,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Kkd-kp-164" secondAttribute="trailing" constant="20" id="2iN-zZ-Gwf"/>
+                                                <constraint firstItem="Kkd-kp-164" firstAttribute="top" secondItem="Hh2-XF-yWH" secondAttribute="top" constant="6" id="poD-rj-Ug7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1141,7 +1193,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHp-AC-9dT">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHp-AC-9dT">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="magnetometersYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="RQp-zl-2EQ"/>
@@ -1154,6 +1206,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fHp-AC-9dT" secondAttribute="trailing" constant="20" id="LsD-9k-ata"/>
+                                                <constraint firstItem="fHp-AC-9dT" firstAttribute="top" secondItem="1sL-JT-ss5" secondAttribute="top" constant="6" id="PCr-UW-XdV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1164,7 +1220,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dU1-mB-wug">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dU1-mB-wug">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="magnetometersZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="Kgm-bi-1Qb"/>
@@ -1177,6 +1233,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dU1-mB-wug" firstAttribute="top" secondItem="oLD-6o-KZc" secondAttribute="top" constant="6" id="DDe-zk-nTg"/>
+                                                <constraint firstAttribute="trailing" secondItem="dU1-mB-wug" secondAttribute="trailing" constant="20" id="wrP-SJ-wUT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1214,7 +1274,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUv-WI-yhP">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUv-WI-yhP">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="cameraRedSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="dlD-DE-BhO"/>
@@ -1227,6 +1287,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vUv-WI-yhP" secondAttribute="trailing" constant="20" id="BWm-iB-Z7q"/>
+                                                <constraint firstItem="vUv-WI-yhP" firstAttribute="top" secondItem="tg3-fg-Ccm" secondAttribute="top" constant="6" id="Yvh-1m-oYp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1237,7 +1301,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mi-hW-ZDH">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mi-hW-ZDH">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="cameraGreenSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="V7c-8n-DOm"/>
@@ -1250,6 +1314,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3mi-hW-ZDH" firstAttribute="top" secondItem="to5-CA-n7r" secondAttribute="top" constant="6" id="K6v-fC-HiC"/>
+                                                <constraint firstAttribute="trailing" secondItem="3mi-hW-ZDH" secondAttribute="trailing" constant="20" id="MAV-AE-Cfp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1260,7 +1328,7 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qU-cq-T6Z">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qU-cq-T6Z">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="cameraBlueSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="Nfs-9Z-p3Q"/>
@@ -1273,6 +1341,10 @@ Homepage: http://minterart.tumblr.com</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2qU-cq-T6Z" firstAttribute="top" secondItem="O6e-kW-MeL" secondAttribute="top" constant="6" id="Gnm-w7-m7E"/>
+                                                <constraint firstAttribute="trailing" secondItem="2qU-cq-T6Z" secondAttribute="trailing" constant="20" id="sbm-OR-vtW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
@@ -1735,15 +1807,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lca-tE-BTY">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lca-tE-BTY">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="162" id="T51-qb-eUG"/>
+                                                        <constraint firstAttribute="height" constant="21" id="lKv-Q9-kng"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-Ga-7Wg">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="P9W-7F-nSR" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="xAmplitudeSliderValueChanged:" destination="fna-KS-Mty" eventType="valueChanged" id="8fB-hd-5BK"/>
+                                                    </connections>
+                                                </slider>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-Ga-7Wg">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="Nsj-gW-8cF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="yBU-AF-fel"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1751,13 +1837,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="fna-KS-Mty" id="4RY-HV-eJE"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="P9W-7F-nSR" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="xAmplitudeSliderValueChanged:" destination="fna-KS-Mty" eventType="valueChanged" id="8fB-hd-5BK"/>
-                                                    </connections>
-                                                </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="P9W-7F-nSR" secondAttribute="bottom" constant="11" id="Fq2-Ng-wd6"/>
+                                                <constraint firstItem="lca-tE-BTY" firstAttribute="leading" secondItem="Zm0-gV-vVK" secondAttribute="leading" constant="8" id="Jr1-22-rPU"/>
+                                                <constraint firstAttribute="trailing" secondItem="EMv-Ga-7Wg" secondAttribute="trailing" constant="8" id="M7M-rm-P6s"/>
+                                                <constraint firstItem="EMv-Ga-7Wg" firstAttribute="top" secondItem="Zm0-gV-vVK" secondAttribute="top" constant="16" id="RWb-Z7-xmn"/>
+                                                <constraint firstAttribute="trailing" secondItem="P9W-7F-nSR" secondAttribute="trailing" constant="8" id="TJq-FS-ZeB"/>
+                                                <constraint firstItem="lca-tE-BTY" firstAttribute="top" secondItem="Zm0-gV-vVK" secondAttribute="top" constant="20" id="czH-em-PeA"/>
+                                                <constraint firstItem="P9W-7F-nSR" firstAttribute="leading" secondItem="Zm0-gV-vVK" secondAttribute="leading" constant="8" id="lbv-b8-U3l"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1772,15 +1861,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPV-0M-iCS">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPV-0M-iCS">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="162" id="7at-3h-uZQ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="S8i-jU-eCn"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-nM-4xW">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-3U-dkZ" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="yAmplitudeSliderValueChanged:" destination="fna-KS-Mty" eventType="valueChanged" id="Fgt-V8-PDg"/>
+                                                    </connections>
+                                                </slider>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-nM-4xW">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="4iR-AD-UHD"/>
+                                                        <constraint firstAttribute="width" constant="110" id="i0I-00-bRK"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1788,13 +1891,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="fna-KS-Mty" id="mdp-3V-Hvc"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-3U-dkZ" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="yAmplitudeSliderValueChanged:" destination="fna-KS-Mty" eventType="valueChanged" id="Fgt-V8-PDg"/>
-                                                    </connections>
-                                                </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cAW-nM-4xW" secondAttribute="trailing" constant="8" id="JMD-Ze-H4Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="NrC-3U-dkZ" secondAttribute="bottom" constant="11" id="Jso-8o-PG5"/>
+                                                <constraint firstAttribute="trailing" secondItem="NrC-3U-dkZ" secondAttribute="trailing" constant="8" id="PXu-fp-Pe0"/>
+                                                <constraint firstItem="cAW-nM-4xW" firstAttribute="top" secondItem="i1w-f4-8OD" secondAttribute="top" constant="16" id="VFr-3y-9Gx"/>
+                                                <constraint firstItem="sPV-0M-iCS" firstAttribute="top" secondItem="i1w-f4-8OD" secondAttribute="top" constant="20" id="aUa-Tf-OSy"/>
+                                                <constraint firstItem="sPV-0M-iCS" firstAttribute="leading" secondItem="i1w-f4-8OD" secondAttribute="leading" constant="8" id="sj6-hd-Tcx"/>
+                                                <constraint firstItem="NrC-3U-dkZ" firstAttribute="leading" secondItem="i1w-f4-8OD" secondAttribute="leading" constant="8" id="xwK-JS-TUc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1809,15 +1915,23 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bG-5M-Vw9">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amplitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bG-5M-Vw9">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="162" id="kty-oS-be9"/>
+                                                        <constraint firstAttribute="height" constant="21" id="tRi-jg-EsI"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZj-nE-Zfn">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZj-nE-Zfn">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="IFB-JG-l5r"/>
+                                                        <constraint firstAttribute="width" constant="110" id="jY4-lG-IQ3"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1825,13 +1939,22 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="fna-KS-Mty" id="Fjt-Lo-ytu"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="k6Y-pp-rqJ" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="k6Y-pp-rqJ" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
                                                     <connections>
                                                         <action selector="zAmplitudeSliderValueChanged:" destination="fna-KS-Mty" eventType="valueChanged" id="20R-Bb-vCF"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="k6Y-pp-rqJ" firstAttribute="leading" secondItem="aDA-fd-aeQ" secondAttribute="leading" constant="8" id="1ei-BE-CA2"/>
+                                                <constraint firstItem="5bG-5M-Vw9" firstAttribute="top" secondItem="aDA-fd-aeQ" secondAttribute="top" constant="20" id="GhX-tR-Aiq"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZj-nE-Zfn" secondAttribute="trailing" constant="8" id="Ndz-2N-8a9"/>
+                                                <constraint firstItem="hZj-nE-Zfn" firstAttribute="top" secondItem="aDA-fd-aeQ" secondAttribute="top" constant="16" id="hN7-JG-52O"/>
+                                                <constraint firstAttribute="bottom" secondItem="k6Y-pp-rqJ" secondAttribute="bottom" constant="11" id="ntx-35-lW5"/>
+                                                <constraint firstAttribute="trailing" secondItem="k6Y-pp-rqJ" secondAttribute="trailing" constant="8" id="uPn-gR-y7c"/>
+                                                <constraint firstItem="5bG-5M-Vw9" firstAttribute="leading" secondItem="aDA-fd-aeQ" secondAttribute="leading" constant="8" id="yXQ-M7-YZY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1881,15 +2004,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n40-su-c0V">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n40-su-c0V">
+                                                    <rect key="frame" x="8" y="19" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="U9J-tF-9Bk"/>
+                                                        <constraint firstAttribute="width" constant="162" id="UEj-xb-0nE"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lse-pw-JhZ">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-dm-okQ" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="48" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="xFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="Hsh-QO-tUc"/>
+                                                    </connections>
+                                                </slider>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lse-pw-JhZ">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="1ZQ-jj-AuV"/>
+                                                        <constraint firstAttribute="height" constant="30" id="xaq-B4-vXS"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1898,13 +2035,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="pxz-cD-pwe"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-dm-okQ" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="xFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="Hsh-QO-tUc"/>
-                                                    </connections>
-                                                </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lse-pw-JhZ" firstAttribute="top" secondItem="Cdt-8m-mbJ" secondAttribute="top" constant="16" id="1c3-Iq-hW9"/>
+                                                <constraint firstItem="n40-su-c0V" firstAttribute="top" secondItem="Cdt-8m-mbJ" secondAttribute="top" constant="19" id="Ajv-HS-0A2"/>
+                                                <constraint firstItem="mJ5-dm-okQ" firstAttribute="leading" secondItem="Cdt-8m-mbJ" secondAttribute="leading" constant="8" id="HVJ-I0-d9Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="mJ5-dm-okQ" secondAttribute="bottom" constant="12" id="K2O-Ii-Ee5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lse-pw-JhZ" secondAttribute="trailing" constant="8" id="WE5-Gz-DTO"/>
+                                                <constraint firstAttribute="trailing" secondItem="mJ5-dm-okQ" secondAttribute="trailing" constant="8" id="XDq-ab-6N9"/>
+                                                <constraint firstItem="n40-su-c0V" firstAttribute="leading" secondItem="Cdt-8m-mbJ" secondAttribute="leading" constant="8" id="yKE-Kg-I4r"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1915,15 +2055,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlL-lz-cuK">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlL-lz-cuK">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="162" id="GhW-6a-T0e"/>
+                                                        <constraint firstAttribute="height" constant="21" id="hNt-bU-bIe"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-Gf-tgF">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-JU-rKZ" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="xFrequencyMaxSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="J3E-0L-ASl"/>
+                                                    </connections>
+                                                </slider>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-Gf-tgF">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="4OW-Bz-Vkh"/>
+                                                        <constraint firstAttribute="height" constant="30" id="NuY-MF-JhF"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1931,13 +2085,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="wHS-sN-kLq"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-JU-rKZ" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="xFrequencyMaxSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="J3E-0L-ASl"/>
-                                                    </connections>
-                                                </slider>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="nM9-Gf-tgF" secondAttribute="trailing" constant="8" id="5iL-5W-9Vz"/>
+                                                <constraint firstAttribute="bottom" secondItem="L1L-JU-rKZ" secondAttribute="bottom" constant="11" id="95b-Bo-LV5"/>
+                                                <constraint firstItem="AlL-lz-cuK" firstAttribute="top" secondItem="d5b-Hi-oRT" secondAttribute="top" constant="20" id="Ggh-rh-oz5"/>
+                                                <constraint firstItem="L1L-JU-rKZ" firstAttribute="leading" secondItem="d5b-Hi-oRT" secondAttribute="leading" constant="8" id="ggm-V7-WXI"/>
+                                                <constraint firstAttribute="trailing" secondItem="L1L-JU-rKZ" secondAttribute="trailing" constant="8" id="hHe-Zi-8nT"/>
+                                                <constraint firstItem="nM9-Gf-tgF" firstAttribute="top" secondItem="d5b-Hi-oRT" secondAttribute="top" constant="16" id="iIb-lm-BUZ"/>
+                                                <constraint firstItem="AlL-lz-cuK" firstAttribute="leading" secondItem="d5b-Hi-oRT" secondAttribute="leading" constant="8" id="vBm-bs-SGC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1952,9 +2109,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RpN-81-xot">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1fD-pP-pfs" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="yFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="rkr-Ep-R1V"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-Fe-gAb">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Uho-8p-0qH"/>
+                                                        <constraint firstAttribute="width" constant="162" id="ZLC-PB-Kwd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RpN-81-xot">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="1dJ-Su-8NR"/>
+                                                        <constraint firstAttribute="height" constant="30" id="2tE-Ey-7Oa"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1962,19 +2139,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="4Ib-o1-MQo"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1fD-pP-pfs" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="yFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="rkr-Ep-R1V"/>
-                                                    </connections>
-                                                </slider>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-Fe-gAb">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1fD-pP-pfs" secondAttribute="bottom" constant="11" id="CMv-rB-hzD"/>
+                                                <constraint firstItem="1fD-pP-pfs" firstAttribute="leading" secondItem="EVo-0B-fZh" secondAttribute="leading" constant="8" id="JuW-UC-1cc"/>
+                                                <constraint firstAttribute="trailing" secondItem="RpN-81-xot" secondAttribute="trailing" constant="8" id="LRZ-V8-EWG"/>
+                                                <constraint firstItem="ZSI-Fe-gAb" firstAttribute="top" secondItem="EVo-0B-fZh" secondAttribute="top" constant="20" id="bKf-nS-67S"/>
+                                                <constraint firstItem="RpN-81-xot" firstAttribute="top" secondItem="EVo-0B-fZh" secondAttribute="top" constant="16" id="eoU-sI-Y7Q"/>
+                                                <constraint firstAttribute="trailing" secondItem="1fD-pP-pfs" secondAttribute="trailing" constant="8" id="t2L-w4-15g"/>
+                                                <constraint firstItem="ZSI-Fe-gAb" firstAttribute="leading" secondItem="EVo-0B-fZh" secondAttribute="leading" constant="8" id="x98-wW-8eV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1985,9 +2159,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-rw-95U">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-hn-VuS" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="yFrequencyMaxSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="kRn-hH-h6J"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VT-Ph-Ubw">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="8JR-Q5-dvS"/>
+                                                        <constraint firstAttribute="width" constant="162" id="Z0L-xw-YJC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-rw-95U">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="NaA-Ow-0hv"/>
+                                                        <constraint firstAttribute="width" constant="110" id="l5o-yh-YDJ"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1995,19 +2189,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="Wtr-gi-5Ev"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-hn-VuS" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="yFrequencyMaxSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="kRn-hH-h6J"/>
-                                                    </connections>
-                                                </slider>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VT-Ph-Ubw">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hhj-hn-VuS" secondAttribute="bottom" constant="11" id="FSs-Sw-WQx"/>
+                                                <constraint firstItem="5VT-Ph-Ubw" firstAttribute="leading" secondItem="cii-be-Odq" secondAttribute="leading" constant="8" id="Kzy-Yc-RIP"/>
+                                                <constraint firstAttribute="trailing" secondItem="hhj-hn-VuS" secondAttribute="trailing" constant="8" id="Oqa-e1-y5M"/>
+                                                <constraint firstItem="aCJ-rw-95U" firstAttribute="top" secondItem="cii-be-Odq" secondAttribute="top" constant="16" id="TnB-dG-8Hi"/>
+                                                <constraint firstItem="hhj-hn-VuS" firstAttribute="leading" secondItem="cii-be-Odq" secondAttribute="leading" constant="8" id="Yf1-A0-DdZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="aCJ-rw-95U" secondAttribute="trailing" constant="8" id="d5o-tG-AhQ"/>
+                                                <constraint firstItem="5VT-Ph-Ubw" firstAttribute="top" secondItem="cii-be-Odq" secondAttribute="top" constant="20" id="ygY-Kc-SJY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -2022,9 +2213,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqI-wb-zUS">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-g7-D8o" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
+                                                    <connections>
+                                                        <action selector="zFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="WEx-Nl-sc0"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhF-YQ-BcE">
+                                                    <rect key="frame" x="8" y="20" width="162" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="p9o-ek-A89"/>
+                                                        <constraint firstAttribute="width" constant="162" id="tAB-yX-OdA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqI-wb-zUS">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="0cX-Hg-Jpk"/>
+                                                        <constraint firstAttribute="width" constant="110" id="qFg-of-QXa"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -2032,19 +2243,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="9zz-tF-bTu"/>
                                                     </connections>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-g7-D8o" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
-                                                    <connections>
-                                                        <action selector="zFrequencyMinSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="WEx-Nl-sc0"/>
-                                                    </connections>
-                                                </slider>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhF-YQ-BcE">
-                                                    <rect key="frame" x="20" y="20" width="162" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tgr-g7-D8o" secondAttribute="bottom" constant="11" id="R2y-ne-wes"/>
+                                                <constraint firstAttribute="trailing" secondItem="QqI-wb-zUS" secondAttribute="trailing" constant="8" id="XFr-hZ-0Od"/>
+                                                <constraint firstItem="yhF-YQ-BcE" firstAttribute="top" secondItem="QEL-dC-wVo" secondAttribute="top" constant="20" id="bhx-VR-vp4"/>
+                                                <constraint firstItem="QqI-wb-zUS" firstAttribute="top" secondItem="QEL-dC-wVo" secondAttribute="top" constant="16" id="fZe-dO-m6y"/>
+                                                <constraint firstAttribute="trailing" secondItem="tgr-g7-D8o" secondAttribute="trailing" constant="8" id="tmG-xx-Uwf"/>
+                                                <constraint firstItem="tgr-g7-D8o" firstAttribute="leading" secondItem="QEL-dC-wVo" secondAttribute="leading" constant="8" id="vVw-qG-TuS"/>
+                                                <constraint firstItem="yhF-YQ-BcE" firstAttribute="leading" secondItem="QEL-dC-wVo" secondAttribute="leading" constant="8" id="zbb-t5-pgE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -2055,15 +2263,29 @@ Homepage: http://minterart.tumblr.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MHi-FK-L1K" customClass="JAMAccurateSlider">
-                                                    <rect key="frame" x="18" y="49" width="284" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MHi-FK-L1K" customClass="JAMAccurateSlider">
+                                                    <rect key="frame" x="6" y="49" width="308" height="31"/>
                                                     <connections>
                                                         <action selector="zFrequencyMaxSliderValueChanged:" destination="cHt-NB-Ct4" eventType="valueChanged" id="hmP-09-awF"/>
                                                     </connections>
                                                 </slider>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHL-M6-ExC">
-                                                    <rect key="frame" x="190" y="16" width="110" height="30"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7P-ih-Egq">
+                                                    <rect key="frame" x="8" y="20" width="167" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="pEh-0w-7oz"/>
+                                                        <constraint firstAttribute="width" constant="167" id="vMZ-iw-Nvv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHL-M6-ExC">
+                                                    <rect key="frame" x="202" y="16" width="110" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="58F-lC-dgl"/>
+                                                        <constraint firstAttribute="width" constant="110" id="qxg-Fn-zoL"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -2071,13 +2293,16 @@ Homepage: http://minterart.tumblr.com</string>
                                                         <outlet property="delegate" destination="cHt-NB-Ct4" id="Oun-lJ-Dxn"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maximum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7P-ih-Egq">
-                                                    <rect key="frame" x="15" y="20" width="167" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="CHL-M6-ExC" secondAttribute="trailing" constant="8" id="Np3-fv-hNj"/>
+                                                <constraint firstItem="t7P-ih-Egq" firstAttribute="leading" secondItem="Oyl-xh-pSC" secondAttribute="leading" constant="8" id="QVu-tx-bXf"/>
+                                                <constraint firstItem="MHi-FK-L1K" firstAttribute="leading" secondItem="Oyl-xh-pSC" secondAttribute="leading" constant="8" id="ZYX-pY-EwY"/>
+                                                <constraint firstAttribute="trailing" secondItem="MHi-FK-L1K" secondAttribute="trailing" constant="8" id="kMh-94-POy"/>
+                                                <constraint firstAttribute="bottom" secondItem="MHi-FK-L1K" secondAttribute="bottom" constant="11" id="l5I-Gm-Ols"/>
+                                                <constraint firstItem="t7P-ih-Egq" firstAttribute="top" secondItem="Oyl-xh-pSC" secondAttribute="top" constant="20" id="sor-FI-5XG"/>
+                                                <constraint firstItem="CHL-M6-ExC" firstAttribute="top" secondItem="Oyl-xh-pSC" secondAttribute="top" constant="16" id="ybM-6n-RzM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -2133,15 +2358,15 @@ Homepage: http://minterart.tumblr.com</string>
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sine_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="cDg-nI-Myq">
-                                            <rect key="frame" x="20" y="2" width="39" height="41"/>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sw-3Q-XTO">
                                             <rect key="frame" x="67" y="2" width="214" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sine_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="cDg-nI-Myq">
+                                            <rect key="frame" x="20" y="2" width="39" height="41"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -63,11 +63,6 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
     [super viewDidLoad];
 
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.tableView.backgroundView = nil;
-        self.tableView.backgroundColor = [UIColor darkGrayColor];
-    }
 
 }
 

@@ -33,10 +33,6 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 {
     [super viewDidLoad];
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.tableView.backgroundColor = nil;
-        self.tableView.backgroundColor = [UIColor darkGrayColor];
-    }
     
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateControls)];
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
@@ -47,18 +43,7 @@ static NSString *VWWSegueSensorsToGraph = @"VWWSegueSensorsToGraph";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        NSInteger sectionCount = [self.tableView numberOfSections];
-        for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
-            NSInteger cellCount = [self.tableView numberOfRowsInSection:sectionIndex];
-            for(NSUInteger cellIndex = 0; cellIndex < cellCount; cellIndex++){
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
-                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                cell.backgroundColor = [UIColor clearColor];
-            }
-        }
-    }
+
     
     
     // Update disclosuer indicators

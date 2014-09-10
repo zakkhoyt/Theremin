@@ -14,7 +14,6 @@
 		C60DAA3A18B7DB9F000F0AD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA3918B7DB9F000F0AD1 /* main.m */; };
 		C60DAA3E18B7DB9F000F0AD1 /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */; };
 		C60DAA4118B7DB9F000F0AD1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA3F18B7DB9F000F0AD1 /* Main_iPhone.storyboard */; };
-		C60DAA4418B7DB9F000F0AD1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */; };
 		C60DAA4918B7DB9F000F0AD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */; };
 		C60DAA5018B7DB9F000F0AD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DAA4F18B7DB9F000F0AD1 /* XCTest.framework */; };
 		C60DAA5118B7DB9F000F0AD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60DAA2D18B7DB9F000F0AD1 /* Foundation.framework */; };
@@ -113,7 +112,6 @@
 		C60DAA3C18B7DB9F000F0AD1 /* VWWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWAppDelegate.h; sourceTree = "<group>"; };
 		C60DAA3D18B7DB9F000F0AD1 /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
 		C60DAA4018B7DB9F000F0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C60DAA4318B7DB9F000F0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C60DAA4818B7DB9F000F0AD1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C60DAA4E18B7DB9F000F0AD1 /* thereminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thereminTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60DAA4F18B7DB9F000F0AD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -566,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				C60DAA3F18B7DB9F000F0AD1 /* Main_iPhone.storyboard */,
-				C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */,
 			);
 			name = UserInterface;
 			sourceTree = "<group>";
@@ -951,7 +948,6 @@
 				C6DFF3BE18B7E03300B9F94B /* dinas_handwriting.ttf in Resources */,
 				C6DFF3C018B7E03300B9F94B /* pricedown.ttf in Resources */,
 				C6DFF3C318B7E03300B9F94B /* theremin_short@2x~iphone.psd in Resources */,
-				C60DAA4418B7DB9F000F0AD1 /* Main_iPad.storyboard in Resources */,
 				C60DAA4918B7DB9F000F0AD1 /* Images.xcassets in Resources */,
 				C60DAA4118B7DB9F000F0AD1 /* Main_iPhone.storyboard in Resources */,
 				C6DFF2E118B7DED100B9F94B /* readme.markdown in Resources */,
@@ -1072,14 +1068,6 @@
 				C60DAA4018B7DB9F000F0AD1 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C60DAA4218B7DB9F000F0AD1 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C60DAA4318B7DB9F000F0AD1 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */ = {

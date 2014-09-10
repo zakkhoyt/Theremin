@@ -23,27 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.tableView.backgroundColor = nil;
-        self.tableView.backgroundColor = [UIColor darkGrayColor];
-    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[VWWSynthesizersController sharedInstance] writeSettings];
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        NSInteger sectionCount = [self.tableView numberOfSections];
-        for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
-            NSInteger cellCount = [self.tableView numberOfRowsInSection:sectionIndex];
-            for(NSUInteger cellIndex = 0; cellIndex < cellCount; cellIndex++){
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
-                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                cell.backgroundColor = [UIColor clearColor];
-            }
-        }
-    }
 }
 
 
