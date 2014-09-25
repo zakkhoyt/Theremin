@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewController.h"
 @class  VWWSynthesizerGroup;
-@interface VWWSynthesizerAxisSettingsTableViewController : UITableViewController
+@interface VWWSynthesizerAxisSettingsTableViewController : VWWTableViewController
 @property (nonatomic, strong) VWWSynthesizerGroup *synthesizerGroup;
 @end

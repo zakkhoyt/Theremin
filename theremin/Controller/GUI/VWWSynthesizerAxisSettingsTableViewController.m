@@ -14,6 +14,7 @@
 #import "VWWEffectParametersTableViewController.h"
 #import "VWWSensitivityParameterTableViewController.h"
 #import "VWWSynthesizersController.h"
+#import "VWWTableHeaderView.h"
 
 const NSInteger VWWSynthesizerAxisFrequencyRow = 0;
 const NSInteger VWWSynthesizerAxisWaveformRow = 1;
@@ -290,6 +291,31 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
     
 }
 
+
+#pragma mark UITableViewDataSource
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    NSString *title = nil;
+    switch (section) {
+        case 0:
+            title =  @"Frequency";
+            break;
+        case 1:
+            title =  @"Waveform";
+            break;
+        case 2:
+            title =  @"Amplitude";
+            break;
+        case 3:
+            title =  @"Effects";
+            break;
+        default:
+            break;
+    }
+    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, 44);
+    VWWTableHeaderView* headerView = [[VWWTableHeaderView alloc]initWithFrame:frame title:title];
+    
+    return headerView;
+}
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

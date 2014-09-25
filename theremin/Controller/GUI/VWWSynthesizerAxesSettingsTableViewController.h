@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewController.h"
 @class VWWSynthesizerGroup;
 
-@interface VWWSynthesizerAxesSettingsTableViewController : UITableViewController
+@interface VWWSynthesizerAxesSettingsTableViewController : VWWTableViewController
 @property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *gyroscopesGroup;

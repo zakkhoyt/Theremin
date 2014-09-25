@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewCell.h"
 #import <StoreKit/StoreKit.h>
 
 
@@ -17,7 +17,7 @@
 -(void)storeTableViewCellVideoButtonAction:(VWWStoreTableViewCell*)sender;
 @end
 
-@interface VWWStoreTableViewCell : UITableViewCell
+@interface VWWStoreTableViewCell : VWWTableViewCell
 @property (nonatomic, strong) SKProduct *product;
 @property (nonatomic, weak) id <VWWStoreTableViewCellDelegate> delegate;
 @end

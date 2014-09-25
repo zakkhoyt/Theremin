@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewCell.h"
 
 #import "VWWSynthesizerTypes.h"
 
 
-@interface VWWEffectTableViewCell : UITableViewCell
+@interface VWWEffectTableViewCell : VWWTableViewCell
 @property (nonatomic) VWWEffectType effectType;
 @property (nonatomic) VWWAutoTuneType keyType;
 @end

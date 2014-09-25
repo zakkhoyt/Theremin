@@ -11,6 +11,8 @@
 #import "VWWSynthesizerAxisSettingsTableViewController.h"
 #import "VWWSynthesizersController.h"
 #import "VWWInAppPurchaseIdentifier.h"
+#import "VWWTableHeaderView.h"
+
 
 
 static NSString *VWWSegueAxesToGroupConfig = @"VWWSegueAxesToGroupConfig";
@@ -61,7 +63,6 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 {
 
     [super viewDidLoad];
-
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
 
 }
@@ -236,6 +237,33 @@ const NSInteger VWWSynthesizerZAxisRow = 3;
 
 
 #pragma mark UITableViewDataSource
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    NSString *title = nil;
+//    switch (section) {
+//        case 0:
+//            title =  @"Touch Screen";
+//            break;
+//        case 1:
+//            title =  @"Accelerometers";
+//            break;
+//        case 2:
+//            title =  @"Gyroscopes";
+//            break;
+//        case 3:
+//            title =  @"Magnetometers";
+//            break;
+//        case 4:
+//            title =  [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? @"Camera" : @"";
+//            break;
+//        default:
+//            break;
+//    }
+//    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, 44);
+//    VWWTableHeaderView* headerView = [[VWWTableHeaderView alloc]initWithFrame:frame title:title];
+//
+//    return headerView;
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(section == VWWSynthesizerCameraSection){
         return [[VWWInAppPurchaseIdentifier sharedInstance]productPurchased:VWWInAppPurchaseCameraDeviceKey] ? [super tableView:tableView heightForHeaderInSection:section] : 0.01;

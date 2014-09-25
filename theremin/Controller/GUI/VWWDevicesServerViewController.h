@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWViewController.h"
 
-@interface VWWDevicesServerViewController : UIViewController
+@interface VWWDevicesServerViewController : VWWViewController
 
 @end

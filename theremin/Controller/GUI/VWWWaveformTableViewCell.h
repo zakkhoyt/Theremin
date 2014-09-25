@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewCell.h"
 #import "VWWSynthesizerTypes.h"
 
 
 
-@interface VWWWaveformTableViewCell : UITableViewCell
+@interface VWWWaveformTableViewCell : VWWTableViewCell
 @property (nonatomic) VWWWaveType wavetype;
 @end

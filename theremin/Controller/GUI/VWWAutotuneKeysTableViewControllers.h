@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewController.h"
 @class VWWNormalizedSynthesizer;
 
-@interface VWWAutotuneKeysTableViewControllers : UITableViewController
+@interface VWWAutotuneKeysTableViewControllers : VWWTableViewController
 @property (nonatomic, strong) VWWNormalizedSynthesizer *synthesizer;
 @end

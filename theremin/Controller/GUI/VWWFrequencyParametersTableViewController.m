@@ -11,6 +11,7 @@
 #import "VWWSynthesizerGroup.h" 
 #import "VWWSynthesizersController.h"
 #import "JAMAccurateSlider.h"
+#import "VWWTableHeaderView.h"
 
 @interface VWWFrequencyParametersTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *xFrequencyMinTextField;
@@ -251,6 +252,46 @@
     }
     return @"";
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    NSString *title = nil;
+//    if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupTouchScreen] ||
+//       [self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupMotion]){
+//        
+//        switch (section) {
+//            case VWWAxisTypeX:
+//                title =  @"X-Axis";
+//                break;
+//            case VWWAxisTypeY:
+//                title =  @"Y-Axis";
+//                break;
+//            case VWWAxisTypeZ:
+//                title =  @"Z-Axis";
+//                break;
+//            default:
+//                break;
+//        }
+//    } else if([self.synthesizerGroup.groupType isEqualToString:VWWSynthesizerGroupCamera]){
+//        switch (section) {
+//            case VWWAxisTypeX:
+//                title = @"Red";
+//                break;
+//            case VWWAxisTypeY:
+//                title = @"Green";
+//                break;
+//            case VWWAxisTypeZ:
+//                title = @"Blue";
+//                break;
+//            default:
+//                break;
+//        }
+//        
+//    }
+//    
+//    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, 44);
+//    VWWTableHeaderView* headerView = [[VWWTableHeaderView alloc]initWithFrame:frame title:title];
+//    return headerView;
+//}
 
 #pragma mark UITableViewDelegate
 

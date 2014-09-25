@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewController.h"
 
-@interface VWWSettingsTableViewController : UITableViewController
+@interface VWWSettingsTableViewController : VWWTableViewController
 
 @end

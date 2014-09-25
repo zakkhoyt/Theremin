@@ -7,6 +7,7 @@
 //
 
 #import "VWWAppDelegate.h"
+#import "UIFont+VWW.h"
 
 @implementation VWWAppDelegate
 
@@ -52,11 +53,24 @@
 }
 
 -(void)setupAppearance{
-    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
+//    [[UIToolbar appearance] setBarTintColor:[UIColor darkGrayColor]];r
+    
+    UIColor *color = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2];
+    [[UINavigationBar appearance] setBarTintColor:color];
+    [[UIToolbar appearance] setBarTintColor:color];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]}];
-    [[UIToolbar appearance] setBarTintColor:[UIColor darkGrayColor]];
-}
+    
+    
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor greenColor],
+                                 NSFontAttributeName : [UIFont fontForVWWWithSize:18]};
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
 
+}
 
 -(void)printFonts{
     VWW_LOG_DEBUG(@"\nListing fonts installed on this device:\n");

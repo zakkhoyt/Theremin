@@ -10,7 +10,7 @@
 #import "VWWInAppPurchaseIdentifier.h"
 
 @interface VWWStoreTableViewCell ()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *productLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
@@ -21,7 +21,7 @@
 
 -(void)setProduct:(SKProduct *)product{
     _product = product;
-    self.titleLabel.text = product.localizedTitle;
+    self.productLabel.text = product.localizedTitle;
     if(product.localizedDescription){
         self.descriptionLabel.text = [NSString stringWithFormat:@"Description: %@", product.localizedDescription];
     } else {
