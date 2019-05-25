@@ -323,6 +323,10 @@
 }
 
 -(AVCaptureDevice *)frontFacingCameraIfAvailable {
+//    AVCaptureDeviceDiscoverySession* discoverSession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
+//                                                           mediaType:AVMediaTypeVideo
+//                                                            position:AVCaptureDevicePositionUnspecified];
+//    
     NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     AVCaptureDevice *captureDevice = nil;
     for (AVCaptureDevice *device in videoDevices) {

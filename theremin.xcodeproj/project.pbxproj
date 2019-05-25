@@ -911,7 +911,7 @@
 				TargetAttributes = {
 					C60DAA2918B7DB9F000F0AD1 = {
 						DevelopmentTeam = J7U74N85YF;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -922,6 +922,7 @@
 						};
 					};
 					C60DAA4D18B7DB9F000F0AD1 = {
+						DevelopmentTeam = J7U74N85YF;
 						TestTargetID = C60DAA2918B7DB9F000F0AD1;
 					};
 				};
@@ -1118,7 +1119,9 @@
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = J7U74N85YF;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1138,7 +1141,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
+				PROVISIONING_PROFILE = automatic;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1172,9 +1175,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = J7U74N85YF;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1186,7 +1191,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
+				PROVISIONING_PROFILE = automatic;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1201,8 +1206,8 @@
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = J7U74N85YF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1214,8 +1219,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.theremin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "282d5bad-2961-41fa-b668-7646f4bc4b12";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = automatic;
+				PROVISIONING_PROFILE_SPECIFIER = vaporwarewolf_Theremin_dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1227,10 +1232,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = J7U74N85YF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1242,8 +1247,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.theremin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "282d5bad-2961-41fa-b668-7646f4bc4b12";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = automatic;
+				PROVISIONING_PROFILE_SPECIFIER = vaporwarewolf_Theremin_appstore;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
