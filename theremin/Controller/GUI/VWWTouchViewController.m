@@ -42,7 +42,6 @@
 
 @implementation VWWTouchViewController
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -64,11 +63,12 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:VWWStartCamera object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self startCamera];
     }];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+
     self.navigationController.navigationBarHidden = YES;
     
 }
@@ -89,6 +89,8 @@
     } else {
         [self showInfoLabel];
     }
+    
+    //self.touchView.backgroundColor = [UIColor whiteColor];
 }
 
 - (BOOL)prefersStatusBarHidden {

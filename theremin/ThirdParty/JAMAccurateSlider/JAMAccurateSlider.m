@@ -166,10 +166,10 @@ static const float kAnimationFadeOutDuration = 0.4;
     }
     
 
-    CGFloat verticalTouchDelta = fabsf([touch locationInView:self].y - (self.frame.size.height / 2.f));
+    CGFloat verticalTouchDelta = fabs([touch locationInView:self].y - (self.frame.size.height / 2.f));
     if (verticalTouchDelta > self.frame.size.height * 2.f) {
         CGFloat trackingHorizontalDistance = [touch locationInView:self].x - [touch previousLocationInView:self].x;
-        CGFloat valueDivisor = fabsf(verticalTouchDelta / self.frame.size.height);
+        CGFloat valueDivisor = fabs(verticalTouchDelta / self.frame.size.height);
         CGFloat valueRange = self.maximumValue - self.minimumValue;
         CGFloat valuePerPoint = valueRange / self.frame.size.width;
         self.value += (trackingHorizontalDistance * valuePerPoint) / valueDivisor;

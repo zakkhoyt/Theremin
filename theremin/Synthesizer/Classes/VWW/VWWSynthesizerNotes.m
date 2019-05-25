@@ -145,8 +145,8 @@
     else{
         if(frequency < ((NSNumber*)(notes)[mid]).floatValue){
             // See if it's closer to mid or mid-1
-            float temp1 = abs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
-            float temp2 = abs(frequency - ((NSNumber*)(notes)[mid-1]).floatValue);
+            float temp1 = fabs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
+            float temp2 = fabs(frequency - ((NSNumber*)(notes)[mid-1]).floatValue);
             if(temp1 < temp2)
                 r = ((NSNumber*)(notes)[mid]).floatValue;
             else
@@ -154,8 +154,8 @@
         }
         else{
             // See if it's closer to mid of mid+1
-            float temp1 = abs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
-            float temp2 = abs(frequency - ((NSNumber*)(notes)[mid+1]).floatValue);
+            float temp1 = fabs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
+            float temp2 = fabs(frequency - ((NSNumber*)(notes)[mid+1]).floatValue);
             if(temp1 < temp2)
                 r = ((NSNumber*)(notes)[mid]).floatValue;
             else

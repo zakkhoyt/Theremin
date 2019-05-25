@@ -8,11 +8,9 @@
 
 #import "VWWSettingsTableViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import <iAd/iAd.h>
 
-@interface VWWSettingsTableViewController () <ADBannerViewDelegate>
+@interface VWWSettingsTableViewController ()
 @property (weak, nonatomic) IBOutlet UITableViewCell *airPlayTableViewCell;
-@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @end
 
 @implementation VWWSettingsTableViewController
@@ -21,10 +19,6 @@
 {
     [super viewDidLoad];
 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    self.adBannerView.delegate = self;
-    self.adBannerView.alpha = 0.0;
     [self addAirPlayVolumeControl];
     self.preferredContentSize = CGSizeMake(320, 1000);
 
@@ -32,7 +26,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     NSInteger sectionCount = [self.tableView numberOfSections];
     for(NSUInteger sectionIndex = 0; sectionIndex < sectionCount; sectionIndex++){
@@ -77,13 +70,6 @@
 //    return cell;
 //}
 
-#pragma mark AdBannerDelegate
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.adBannerView.alpha = 1.0;
-    }];
-}
 
 
 #pragma mark UITableViewDelegate

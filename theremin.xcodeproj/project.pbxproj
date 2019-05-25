@@ -21,6 +21,7 @@
 		C60DAA5A18B7DB9F000F0AD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60DAA5818B7DB9F000F0AD1 /* InfoPlist.strings */; };
 		C60DAA5C18B7DB9F000F0AD1 /* thereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */; };
 		C610D4AB18B8055800999A3D /* theremin.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C610D4AA18B8055800999A3D /* theremin.entitlements */; };
+		C62846822298E78E00749606 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62846812298E78E00749606 /* NavigationController.m */; };
 		C668DEAD19B7B8BB00917545 /* VWWSensorGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C668DEAC19B7B8BB00917545 /* VWWSensorGraphViewController.m */; };
 		C668DEB219B7B8F200917545 /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C668DEB019B7B8F200917545 /* VWWGraphScene.m */; };
 		C6C8CBB819AD17DF0084BA98 /* VWWInAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C8CBB519AD17DF0084BA98 /* VWWInAppPurchase.m */; };
@@ -119,6 +120,8 @@
 		C60DAA5918B7DB9F000F0AD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C60DAA5B18B7DB9F000F0AD1 /* thereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thereminTests.m; sourceTree = "<group>"; };
 		C610D4AA18B8055800999A3D /* theremin.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = theremin.entitlements; sourceTree = "<group>"; };
+		C62846802298E78E00749606 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		C62846812298E78E00749606 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		C668DEAB19B7B8BB00917545 /* VWWSensorGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSensorGraphViewController.h; sourceTree = "<group>"; };
 		C668DEAC19B7B8BB00917545 /* VWWSensorGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSensorGraphViewController.m; sourceTree = "<group>"; };
 		C668DEAF19B7B8F200917545 /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 				C610D4AE18B80A4B00999A3D /* Settings */,
 				C610D4BA18B80AFD00999A3D /* Touchscreen */,
 				C610D4B918B80AF600999A3D /* Welcome */,
+				C62846802298E78E00749606 /* NavigationController.h */,
+				C62846812298E78E00749606 /* NavigationController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -901,11 +906,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VWW;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Zakk Hoyt";
 				TargetAttributes = {
 					C60DAA2918B7DB9F000F0AD1 = {
 						DevelopmentTeam = J7U74N85YF;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -922,7 +928,7 @@
 			};
 			buildConfigurationList = C60DAA2518B7DB9F000F0AD1 /* Build configuration list for PBXProject "theremin" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1027,6 +1033,7 @@
 				C6DFF3AA18B7E03300B9F94B /* VWWTouchViewController.m in Sources */,
 				C6DFF3AE18B7E03300B9F94B /* VWWBonjourClientController.m in Sources */,
 				C668DEB219B7B8F200917545 /* VWWGraphScene.m in Sources */,
+				C62846822298E78E00749606 /* NavigationController.m in Sources */,
 				C6DFF3BD18B7E03300B9F94B /* VWWMotionAxis.m in Sources */,
 				C6DFF3A218B7E03300B9F94B /* VWWFrequencyParametersTableViewController.m in Sources */,
 				C6DFF3A718B7E03300B9F94B /* VWWSynthesizerAxesSettingsTableViewController.m in Sources */,
@@ -1089,20 +1096,34 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1115,7 +1136,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
 				SDKROOT = iphoneos;
@@ -1131,27 +1152,40 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PROVISIONING_PROFILE = "FC8677A4-E02D-40BC-88E5-DD615E8E9DB1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1165,8 +1199,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1175,9 +1211,11 @@
 					"theremin/ThirdParty/GPUImage/Source/**",
 				);
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.theremin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "282d5bad-2961-41fa-b668-7646f4bc4b12";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1189,8 +1227,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = theremin/Controller/NonGUI/InterappAudio/theremin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1199,9 +1239,11 @@
 					"theremin/ThirdParty/GPUImage/Source/**",
 				);
 				INFOPLIST_FILE = "theremin/theremin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.theremin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "282d5bad-2961-41fa-b668-7646f4bc4b12";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1224,6 +1266,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "thereminTests/thereminTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vaporwarewolf.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1242,6 +1285,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "theremin/theremin-Prefix.pch";
 				INFOPLIST_FILE = "thereminTests/thereminTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vaporwarewolf.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
