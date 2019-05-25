@@ -83,24 +83,20 @@
     self.graphScene.bottom = -1.0;
     self.graphScene.top    =  1.0;
 }
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
-    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-       toInterfaceOrientation == UIInterfaceOrientationLandscapeRight){
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
-        self.toolbar.hidden = YES;
-        
-    } else {
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-        self.toolbar.hidden = NO;
-    }
-    
-}
-
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-    
-}
+//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+//    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+//
+//    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+//       toInterfaceOrientation == UIInterfaceOrientationLandscapeRight){
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//        self.toolbar.hidden = YES;
+//
+//    } else {
+//        [self.navigationController setNavigationBarHidden:NO animated:NO];
+//        self.toolbar.hidden = NO;
+//    }
+//
+//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 //    if([segue.identifier isEqualToString:VWWSegueTuningToOptions]){
@@ -109,9 +105,9 @@
 //    }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return YES;
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+//    return YES;
+//}
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -63,10 +63,24 @@
 
 #pragma mark IBActions
 - (IBAction)restoreButtonAction:(id)sender {
-    [[[UIAlertView alloc]initWithTitle:@"Restore Purchases?"
-                               message:@"This will restore any features that you have previously purchased with your iTunes Store account"
-                              delegate:self cancelButtonTitle:@"Not Now"
-                     otherButtonTitles:@"Restore", nil]show];
+    
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Restore Purchases?"
+                                                                message:@"This will restore any features that you have previously purchased with your iTunes Store account"
+                                                         preferredStyle:UIAlertControllerStyleAlert];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Restore"
+                                           style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * _Nonnull action) {
+                                             if(self.hud == nil) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                             [[VWWInAppPurchase sharedInstance] restoreCompletedTransactions];
+
+                                         }]];
+    
+    [ac addAction:[UIAlertAction actionWithTitle:@"Not Now"
+                                           style:UIAlertActionStyleDefault
+                                         handler:nil]];
+    
+    [self presentViewController:ac animated:YES completion:nil];
 }
 
 #pragma mark Private methods
@@ -119,14 +133,6 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         cell.backgroundColor = [UIColor clearColor];
-    }
-}
-
-#pragma mark UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1){
-        if(self.hud == nil)[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[VWWInAppPurchase sharedInstance] restoreCompletedTransactions];
     }
 }
 

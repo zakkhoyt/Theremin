@@ -114,8 +114,8 @@ static NSString *zMax = @"zMax";
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
         // Set _device values
-        _accelerometers.x.current = accelerometerData.acceleration.x;
-        _accelerometers.x.currentNormalized = value;
+        self->_accelerometers.x.current = accelerometerData.acceleration.x;
+        self->_accelerometers.x.currentNormalized = value;
         
         
         // Y Axis
@@ -124,8 +124,8 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _accelerometers.y.current = accelerometerData.acceleration.y;
-        _accelerometers.y.currentNormalized = value;
+        self->_accelerometers.y.current = accelerometerData.acceleration.y;
+        self->_accelerometers.y.currentNormalized = value;
         
         // Z Axis
         value = accelerometerData.acceleration.z + kAccelerometerZMax;
@@ -133,41 +133,41 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _accelerometers.z.current = accelerometerData.acceleration.z;
-        _accelerometers.z.currentNormalized = value;
+        self->_accelerometers.z.current = accelerometerData.acceleration.z;
+        self->_accelerometers.z.currentNormalized = value;
         
         
         
         
         // Set device min and max values
         BOOL changed = NO;
-        if(accelerometerData.acceleration.x < _accelerometers.x.min){
-            _accelerometers.x.min = accelerometerData.acceleration.x;
+        if(accelerometerData.acceleration.x < self->_accelerometers.x.min){
+            self->_accelerometers.x.min = accelerometerData.acceleration.x;
             changed = YES;
         }
-        if(accelerometerData.acceleration.x > _accelerometers.x.max){
-            _accelerometers.x.max = accelerometerData.acceleration.x;
+        if(accelerometerData.acceleration.x > self->_accelerometers.x.max){
+            self->_accelerometers.x.max = accelerometerData.acceleration.x;
             changed = YES;
         }
-        if(accelerometerData.acceleration.y < _accelerometers.y.min){
-            _accelerometers.y.min = accelerometerData.acceleration.y;
+        if(accelerometerData.acceleration.y < self->_accelerometers.y.min){
+            self->_accelerometers.y.min = accelerometerData.acceleration.y;
             changed = YES;
         }
-        if(accelerometerData.acceleration.y > _accelerometers.y.max){
-            _accelerometers.y.max = accelerometerData.acceleration.y;
+        if(accelerometerData.acceleration.y > self->_accelerometers.y.max){
+            self->_accelerometers.y.max = accelerometerData.acceleration.y;
             changed = YES;
         }
-        if(accelerometerData.acceleration.z < _accelerometers.z.min){
-            _accelerometers.z.min = accelerometerData.acceleration.z;
+        if(accelerometerData.acceleration.z < self->_accelerometers.z.min){
+            self->_accelerometers.z.min = accelerometerData.acceleration.z;
             changed = YES;
         }
-        if(accelerometerData.acceleration.z > _accelerometers.z.max){
-            _accelerometers.z.max = accelerometerData.acceleration.z;
+        if(accelerometerData.acceleration.z > self->_accelerometers.z.max){
+            self->_accelerometers.z.max = accelerometerData.acceleration.z;
             changed = YES;
         }
         
         if(changed){
-            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_accelerometers];
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:self->_accelerometers];
             [VWWUserDefaults setAccelerometersMinMaxValues:dictionary];
         }
         
@@ -210,8 +210,8 @@ static NSString *zMax = @"zMax";
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
         // Set _device values
-        _gyroroscopes.x.current = gyroData.rotationRate.x;
-        _gyroroscopes.x.currentNormalized = value;
+        self->_gyroroscopes.x.current = gyroData.rotationRate.x;
+        self->_gyroroscopes.x.currentNormalized = value;
         
         
         // Y Axis
@@ -220,8 +220,8 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _gyroroscopes.y.current = gyroData.rotationRate.y;
-        _gyroroscopes.y.currentNormalized = value;
+        self->_gyroroscopes.y.current = gyroData.rotationRate.y;
+        self->_gyroroscopes.y.currentNormalized = value;
         
         // Z Axis
         value = gyroData.rotationRate.z + kGyroZMax;
@@ -229,46 +229,46 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _gyroroscopes.z.current = gyroData.rotationRate.z;
-        _gyroroscopes.z.currentNormalized = value;
+        self->_gyroroscopes.z.current = gyroData.rotationRate.z;
+        self->_gyroroscopes.z.currentNormalized = value;
         
         
         
         // Set device min and max values
         BOOL changed = NO;
-        if(gyroData.rotationRate.x < _gyroroscopes.x.min){
-            _gyroroscopes.x.min = gyroData.rotationRate.x;
+        if(gyroData.rotationRate.x < self->_gyroroscopes.x.min){
+            self->_gyroroscopes.x.min = gyroData.rotationRate.x;
             changed = YES;
         }
-        if(gyroData.rotationRate.x > _gyroroscopes.x.max){
-            _gyroroscopes.x.max = gyroData.rotationRate.x;
+        if(gyroData.rotationRate.x > self->_gyroroscopes.x.max){
+            self->_gyroroscopes.x.max = gyroData.rotationRate.x;
             changed = YES;
         }
-        if(gyroData.rotationRate.y < _gyroroscopes.y.min){
-            _gyroroscopes.y.min = gyroData.rotationRate.y;
+        if(gyroData.rotationRate.y < self->_gyroroscopes.y.min){
+            self->_gyroroscopes.y.min = gyroData.rotationRate.y;
             changed = YES;
         }
-        if(gyroData.rotationRate.y > _gyroroscopes.y.max){
-            _gyroroscopes.y.max = gyroData.rotationRate.y;
+        if(gyroData.rotationRate.y > self->_gyroroscopes.y.max){
+            self->_gyroroscopes.y.max = gyroData.rotationRate.y;
             changed = YES;
         }
-        if(gyroData.rotationRate.z < _gyroroscopes.z.min){
-            _gyroroscopes.z.min = gyroData.rotationRate.z;
+        if(gyroData.rotationRate.z < self->_gyroroscopes.z.min){
+            self->_gyroroscopes.z.min = gyroData.rotationRate.z;
             changed = YES;
         }
-        if(gyroData.rotationRate.z > _gyroroscopes.z.max){
-            _gyroroscopes.z.max = gyroData.rotationRate.z;
+        if(gyroData.rotationRate.z > self->_gyroroscopes.z.max){
+            self->_gyroroscopes.z.max = gyroData.rotationRate.z;
             changed = YES;
         }
         
         if(changed){
-            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_gyroroscopes];
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:self->_gyroroscopes];
             [VWWUserDefaults setGyroscopesMinMaxValues:dictionary];
         }
 
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate vwwMotionMonitor:self gyroUpdated:_gyroroscopes];
+            [self.delegate vwwMotionMonitor:self gyroUpdated:self->_gyroroscopes];
         });
     }];
     self.gyrosRunning = YES;
@@ -302,8 +302,8 @@ static NSString *zMax = @"zMax";
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
         // Set _device values
-        _magnetometers.x.current = magnetometerData.magneticField.x;
-        _magnetometers.x.currentNormalized = value;
+        self->_magnetometers.x.current = magnetometerData.magneticField.x;
+        self->_magnetometers.x.currentNormalized = value;
         
         
         // Y Axis
@@ -312,8 +312,8 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _magnetometers.y.current = magnetometerData.magneticField.y;
-        _magnetometers.y.currentNormalized = value;
+        self->_magnetometers.y.current = magnetometerData.magneticField.y;
+        self->_magnetometers.y.currentNormalized = value;
         
         // Z Axis
         float absZ = magnetometerData.magneticField.z;
@@ -323,47 +323,47 @@ static NSString *zMax = @"zMax";
         value /= normalize;
         if(value < 0.0) value = 0;
         if(value > 1.0) value = 1.0;
-        _magnetometers.z.current = magnetometerData.magneticField.z;
-        _magnetometers.z.currentNormalized = value;
+        self->_magnetometers.z.current = magnetometerData.magneticField.z;
+        self->_magnetometers.z.currentNormalized = value;
         
         
         
         // Set device min and max values
         BOOL changed = NO;
-        if(magnetometerData.magneticField.x < _magnetometers.x.min){
-            _magnetometers.x.min = magnetometerData.magneticField.x;
+        if(magnetometerData.magneticField.x < self->_magnetometers.x.min){
+            self->_magnetometers.x.min = magnetometerData.magneticField.x;
             changed = YES;
         }
-        if(magnetometerData.magneticField.x > _magnetometers.x.max){
-            _magnetometers.x.max = magnetometerData.magneticField.x;
+        if(magnetometerData.magneticField.x > self->_magnetometers.x.max){
+            self->_magnetometers.x.max = magnetometerData.magneticField.x;
             changed = YES;
         }
-        if(magnetometerData.magneticField.y < _magnetometers.y.min){
-            _magnetometers.y.min = magnetometerData.magneticField.y;
+        if(magnetometerData.magneticField.y < self->_magnetometers.y.min){
+            self->_magnetometers.y.min = magnetometerData.magneticField.y;
             changed = YES;
         }
-        if(magnetometerData.magneticField.y > _magnetometers.y.max){
-            _magnetometers.y.max = magnetometerData.magneticField.y;
+        if(magnetometerData.magneticField.y > self->_magnetometers.y.max){
+            self->_magnetometers.y.max = magnetometerData.magneticField.y;
             changed = YES;
         }
-        if(magnetometerData.magneticField.z < _magnetometers.z.min){
-            _magnetometers.z.min = magnetometerData.magneticField.z;
+        if(magnetometerData.magneticField.z < self->_magnetometers.z.min){
+            self->_magnetometers.z.min = magnetometerData.magneticField.z;
             changed = YES;
         }
-        if(magnetometerData.magneticField.z > _magnetometers.z.max){
-            _magnetometers.z.max = magnetometerData.magneticField.z;
+        if(magnetometerData.magneticField.z > self->_magnetometers.z.max){
+            self->_magnetometers.z.max = magnetometerData.magneticField.z;
             changed = YES;
         }
         
         if(changed){
-            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_magnetometers];
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:self->_magnetometers];
             [VWWUserDefaults setMagnetometersMinMaxValues:dictionary];
         }
 
         
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate vwwMotionMonitor:self magnetometerUpdated:_magnetometers];
+            [self.delegate vwwMotionMonitor:self magnetometerUpdated:self->_magnetometers];
         });
     }];
     self.magnetometerRunning = YES;
