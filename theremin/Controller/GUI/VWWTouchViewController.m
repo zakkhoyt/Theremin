@@ -42,6 +42,10 @@
 
 @implementation VWWTouchViewController
 
+- (UIRectEdge)preferredScreenEdgesDeferringSystemGestures {
+    return UIRectEdgeAll;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

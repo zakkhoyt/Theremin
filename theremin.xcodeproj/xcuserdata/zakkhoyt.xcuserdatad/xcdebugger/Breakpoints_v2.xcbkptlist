@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "theremin/Controller/GUI/VWWTouchViewController.m"
-            timestampString = "580450428.2328351"
+            timestampString = "580529425.506566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "-captureOutput:didOutputSampleBuffer:fromConnection:"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "theremin/Controller/GUI/VWWTouchViewController.m"
-            timestampString = "580450428.2329299"
+            timestampString = "580529425.506996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-startCamera"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "theremin/Controller/GUI/VWWTouchViewController.m"
-            timestampString = "580450428.2329839"
+            timestampString = "580529425.507282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-startCamera"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "theremin/Controller/GUI/VWWTouchViewController.m"
-            timestampString = "580450428.233031"
+            timestampString = "580529425.507535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "-startCamera"
             landmarkType = "7">
          </BreakpointContent>
